@@ -37,6 +37,7 @@ VERSION DE MIGUEL
 _Nos definimos como una empresa socialmente responsable, que además de vender libros, se enfoca en fomentar la lectura en las personas de cualquier rincon del mundo, a través de recomendaciones de libros._
 
 _Nuestra Mision: llevar la lectura de una manera accesible a todo aquel que la necesite._
+
 _Nuestra vision: lograr el acceso universal y equitativo a la lectura a un precio asequible para todos._
 
 _Apuntamos a un publico que busca iniciar/ampliar sus conocimientos especialmente a estudiantes, docentes y lectores en general._
