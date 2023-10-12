@@ -52,7 +52,7 @@ _Apuntamos a un publico que busca iniciar/ampliar sus conocimientos especialment
 * **Melissa Guadalupe Saavedra** - *...........* - [........](https://github.com/.........)
 * **Miguel Alejandro Nieva** - *54 años, Santiago del EStero, Argentina* - *malnieva@gmail.com* - [malnieva](https://github.com/malnieva)
 * **Andrea Geovana del Valle Chavez** - *30 años,emprendedora y estudiante avanzada en profesorado de Matematicas con domicilio en la Banda/ Sgo Del Estero* - [AndiiCG](https://github.com/AndiiCG)
-* **Adriana Jacqueline Morales** - *...........* - [........](https://github.com/.........)
+* **Adriana Jacqueline Morales** - *39 años, de Capital, Santiago del Estero, Argentina* - *jacky_morales84@hotmail.com* - [Jacky2884](https://github.com/Jacky2884)
 * **Agustin Bravo** - *...........* - [........](https://github.com/.........)
 
 
