@@ -55,7 +55,7 @@ _Apuntamos a un publico que busca iniciar/ampliar sus conocimientos especialment
 
 ## Integrantes ✒️
 
-* **Gustavo Agustin Quiroga** - *........* - [.........](https://github.com/.........)
+* **Gustavo Agustin Quiroga** - *Joven programador de 22 años, vivo en la Banda/Santiago del estero. A veces artista e hincha de Boca* - [.........](https://github.com/guccho6w9)
 * **Galo Rafael Minguez** - *...........* - [........](https://github.com/.........)
 * **Melissa Guadalupe Saavedra** - *...........* - [........](https://github.com/.........)
 * **Miguel Alejandro Nieva** - *54 años, Santiago del EStero, Argentina* - *malnieva@gmail.com* - [malnieva](https://github.com/malnieva)
