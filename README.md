@@ -12,14 +12,6 @@ decripcion de los integrantes del grupo
 *
 *
 
-
-
-
-
-
-
-
-
 links de referencia
 https://papeltec.com.ar/
 https://papeleriacarranza.com.ar/
@@ -59,7 +51,7 @@ _Apuntamos a un publico que busca iniciar/ampliar sus conocimientos especialment
 * **Galo Rafael Minguez** - *...........* - [........](https://github.com/.........)
 * **Melissa Guadalupe Saavedra** - *...........* - [........](https://github.com/.........)
 * **Miguel Alejandro Nieva** - *54 años, Santiago del EStero, Argentina* - *malnieva@gmail.com* - [malnieva](https://github.com/malnieva)
-* **Andrea Geovana del Valle Chavez** - *...........* - [........](https://github.com/.........)
+* **Andrea Geovana del Valle Chavez** - *30 años,emprendedora y estudiante avanzada en profesorado de Matematicas con domicilio en la Banda/ Sgo Del Estero* - [AndiiCG](https://github.com/AndiiCG)
 * **Adriana Jacqueline Morales** - *...........* - [........](https://github.com/.........)
 * **Agustin Bravo** - *...........* - [........](https://github.com/.........)
 
