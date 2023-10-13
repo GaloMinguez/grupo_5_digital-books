@@ -1,32 +1,6 @@
-# descripcion de la empresa 
-### Somos una empresa dedicada a la venta de libros desde el año 2005. Tenemos disponibles todos los géneros que necesites; también contamos con la opción de comprar el libro que quieras en formato PDF para llegar a todos los bolsillos de nuestros clientes.
-
-apuntamos a un publico en general que busca iniciar/ampliar sus conocimientos especialmente a estudiantes, docentes y lectores en general.
-
-
-decripcion de los integrantes del grupo
-*
-*
-*
-*
-*
-*
-
-links de referencia
-https://papeltec.com.ar/
-https://papeleriacarranza.com.ar/
-https://www.librenta.com/
-https://www.buscalibre.com.ar/
-https://usershop.redusers.com/ar/
-
-
-
-*************************
-VERSION DE MIGUEL
-*************************
 # DIGITAL BOOKS
 
-_Nos definimos como una empresa socialmente responsable, que además de vender libros, se enfoca en fomentar la lectura en las personas de cualquier rincon del mundo, a través de recomendaciones de libros._
+_Desde el año 2005 nos constituimos como una empresa socialmente responsable, que además de vender libros, se enfoca en fomentar la lectura en las personas de cualquier rincon del mundo, a través de recomendaciones de libros._
 
 _Nuestra Mision: llevar la lectura de una manera accesible a todo aquel que la necesite._
 
@@ -37,31 +11,31 @@ _Apuntamos a un publico que busca iniciar/ampliar sus conocimientos especialment
 
 ## Links de Referencia 📋
 
-* [PapelTec](https://papeltec.com.ar/) - Libreria Jugueteria Regalos
-* [Papeleria Carranza](https://papeleriacarranza.com.ar/) - Papeleria
+* [Casa del Libro](https://www.casadellibro.com/) - Venta de libros
+* [Planeta del Libro](https://www.planetadelibros.com.ar/) - Venta de libros
 * [Librenta](https://www.librenta.com/) - Venta de libros
 * [BuscaLibre](https://www.buscalibre.com.ar/) - Venta de libros
 * [UserShop](https://usershop.redusers.com/ar/) - Venta de libros y revistas
 * [Tematika](https://tematika.com) - Venta de libros
 
+_Las referencias arriba mencionadas fueron elegidas en general por su aspecto y funcionalidad_
 
 ## Integrantes ✒️
 
 * **Gustavo Agustin Quiroga** - *Joven programador de 22 años, vivo en la Banda/Santiago del estero. A veces artista e hincha de Boca* - *gusta.quiroga033@gmail.com* [guccho6w9](https://github.com/guccho6w9)
 * **Galo Rafael Minguez** - *...........* - [........](https://github.com/.........)
 * **Melissa Guadalupe Saavedra** - *...........* - [........](https://github.com/.........)
-* **Miguel Alejandro Nieva** - *54 años, Santiago del Estero, Argentina* - *malnieva@gmail.com* - [malnieva](https://github.com/malnieva)
+* **Miguel Alejandro Nieva** - *Desarrollador winform/webform y DBA, 54 años, de Santiago del Estero, Argentina* - *malnieva@gmail.com* - [malnieva](https://github.com/malnieva)
 * **Andrea Geovana del Valle Chavez** - *30 años,emprendedora y estudiante avanzada en profesorado de Matematicas con domicilio en la Banda/ Sgo Del Estero* - [AndiiCG](https://github.com/AndiiCG)
 * **Adriana Jacqueline Morales** - *39 años, de Capital, Santiago del Estero, Argentina* - *jacky_morales84@hotmail.com* - [Jacky2884](https://github.com/Jacky2884)
 * **Agustin Bravo** - *...........* - [........](https://github.com/.........)
 
 
-## Expresiones de Gratitud 🎁
+## Ayudanos a crecer 🎁
 
 * Comenta a otros sobre este proyecto 📢
 * Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
 * Da las gracias públicamente 🤓.
-* etc.
 
 
 ---
