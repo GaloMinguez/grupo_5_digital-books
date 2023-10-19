@@ -25,10 +25,10 @@ _Las referencias arriba mencionadas fueron elegidas en general por su aspecto y 
 * **Gustavo Agustin Quiroga** - *Joven programador de 22 años, vivo en la Banda/Santiago del estero. A veces artista e hincha de Boca* - *gusta.quiroga033@gmail.com* [guccho6w9](https://github.com/guccho6w9)
 * **Galo Rafael Minguez** -  Tengo 25 años y soy de La Banda/Santiago Del Estero, soy estudiante de ingenieria Electromecanica en la unse, electricista y reparador en mis tiempos libres en todo el rubro que tenga que ver con la tecnologia - galo.minguez@gmail.com - (https://github.com/GaloMinguez)
 * **Melissa Guadalupe Saavedra** - Tengo 34 años, vivo en Santiago del Estero; soy profesora de Tecnología del nivel Secundario. Me gusta ir al gimnasio, salir a comer con amigos o familia y escuchar música internacional de los 80 y 90 mayormente. - (https://github.com/Melissa267)
-* **Miguel Alejandro Nieva** - *Desarrollador winform/webform y DBA, 54 años, de Santiago del Estero, Argentina* - *malnieva@gmail.com* - [malnieva](https://github.com/malnieva)
+* **Miguel Alejandro Nieva** - *Desarrollador junior de software y DBA, 54 años, de Santiago del Estero, Argentina* - *malnieva@gmail.com* - [Mi GitHub](https://github.com/malnieva)
 * **Andrea Geovana del Valle Chavez** - *30 años,emprendedora y estudiante de Prof de Matematicas con domicilio en la Banda/ Sgo Del Estero* - *andiicg12@gmail.com* [AndiiCG](https://github.com/AndiiCG)
 * **Adriana Jacqueline Morales** - *39 años, de Capital, Santiago del Estero, Argentina* - *jacky_morales84@hotmail.com* - [Jacky2884](https://github.com/Jacky2884)
-* **Agustin Bravo** - *...........* - [........](https://github.com/.........)
+
 
 
 ## Ayudanos a crecer 🎁
