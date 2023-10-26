@@ -1,0 +1,16 @@
+{
+  "name": "grupo_5_digital-books",
+  "version": "1.0.0",
+  "description": "_Desde el año 2005 nos constituimos como una empresa socialmente responsable, que además de vender libros, se enfoca en fomentar la lectura en las personas de cualquier rincon del mundo, a través de recomendaciones de libros._",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
