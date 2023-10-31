@@ -4,10 +4,12 @@ const path = require('path');
 const app = express();
 
 app.get('/', (req, res) => {
-   res.sendFile(path.join(__dirname, 'design', 'index.html'))
+   res.sendFile(path.join(__dirname, 'src','views', 'index.html'))
 });
 
-app.listen(3000, ()=> {
-   console.log("servidor en marcha");
-})
+const publicPath = path.join(__dirname, 'src');
+
+app.use(express.static(publicPath));
+
+app.listen(3000, ()=> console.log(`http://localhost:3000`));
 
