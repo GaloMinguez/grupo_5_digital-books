@@ -232,6 +232,7 @@ body {
     color: var(--color-texto);
     font-style: italic;
     text-align: justify;
+    padding: 30px;
 }
 
 
@@ -295,4 +296,3 @@ body {
     display: flex;
     justify-content: center;
 }
-

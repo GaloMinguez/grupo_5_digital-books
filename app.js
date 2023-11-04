@@ -7,6 +7,10 @@ app.get('/', (req, res) => {
    res.sendFile(path.join(__dirname, 'src','views', 'index.html'))
 });
 
+app.get("/detalleProducto", (req, res) => {
+     res.sendFile(path.join(__dirname, "src", "views", "productDetail.html"));
+   });
+
 const publicPath = path.join(__dirname, 'src');
 
 app.use(express.static(publicPath));
