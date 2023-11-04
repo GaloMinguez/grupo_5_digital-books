@@ -10,7 +10,7 @@ section{
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    background: url(https://wallpapers.com/images/high/books-background-1tvzdkgddqinmpue.webp);
+    background: url(https://wallpapers.com/images/high/books-background-1tvzdkgddqinmpue.webp); /*puse una imagen se puede modificar con el color que decidamos despues*/
     opacity: 80%;
     background-position:center ;
     background-size: cover;
