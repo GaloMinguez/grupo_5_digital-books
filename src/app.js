@@ -15,12 +15,15 @@ app.get("/detalleProducto", (req, res) => {
    res.sendFile(path.join(__dirname, "views", "productDetail.html"));
  });
 
-
 //ruta login
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname,'views','login.html'))
-}) 
+   res.sendFile(path.join(__dirname,'views','login.html'))
+ }) 
 
+//ruta registro
+app.get('/register', (req, res) => {
+   res.sendFile(path.join(__dirname,'views','register.html'))
+ })
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`)
