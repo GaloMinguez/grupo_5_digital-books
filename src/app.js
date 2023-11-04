@@ -1,15 +1,28 @@
-const { log } = require('console');
-const express = require('express');
-const path = require('path');
-const app = express();
+const express = require('express')
+const path = require('path')
+const app = express()
+const port = 3000
+
+//configuracion de la carpeta estatica
+const publicPath = path.join(__dirname,'public');
+app.use(express.static(publicPath))
 
 app.get('/', (req, res) => {
-   res.sendFile(path.join(__dirname, 'src','views', 'index.html'))
+   res.sendFile(path.join(__dirname,'views', 'index.html'))
 });
 
-const publicPath = path.join(__dirname, 'src');
+app.get("/detalleProducto", (req, res) => {
+   res.sendFile(path.join(__dirname, "views", "productDetail.html"));
+ });
 
-app.use(express.static(publicPath));
 
-app.listen(3000, ()=> console.log(`http://localhost:3000`));
+//ruta login
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname,'views','login.html'))
+}) 
+
+
+app.listen(port, () => {
+  console.log(`Servidor corriendo en http://localhost:${port}`)
+})
 
