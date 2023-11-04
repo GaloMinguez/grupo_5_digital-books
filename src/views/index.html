@@ -28,10 +28,10 @@
             </div>
             <ul class="cuentas">
                 <il>
-                    <i class="fa-solid fa-id-card"><a href="" target="_blank">  Crear cuenta</a></i>
+                    <i class="fa-solid fa-id-card"><a href="register" target="self">  Crear cuenta</a></i>
                 </il>
                 <il>
-                    <i class="fa-solid fa-right-to-bracket"><a href="" target="_blank"> Iniciar sesion</a></i>
+                    <i class="fa-solid fa-right-to-bracket"><a href="login" target="_blank"> Iniciar sesion</a></i>
                 </il>
                 <il>
                     <i class="fa-solid fa-basket-shopping"><a href="" target="_blank">  Mis compras</a></i>
@@ -135,6 +135,33 @@
           </div>
      </section>
      <!-- FIN SLIDER DE PRODUCTOS -->
+
+     <script>
+          const slider = document.querySelector('.slider');
+const btnIzquierda = document.getElementById('btn-izquierda');
+const btnDerecha = document.getElementById('btn-derecha');
+
+let currentIndex = 0;
+
+btnIzquierda.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + 5) % 5; // Asegura que el índice esté en el rango correcto
+  updateSlider();
+});
+
+btnDerecha.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % 5; // Asegura que el índice esté en el rango correcto
+  updateSlider();
+});
+
+function updateSlider() {
+  const containerProductos = document.querySelectorAll('.container-productos');
+  containerProductos.forEach((container, index) => {
+    container.style.display = index === currentIndex ? 'block' : 'none';
+  });
+}
+
+updateSlider(); 
+     </script>
 
 
     </main>

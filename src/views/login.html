@@ -43,7 +43,7 @@
           </form>
 
           <div>
-            <button>Acceder</button>
+            <button id="acceso-btn">Acceder</button>
             <div class="registrar">
               <p>
                 No tengo cuenta -
@@ -61,5 +61,20 @@
   <footer>
 
   </footer>
+
+  <!-- retorno a index -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Obtener el botón de registro por su ID
+      const registroBtn = document.getElementById("acceso-btn");
+  
+      // Agregar un manejador de clic al botón de registro
+      registroBtn.addEventListener("click", function() {
+        // Realizar la redirección a la raíz del sitio ("/")
+        window.location.href = "/";
+      });
+    });
+  </script>
+  
 </body>
 </html>

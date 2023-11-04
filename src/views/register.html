@@ -47,7 +47,8 @@
                 </form>
       
                 <div>
-                  <button>Registrarme</button>
+                  <button id="registro-btn">Registrarme</button>
+
       
                   <div class="registrar">
                     <p>
@@ -64,5 +65,20 @@
     <footer>
 
     </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Obtener el botón de registro por su ID
+        const registroBtn = document.getElementById("registro-btn");
+    
+        // Agregar un manejador de clic al botón de registro
+        registroBtn.addEventListener("click", function() {
+          // Realizar la redirección a index.html
+          window.location.href = "/";
+        });
+      });
+    </script>
+    
+
 </body>
 </html>
