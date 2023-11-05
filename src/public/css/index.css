@@ -215,15 +215,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 18px;
 }
 .busqueda {
   width: 25%;
   display: flex;
   justify-content: left;
 }
+#busqueda{
+  width: 80%;
+  height: 30px;
+}
 #logo {
   display: flex;
-  width: 30%;
+  width: 25%;
   justify-content: center;
 }
 .logo {
@@ -231,22 +236,24 @@ body {
   width: 100px;
   justify-content: center;
 }
-#cuentas {
-  width: 40%;
+.cuentas {
+  width: 50%;
   display: flex;
   justify-content: right;
 }
-.cuentas{
-    padding: 5px;
+#cuentas{
+    width: 50%;
+    padding: 8px;
     text-align: center;
 }
 
-.header-down {
+#header-down {
   width: 100%;
   display: flex;
   justify-content: center;
+  font-size: 24px;
 }
-#header-down {
+.header-down {
   width: 20%;
   display: flex;
   justify-content: center;
@@ -259,7 +266,7 @@ body {
     place-items: center;
 }
 .footer{
-    width: 90%;
+    width: 95%;
     display: flex;
     padding: 5px;
 }
@@ -278,6 +285,9 @@ body {
 }
 .titulos-footer{
     padding: 3px;
+}
+#N-S{
+  padding: 3px;
 }
 
 .footer-down{
