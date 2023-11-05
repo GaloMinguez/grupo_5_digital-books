@@ -11,6 +11,7 @@ app.get('/', (req, res) => {
    res.sendFile(path.join(__dirname,'views', 'index.html'))
 });
 
+//ruta Detalle de producto
 app.get("/detalleProducto", (req, res) => {
    res.sendFile(path.join(__dirname, "views", "productDetail.html"));
  });
@@ -27,20 +28,4 @@ app.get('/register', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`)
-})
-
-const cartInfo = document.querySelector('.cart-product')
-const rowProduct = document.querySelector('.row-product')
-
-// Lista de los contenedores de producto:
-const productsList = document.querySelector('.slider')
-
-// Variable de arreglos de productos:
-let allProducts = []
-
-
-productsList.addEventListener('click', e => {
-  if(e.target.classList.contains('btn-add-cart')) {
-    const product = e.target.parentElement
-  }
 })
