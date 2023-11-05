@@ -18,6 +18,10 @@
 
     <link rel="shortcut icon" href="./img/logo-db.png">
 
+    <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous"
+        defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet"
+        crossorigin="anonymous">
 </head>
 
 <body>
@@ -25,9 +29,67 @@
         <h1><b>HEADER</b></h1>
     </header>
     <main>
+
+
         <div class="container-img">
-            <img src="./img/libro2.png" alt="imagen-producto" />
-       </div>
+            <!-- SLIDER DE PRODUCTOS -->
+            <div class="swiffy-slider slider-item-ratio slider-item-ratio-16x9 slider-nav-animation slider-nav-animation-fadein"
+                id="swiffy-animation">
+                <ul class="slider-container">
+                    <li>
+                        <div class="container-productos">
+                            <div class="imagen-productos">
+                                <img src="./img/libro2.png" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="container-productos">
+                            <div class="imagen-productos">
+                                <img src="./img/libro3.png" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="container-productos">
+                            <div class="imagen-productos">
+                                <img src="./img/libro4.png" alt="">
+                            </div>
+                    </li>
+                    <li>
+                        <div class="container-productos">
+                            <div class="imagen-productos">
+                                <img src="./img/libro5.png" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="container-productos">
+                            <div class="imagen-productos">
+                                <img src="./img/libro1.png" alt="">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <button type="button" class="slider-nav" aria-label="Ir al anterior"></button>
+                <button type="button" class="slider-nav slider-nav-next" aria-label="Ir al proximo"></button>
+
+                <div class="slider-indicators">
+                    <button aria-label="Go to slide" class=""></button>
+                    <button aria-label="Go to slide" class="active"></button>
+                    <button aria-label="Go to slide" class=""></button>
+                    <button aria-label="Go to slide" class=""></button>
+                    <button aria-label="Go to slide" class=""></button>
+                </div>
+            </div>
+
+
+
+            <!--<img src="./img/libro2.png" alt="imagen-producto" />-->
+        </div>
+
+
 
         <div class="container-info-product">
             <div class="container-name-product">
@@ -44,7 +106,7 @@
                 <label for=""><i class="fa-regular fa-star"></i></label>
                 <span>5 Comentarios</span>
             </div>
-            
+
             <div class="container-price">
                 <span>$ 1232.00</span>
                 <i class="fa-solid fa-angle-right"></i>
@@ -85,15 +147,9 @@
                 </div>
                 <div class="text-description">
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing
-                        elit. Laboriosam iure provident atque voluptatibus
-                        reiciendis quae rerum, maxime placeat enim cupiditate
-                        voluptatum, temporibus quis iusto. Enim eum qui delectus
-                        deleniti similique? Lorem, ipsum dolor sit amet
-                        consectetur adipisicing elit. Sint autem magni earum est
-                        dolorem saepe perferendis repellat ipsam laudantium cum
-                        assumenda quidem quam, vero similique? Iusto officiis
-                        quod blanditiis iste?
+                        Un retrato sociocultural de los argentinos, en particular, de las razones de la “ciclocrisis” 
+                        y los movimientos pendulares que nos condicionan, el rol del consumo, la idea de clase media 
+                        en la que creemos y las expectativas sobre el futuro colectivo.
                     </p>
                 </div>
             </div>
@@ -103,8 +159,20 @@
                     <h4>Información adicional</h4>
                     <i class="fa-solid fa-chevron-down"></i>
                 </div>
-                <div class="text-additional-information hidden">
-                    <p>-----------</p>
+                <div class="text-additional-information">
+                    <p>INTRODUCCIÓN El consumo ha dejado de ser un tema meramente económico para transformarse 
+                        en un fenómeno social de fuerte impacto político: ahora los ciudadanos votan como consumidores, 
+                        las marcas actúan como políticos y los políticos comunican como marcas. En la actual “Sociedad 
+                        de Consumidores” en la que vivimos, el consumo se ha vuelto tanto un generador de identidad como 
+                        un amortiguador social, siendo imposible soslayar su influencia sobre los ciudadanos. Es bajo 
+                        esta nueva perspectiva que debemos analizar el nuevo “clima de época” que emerge en la Argentina. 
+                        El mundo asiste a una poderosa transformación estructural que nos brinda una gran oportunidad para 
+                        acceder al desarrollo. Sin embargo, como un fantasma del que no terminamos de desprendernos, flota 
+                        entre nosotros la idea de la “ciclocrisis”; un aparente destino circular que nos conduce a la lógica 
+                        del corto plazo, a una conducta ciclotímica y pendular. ¿Seremos los argentinos capaces de cambiar 
+                        el chip, y romper así con el marco mental de la “ciclocrisis” que nos bloquea, abruma y condiciona? 
+                        ¿Podremos construir sobre lo construido y encaminarnos en un proyecto de desarrollo con inclusión 
+                        social? Y fundamentalmente, ¿sabremos reconocer y aprovechar a tiempo esta nueva oportunidad?</p>
                 </div>
             </div>
 

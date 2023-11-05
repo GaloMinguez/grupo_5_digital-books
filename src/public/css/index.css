@@ -156,52 +156,166 @@ body {
 /*  HASTA AQUI LOS LINEAMIENTOS PROPUESTOS  */
 
 /* SLIDER DE PRODUCTOS */
-
-.container-productos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-basis: 100%;
-    flex-shrink: 0;
+#carrusel-contenido {
+  margin: 0 auto;
+  padding: 10px;
+  overflow: hidden;
+  text-align: left;
 }
 
-.descripcion-productos{
-    width: 50%;
+#carrusel-caja {
+  -moz-animation: automatizacion 15s infinite linear;
+  -o-animation: automatizacion 15s infinite linear;
+  -webkit-animation: automatizacion 15s infinite linear;
+  animation: automatizacion 15s infinite linear;
+
+  -webkit-transition: all 0.75s ease;
+  -moz-transition: all 0.75s ease;
+  -ms-transition: all 0.75s ease;
+  -o-transition: all 0.75s ease;
+  transition: all 0.75s ease;
+
+  height: 500px;
+  width: 300%;
 }
 
-.descripcion-productos h1{
-    font-size: 5vw;
-    font-weight: 600;
-    text-transform: uppercase;
+@-moz-keyframes automatizacion {
+  0% {
+    margin-left: 0;
+  }
+
+  30% {
+    margin-left: 0;
+  }
+
+  35% {
+    margin-left: -100%;
+  }
+
+  65% {
+    margin-left: -100%;
+  }
+
+  70% {
+    margin-left: -200%;
+  }
+
+  95% {
+    margin-left: -200%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
 }
 
-.descripcion-productos h2{
-    text-transform: lowercase;
-    font-size: 2.2vw;
-    font-weight: 100;
+@-webkit-keyframes automatizacion {
+  0% {
+    margin-left: 0;
+  }
+
+  30% {
+    margin-left: 0;
+  }
+
+  35% {
+    margin-left: -100%;
+  }
+
+  65% {
+    margin-left: -100%;
+  }
+
+  70% {
+    margin-left: -200%;
+  }
+
+  95% {
+    margin-left: -200%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
 }
 
-.descripcion-productos p{
-    color: var(--color-texto);
-    font-style: italic;
-    text-align: justify;
-    padding-right: 30px;
+@keyframes automatizacion {
+  0% {
+    margin-left: 0;
+  }
+
+  30% {
+    margin-left: 0;
+  }
+
+  35% {
+    margin-left: -100%;
+  }
+
+  65% {
+    margin-left: -100%;
+  }
+
+  70% {
+    margin-left: -200%;
+  }
+
+  95% {
+    margin-left: -200%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
 }
 
-.imagen-productos{
-    width: 20%;
-    display: flex;
-    justify-content: center;
+.container-productos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 100%;
+  flex-shrink: 0;
+  float: left;
+  width: 33.333%;
 }
 
-.imagen-productos img{
-    width: 100%;
-    transform: scale(1);
-    transition: all 0.3s;
+.descripcion-productos {
+  width: 50%;
 }
 
-.container-productos:hover .imagen-productos img{
-    transform: scale(1.10);
+.descripcion-productos h1 {
+  font-size: 5vw;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.descripcion-productos h2 {
+  text-transform: lowercase;
+  font-size: 2.2vw;
+  font-weight: 100;
+}
+
+.descripcion-productos p {
+  color: var(--color-texto);
+  font-style: italic;
+  text-align: justify;
+  padding-right: 30px;
+}
+
+.imagen-productos {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.imagen-productos img {
+  width: 100%;
+  transform: scale(1);
+  transition: all 0.3s;
+}
+
+.container-productos:hover .imagen-productos img {
+  transform: scale(1.1);
 }
 /* FIN SLIDER DE PRODUCTOS */
 
@@ -236,9 +350,9 @@ body {
   display: flex;
   justify-content: right;
 }
-.cuentas{
-    padding: 5px;
-    text-align: center;
+.cuentas {
+  padding: 5px;
+  text-align: center;
 }
 
 .header-down {
@@ -252,41 +366,40 @@ body {
   justify-content: center;
 }
 
-
-#footer{
-    width: 100%;
-    display: grid;
-    place-items: center;
+#footer {
+  width: 100%;
+  display: grid;
+  place-items: center;
 }
-.footer{
-    width: 90%;
-    display: flex;
-    padding: 5px;
-}
-
-#footer-top{
-    padding-left: 15px;
-}
-#descripcion{
-    text-align: justify;
+.footer {
+  width: 90%;
+  display: flex;
+  padding: 5px;
 }
 
-.footer-mid{
-    width: 25%;
-    align-items: center;
-    height: 100px;
+#footer-top {
+  padding-left: 15px;
 }
-.titulos-footer{
-    padding: 3px;
+#descripcion {
+  text-align: justify;
 }
 
-.footer-down{
-    width: 100%;
-    display: flex;
-    padding: 15px;
+.footer-mid {
+  width: 25%;
+  align-items: center;
+  height: 100px;
 }
-#copyright{
-    margin-left: 3px;
-    position: relative;
-    bottom: 1px;
+.titulos-footer {
+  padding: 3px;
+}
+
+.footer-down {
+  width: 100%;
+  display: flex;
+  padding: 15px;
+}
+#copyright {
+  margin-left: 3px;
+  position: relative;
+  bottom: 1px;
 }
