@@ -38,25 +38,7 @@ _Las referencias arriba mencionadas fueron elegidas en general por su aspecto y 
 * Da las gracias públicamente 🤓.
 
 
-## RETROSPECTIVA:
-Teniendo  en cuenta que con el grupo ya trabajamos juntos en un SPRINT, y analizándolo entre todos, llegamos a la conclusión que:
-LO QUE DEBERIAMOS HACER MÁS ES:
-* Que uno de los miembros enfatice activamente las cosas positivas que tenemos en cada reunión.
-* Mejorar la comunicación  para plantear dudas.
-* Mejorar la velocidad de trabajo.
-LO QUE DEBEMOS CONSERVAR:
-* La actitud positiva e iniciativa por trabajar.
-* La ayuda mutua que tenemos en nuestro grupo.
-POR DONDE DEBEMOS EMPEZAR:
-* Reuniéndonos de vez en cuando para plantear si alguno tiene dudas o problemas en resolver algo, así buscar una solución entre todos.
-* Rompiendo el hielo para que todos se animen a hablar y participar.
-* Proponiendo programar de a pares.
-* Estableciendo roles en el Equipo.
-CON QUE DEBEMOS DETENERNOS:	
-* Por momentos, para autoevaluarnos.
-QUE DEBERIAMOS HACER MENOS:
-* Es bueno mirar de vez en cuando métricas agiles, como mirar la velocidad del equipo por ejemplo, pero no en cada sprint. Deberíamos hacerlo solo en una vez por tiempo con una retrospectiva.
 
+## Links de TABLERO DE TRABAJO 📋
 
-
----
+* [Organizacion del trabajo](https://trello.com/b/gyyFLBw6/trabajo-grupo-5).
