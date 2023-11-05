@@ -231,10 +231,14 @@ body {
   width: 100px;
   justify-content: center;
 }
-.cuentas {
+#cuentas {
   width: 40%;
   display: flex;
   justify-content: right;
+}
+.cuentas{
+    padding: 5px;
+    text-align: center;
 }
 
 .header-down {
@@ -246,4 +250,43 @@ body {
   width: 20%;
   display: flex;
   justify-content: center;
+}
+
+
+#footer{
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.footer{
+    width: 90%;
+    display: flex;
+    padding: 5px;
+}
+
+#footer-top{
+    padding-left: 15px;
+}
+#descripcion{
+    text-align: justify;
+}
+
+.footer-mid{
+    width: 25%;
+    align-items: center;
+    height: 100px;
+}
+.titulos-footer{
+    padding: 3px;
+}
+
+.footer-down{
+    width: 100%;
+    display: flex;
+    padding: 15px;
+}
+#copyright{
+    margin-left: 3px;
+    position: relative;
+    bottom: 1px;
 }
