@@ -232,6 +232,7 @@ body {
     color: var(--color-texto);
     font-style: italic;
     text-align: justify;
+    padding: 30px;
 }
 
 
@@ -298,6 +299,7 @@ body {
     display: flex;
     justify-content: center;
 }
+<<<<<<< HEAD
 
 
 #footer{
@@ -337,3 +339,5 @@ body {
     position: relative;
     bottom: 1px;
 }
+=======
+>>>>>>> 21c26ef7dc1bcdd2dc4d543895a79390306252ae

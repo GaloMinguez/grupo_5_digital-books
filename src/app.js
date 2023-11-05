@@ -29,3 +29,18 @@ app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`)
 })
 
+const cartInfo = document.querySelector('.cart-product')
+const rowProduct = document.querySelector('.row-product')
+
+// Lista de los contenedores de producto:
+const productsList = document.querySelector('.slider')
+
+// Variable de arreglos de productos:
+let allProducts = []
+
+
+productsList.addEventListener('click', e => {
+  if(e.target.classList.contains('btn-add-cart')) {
+    const product = e.target.parentElement
+  }
+})
