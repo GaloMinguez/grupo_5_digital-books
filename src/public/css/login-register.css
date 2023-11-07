@@ -1,0 +1,133 @@
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin:0;
+    padding: 0;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: url(https://wallpapers.com/images/high/books-background-1tvzdkgddqinmpue.webp); /*puse una imagen se puede modificar con el color que decidamos despues*/
+    opacity: 80%;
+    background-position:center ;
+    background-size: cover;
+}
+
+.contenedor{
+    position: relative;
+    width: 550px;
+    border:2px solid rgb(172, 172, 172);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    height: 600px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor h2{
+    font-size: 40px;
+    color:rgb(2, 2, 2);
+    text-align: center;
+}
+
+.input-contenedor{
+    position: relative;
+    margin: 30px 0;
+    width: 350px;
+    border-bottom: 2px solid rgb(3, 3, 3);
+}
+
+.input-contenedor label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: .6s;
+    font-weight: bold;
+}
+
+
+.input-contenedor input{
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    border: none;
+    outline:none;
+    font-size: 1.5rem;
+    padding: -35px 0 5px;
+    color:rgb(33, 48, 247);
+}
+
+/*iconos*/
+.input-contenedor i{
+    position:absolute;
+    color:rgb(0, 0, 0);
+    font-size: 1.6rem;
+    top: 19px;
+    right: 8px;
+}
+ /*recordar*/
+.olvidar{
+    margin: -15px 0 15px;
+    font-size: 1rem;
+    color:rgb(0, 0, 0);
+    display:flex;
+    justify-content: center;
+}
+.olvidar label input{
+    margin: 3px;
+}
+
+.olvidar label a{
+    color:rgb(92, 38, 241);
+    text-decoration: none;
+    transition: .3s;
+    font-size: 1em;
+}
+
+.olvidar label a:hover{
+    text-decoration: underline;
+
+}
+
+button{
+    width: 100%;
+    height: 45px;
+    border-radius: 40px;
+    background: rgb(94, 87, 172);
+    border: none;
+    font-weight: bold;
+    cursor:pointer;
+    outline: none;
+    font-size: 1rem;
+    transition: .4s;
+}
+
+button:hover{
+    opacity: .9;
+}
+/*No tengo cuenta*/
+.registrar{
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin: 20px 0 10px;
+}
+/*crear una cuenta*/
+.registrar p a{
+    text-decoration: none;
+    color:rgb(94, 87, 172);
+    font-weight: bold;
+    transition: .3s;
+}
+
+.registrar p a:hover{
+    text-decoration: underline;
+}

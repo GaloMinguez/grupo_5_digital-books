@@ -1,0 +1,468 @@
+/*  AGREGADO POR MIGUEL PARA 
+ESTABLECER LINEAMIENTOS RESPECTO AL DISEÑO  */
+:root {
+  --color-primario: #fcb038;
+  --color-secundario: #e92f3d;
+  --color-background: beige;
+  --color-texto: #a1a5a6;
+  --text-default: "Source Sans Pro";
+  --text-secundaria: "sans-serif";
+}
+/*  GENERALES  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--text-default), var(--text-secundaria);
+}
+body {
+  background-color: var(--color-background);
+  color: black;
+  font-family: var(--text-default), var(--text-secundaria);
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.titulos {
+  font-size: 40 px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.subtitulos {
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--color-primario);
+}
+.btn {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  background-color: var(--color-primario);
+  font-weight: 700;
+  padding: 15px 30px;
+  outline: none;
+  border: 2px solid --color-primario;
+  cursor: pointer;
+  position: relative;
+  top: 20px;
+  transition: all 0.3ms;
+}
+.btn span {
+  padding-left: 10px;
+}
+.btn:hover {
+  padding: 15px 45px;
+}
+
+/*  MENU PRINCIPAL  */
+.menu-principal {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 75px;
+  padding: 0 30px;
+  margin-top: 10px;
+  background-color: var(--color-background);
+  z-index: 1;
+}
+.logo img {
+  width: 130px;
+  cursor: pointer;
+}
+.menu-bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.menu-bar .enlaces ul li {
+  display: inline-block;
+  padding: 0 10px;
+}
+.menu-bar .enlaces ul li a {
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-texto);
+  font-weight: 600;
+  background: linear-gradient(currentColor, currentColor);
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: all 0.5s;
+}
+.menu-bar .enlaces ul li a:hover {
+  color: var(--color-secundario);
+  background-size: 100% 2px;
+}
+.menu-principal i {
+  cursor: pointer;
+  color: var(--color-texto);
+  font-size: 30px;
+  float: right;
+  display: none;
+  transition: all 0.5s;
+}
+.menu-principal i:hover {
+  color: var(--color-secundario);
+}
+
+@media screen and (max-width: 650px) {
+  .menu-principal {
+    position: fixed;
+    top: 0;
+    margin-top: 0;
+  }
+  .menu-principal i {
+    display: block;
+  }
+  .menu-bar {
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background: #333;
+    transition: all 1s;
+    transform: translateX(100%);
+  }
+  .menu-bar.active {
+    transform: translateX(0%);
+  }
+  .menu-bar i {
+    position: absolute;
+    right: 50px;
+    top: 50px;
+  }
+  .menu-bar .enlaces ul li {
+    display: block;
+    padding: 20px 10px;
+    text-align: center;
+  }
+  .menu-bar .enlaces ul li a {
+    font-size: 20px;
+  }
+}
+
+/*  HASTA AQUI LOS LINEAMIENTOS PROPUESTOS  */
+
+/* SLIDER DE PRODUCTOS */
+#carrusel-contenido {
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+  text-align: left;
+}
+
+#carrusel-caja {
+  -moz-animation: automatizacion 15s infinite linear;
+  -o-animation: automatizacion 15s infinite linear;
+  -webkit-animation: automatizacion 15s infinite linear;
+  animation: automatizacion 15s infinite linear;
+
+  -webkit-transition: all 0.75s ease;
+  -moz-transition: all 0.75s ease;
+  -ms-transition: all 0.75s ease;
+  -o-transition: all 0.75s ease;
+  transition: all 0.75s ease;
+
+  height: 500px;
+  width: 300%;
+}
+
+@-moz-keyframes automatizacion {
+  0% {
+    margin-left: 0;
+  }
+
+  30% {
+    margin-left: 0;
+  }
+
+  35% {
+    margin-left: -100%;
+  }
+
+  65% {
+    margin-left: -100%;
+  }
+
+  70% {
+    margin-left: -200%;
+  }
+
+  95% {
+    margin-left: -200%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+@-webkit-keyframes automatizacion {
+  0% {
+    margin-left: 0;
+  }
+
+  30% {
+    margin-left: 0;
+  }
+
+  35% {
+    margin-left: -100%;
+  }
+
+  65% {
+    margin-left: -100%;
+  }
+
+  70% {
+    margin-left: -200%;
+  }
+
+  95% {
+    margin-left: -200%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+@keyframes automatizacion {
+  0% {
+    margin-left: 0;
+  }
+
+  30% {
+    margin-left: 0;
+  }
+
+  35% {
+    margin-left: -100%;
+  }
+
+  65% {
+    margin-left: -100%;
+  }
+
+  70% {
+    margin-left: -200%;
+  }
+
+  95% {
+    margin-left: -200%;
+  }
+
+  100% {
+    margin-left: 0;
+  }
+}
+
+.container-productos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 100%;
+  flex-shrink: 0;
+  float: left;
+  width: 33.333%;
+}
+
+.descripcion-productos {
+  width: 50%;
+}
+
+.descripcion-productos h1 {
+  font-size: 5vw;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.descripcion-productos h2 {
+  text-transform: lowercase;
+  font-size: 2.2vw;
+  font-weight: 100;
+}
+
+.descripcion-productos p {
+  color: var(--color-texto);
+  font-style: italic;
+  text-align: justify;
+  padding-right: 30px;
+}
+
+.imagen-productos {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.imagen-productos img {
+  width: 100%;
+  transform: scale(1);
+  transition: all 0.3s;
+}
+
+.container-productos:hover .imagen-productos img {
+  transform: scale(1.1);
+}
+/* FIN SLIDER DE PRODUCTOS */
+
+.busqueda-container {
+  position: absolute;
+  top: 30px; /* Ajusta la posición vertical */
+  left: 20px; /* Ajusta la posición horizontal */
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  border-radius: 25px;
+}
+
+/* Ajusta el espacio entre el icono y el campo de búsqueda */
+.busqueda-container i {
+  margin-right: 5px; /* Mueve el icono un poco hacia la derecha */
+}
+
+#busqueda {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  width: 100%;
+}
+
+
+.header-top {
+  background: url('/img/banner4.png') center/cover no-repeat;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+
+
+.busqueda {
+  width: 25%;
+  display: flex;
+  justify-content: left;
+}
+#busqueda{
+  width: 80%;
+  height: 30px;
+}
+#logo {
+  display: flex;
+  width: 25%;
+  justify-content: right;
+}
+.logo {
+  display: flex;
+  width: 100px;
+  justify-content: right;
+}
+  
+.cuentas ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.cuentas ul li {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.cuentas ul li:last-child {
+  margin-right: 10;
+}
+
+.cuentas ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--color-texto);
+}
+
+/* Estilos para el logo (ajusta el ancho según sea necesario) */
+#logo {
+  flex: 1; /* Toma todo el espacio disponible para empujar los elementos de cuentas a la derecha */
+  margin-left: 0; /* Ajusta el margen izquierdo para mover el logo más a la izquierda */
+}
+
+#logo a {
+  display: block; /* Para permitir ajustar el ancho del logo */
+}
+
+.logo {
+  width: 150px; /* Ajusta el tamaño del logo según tus preferencias */
+}
+#header-down {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+.header-down {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+#footer {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.footer{
+    width: 95%;
+    display: flex;
+    padding: 5px;
+}
+
+#footer-top {
+  padding-left: 15px;
+}
+#descripcion {
+  text-align: justify;
+}
+
+.footer-mid {
+  width: 25%;
+  align-items: center;
+  height: 100px;
+}
+.titulos-footer {
+  padding: 3px;
+}
+#N-S{
+  padding: 3px;
+}
+
+.footer-down {
+  width: 100%;
+  display: flex;
+  padding: 15px;
+}
+#copyright {
+  margin-left: 3px;
+  position: relative;
+  bottom: 1px;
+}
