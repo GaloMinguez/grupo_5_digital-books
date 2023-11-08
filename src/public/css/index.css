@@ -319,18 +319,43 @@ body {
 }
 /* FIN SLIDER DE PRODUCTOS */
 
-.fantasma {
-  width: 5%;
+.busqueda-container {
+  position: absolute;
+  top: 30px; /* Ajusta la posición vertical */
+  left: 20px; /* Ajusta la posición horizontal */
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px;
+  border-radius: 25px;
 }
 
-.header-top {
+/* Ajusta el espacio entre el icono y el campo de búsqueda */
+.busqueda-container i {
+  margin-right: 5px; /* Mueve el icono un poco hacia la derecha */
+}
+
+#busqueda {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
   width: 100%;
-  height: 140px;
+}
+
+
+.header-top {
+  background: url('/img/banner4.png') center/cover no-repeat;
+  width: 100%;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 18px;
 }
+
+
+
 .busqueda {
   width: 25%;
   display: flex;
@@ -343,26 +368,54 @@ body {
 #logo {
   display: flex;
   width: 25%;
-  justify-content: center;
+  justify-content: right;
 }
 .logo {
   display: flex;
   width: 100px;
-  justify-content: center;
-}
-.cuentas {
-  width: 50%;
-  display: flex;
   justify-content: right;
 }
-#cuentas{
-    width: 50%;
-    padding: 8px;
-    text-align: center;
+  
+.cuentas ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
+.cuentas ul li {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.cuentas ul li:last-child {
+  margin-right: 10;
+}
+
+.cuentas ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: var(--color-texto);
+}
+
+/* Estilos para el logo (ajusta el ancho según sea necesario) */
+#logo {
+  flex: 1; /* Toma todo el espacio disponible para empujar los elementos de cuentas a la derecha */
+  margin-left: 0; /* Ajusta el margen izquierdo para mover el logo más a la izquierda */
+}
+
+#logo a {
+  display: block; /* Para permitir ajustar el ancho del logo */
+}
+
+.logo {
+  width: 150px; /* Ajusta el tamaño del logo según tus preferencias */
+}
 #header-down {
   width: 100%;
+  height: 40px;
+  background-color: white;
   display: flex;
   justify-content: center;
   font-size: 24px;

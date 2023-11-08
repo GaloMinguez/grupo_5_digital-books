@@ -5,64 +5,113 @@
   }
   
   body {
-	font-family: "Ubuntu";
-	max-width: 1200px;
-	margin: 0 auto;
 	background-color: beige;
   }
   
-  .fantasma {
-	width: 5%;
+  main {
+	font-family: "Ubuntu";
+	max-width: 1200px;
+	margin: 20px auto;
+	background-color: beige;
   }
   
-  header{
-	  font-family: "Monserrat";
+  .busqueda-container {
+	position: absolute;
+	top: 30px; /* Ajusta la posición vertical */
+	left: 20px; /* Ajusta la posición horizontal */
+	display: flex;
+	align-items: center;
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 5px;
+	border-radius: 25px;
   }
   
-  .header-top1{
-	  display: flex;
-	  justify-content: space-around;
-	  align-items: flex-start;
+  /* Ajusta el espacio entre el icono y el campo de búsqueda */
+  .busqueda-container i {
+	margin-right: 5px; /* Mueve el icono un poco hacia la derecha */
   }
+  
+  #busqueda {
+	border: none;
+	outline: none;
+	background: transparent;
+	font-size: 16px;
+	width: 100%;
+  }
+  
   
   .header-top {
+	background: url('/img/banner4.png') center/cover no-repeat;
 	width: 100%;
-	height: 140px;
+	height: 200px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 18px;
   }
+  
+  
+  
   .busqueda {
 	width: 25%;
 	display: flex;
 	justify-content: left;
   }
-  #busqueda {
+  #busqueda{
 	width: 80%;
 	height: 30px;
   }
   #logo {
 	display: flex;
 	width: 25%;
-	justify-content: center;
+	justify-content: right;
   }
   .logo {
 	display: flex;
 	width: 100px;
-	justify-content: center;
+	justify-content: right;
   }
-  .cuentas {
-	width: 50%;
-	display: inline-block;
-	padding: 0 20px;
+	
+  .cuentas ul {
 	list-style: none;
-	justify-content:flex-end;
-	align-items:flex-end;
+	margin: 0;
+	padding: 0;
+	display: flex;
   }
   
+  .cuentas ul li {
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+  }
+  
+  .cuentas ul li:last-child {
+	margin-right: 10;
+  }
+  
+  .cuentas ul li a {
+	text-decoration: none;
+	font-size: 14px;
+	color: var(--color-texto);
+  }
+  
+  /* Estilos para el logo (ajusta el ancho según sea necesario) */
+  #logo {
+	flex: 1; /* Toma todo el espacio disponible para empujar los elementos de cuentas a la derecha */
+	margin-left: 0; /* Ajusta el margen izquierdo para mover el logo más a la izquierda */
+  }
+  
+  #logo a {
+	display: block; /* Para permitir ajustar el ancho del logo */
+  }
+  
+  .logo {
+	width: 150px; /* Ajusta el tamaño del logo según tus preferencias */
+  }
   #header-down {
 	width: 100%;
+	height: 40px;
+	background-color: white;
 	display: flex;
 	justify-content: center;
 	font-size: 24px;
@@ -78,10 +127,10 @@
 	display: grid;
 	place-items: center;
   }
-  .footer {
-	width: 95%;
-	display: flex;
-	padding: 5px;
+  .footer{
+	  width: 95%;
+	  display: flex;
+	  padding: 5px;
   }
   
   #footer-top {
@@ -99,7 +148,7 @@
   .titulos-footer {
 	padding: 3px;
   }
-  #N-S {
+  #N-S{
 	padding: 3px;
   }
   
@@ -121,6 +170,7 @@
 	color: #222;
   }
   
+  /*----MAIN ----*/
   main {
 	display: flex;
 	gap: 30px;
@@ -216,7 +266,6 @@
   
   .container-quantity {
 	position: relative;
-  
   }
   
   .input-quantity {
@@ -285,6 +334,15 @@
 	display: none;
   }
   
+  .card-list-products {
+	display: flex;
+	flex-direction:row;
+	justify-content: space-between;
+	border-bottom: 1px solid #fb7201;
+	padding: 30px;
+	margin-bottom: 30px;
+  }
+
   .container-description,
   .container-additional-information,
   .container-reviews {
@@ -358,9 +416,9 @@
   }
   
   .card-list-products {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 25px;
+	display: flex;
+	grid-template-columns: repeat(4, 3fr);
+	gap: 35px;
   }
   
   .card {
@@ -406,16 +464,6 @@
   
   .text-product p:hover {
 	color:  #fb7201;
-  }
-  
-  footer {
-	padding: 30px;
-	background-color: #eee;
-	margin-top: 50px;
-	color: #222;
-	display: flex;
-	align-items: center;
-	justify-content: center;
   }
   
   /* MANEJANDO IMAGENES EN MINIATURA */
