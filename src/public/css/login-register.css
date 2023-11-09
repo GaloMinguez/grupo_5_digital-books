@@ -16,13 +16,16 @@ section{
     background-size: cover;
 }
 
+main{
+    background: url('/img/DigitalBooksfondo.png') ;
+}
 .contenedor{
+
     position: relative;
     width: 600px;
     border:2px solid rgb(172, 172, 172);
     border-radius: 20px;
-    background-color:#f1c39e;
-    
+   background-color: rgb(253, 228, 211);
     height: 600px;
     display:flex;
     justify-content: center;
