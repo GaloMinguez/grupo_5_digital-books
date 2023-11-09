@@ -10,7 +10,7 @@ section{
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    background: url(https://wallpapers.com/images/high/books-background-1tvzdkgddqinmpue.webp); /*puse una imagen se puede modificar con el color que decidamos despues*/
+    background-color: beige;
     opacity: 80%;
     background-position:center ;
     background-size: cover;
@@ -18,10 +18,11 @@ section{
 
 .contenedor{
     position: relative;
-    width: 550px;
+    width: 600px;
     border:2px solid rgb(172, 172, 172);
     border-radius: 20px;
-    backdrop-filter: blur(20px);
+    background-color:#f1c39e;
+    
     height: 600px;
     display:flex;
     justify-content: center;
@@ -29,7 +30,7 @@ section{
 }
 
 .contenedor h2{
-    font-size: 40px;
+    font-size: 50px;
     color:rgb(2, 2, 2);
     text-align: center;
 }
@@ -86,7 +87,7 @@ section{
 }
 
 .olvidar label a{
-    color:rgb(92, 38, 241);
+    color:rgb(235, 101, 101);
     text-decoration: none;
     transition: .3s;
     font-size: 1em;
@@ -101,7 +102,7 @@ button{
     width: 100%;
     height: 45px;
     border-radius: 40px;
-    background: rgb(94, 87, 172);
+    background: rgb(243, 167, 68);
     border: none;
     font-weight: bold;
     cursor:pointer;
@@ -123,7 +124,7 @@ button:hover{
 /*crear una cuenta*/
 .registrar p a{
     text-decoration: none;
-    color:rgb(94, 87, 172);
+    color: rgb(235, 101, 101);
     font-weight: bold;
     transition: .3s;
 }
