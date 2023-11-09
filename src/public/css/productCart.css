@@ -16,6 +16,8 @@ header {
 
 main {
     padding: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 #contenedorCompra {
@@ -23,6 +25,7 @@ main {
     border: 1px solid #ddd;
     padding: 20px;
     margin-top: 20px;
+    width: 70%;
 }
 
 .informacionCompra {
@@ -55,4 +58,19 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+.logo img {
+    width: 130px;
+    cursor: pointer;
+  }
+
+#logo {
+  display: flex;
+  width: 25%;
+  justify-content: right;
+}
+.logo {
+  display: flex;
+  width: 100px;
+  justify-content: right;
 }
