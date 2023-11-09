@@ -1,70 +1,58 @@
-img {
-    width: 320px;
-    height: 340px;
-    object-fit: cover;
-    border-radius: 20px 20px 0px 0px;
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
-.carrito{
-    filter: invert(100%);
-    width: 45px;
-    height: auto;
-    position: absolute;
-    top: 14px;
-    cursor: pointer;
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
 }
-.contenedor{
+
+main {
+    padding: 20px;
+}
+
+#contenedorCompra {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.informacionCompra {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 50px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.productosCompra {
     margin-bottom: 20px;
 }
-.contenedorCompra{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top:0px;
-    background-color: rgba(51, 51, 51, 0.6);
-    flex-direction:column;
-    gap:35px;
+
+.total {
+    text-align: right;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-.informacionCompra{
-    width: 500px;
-    height: 500px;
-    background-color: #2D4263;
-    border-radius: 25px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: fixed;
-}
-
-.informacionCompra h2{
-    font-weight: 300;
-    margin: 50px 0px 0px 50px;
-    font-size: 32px;
-    width: 100%;
-}
-.productosCompra{
-    font-size: 17px;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    width: 450px;
-    height: 30%;
-    overflow-y: auto;
-    margin-top: 50px;
-}
-.x{
-    padding-top: 30px;
-    padding-right: 30px;
-    cursor: pointer;
-    font-size: 20px;
+button {
+    background-color: #4caf50;
     color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
 }

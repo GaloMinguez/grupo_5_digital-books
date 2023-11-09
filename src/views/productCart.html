@@ -8,23 +8,37 @@
      <title>Digital Books</title>
      <link rel="stylesheet" href="../css/productCart.css" />
 
-<body>
-    <header>
-        <img class="carrito" src="Educación/Programación/Digital House/Proyecto en grupo/Proyecto/grupo_5_digital-books/src/public/img/carrito.png" alt="carrito">
-    </header>
-    <main>
-        <div id="contenedor" class="contenedor"> </div>
-    </main>
+     <body>
+        <header>
+            <h1>Mis Compras</h1>
+        </header>
+        <main>
+            <div id="contenedorCompra">
+                <div class="informacionCompra" id="informacionCompra">
+                    <h2>Cesta</h2>
+                    <p class="x" id="x">x</p>
+                </div>
     
-    <div id="contenedorCompra">
-        <div class="informacionCompra" id="informacionCompra">
-            <h2>Cesta</h2>
-            <p class="x" id="x">x</p>
-        </div>
-
-        <div class="productosCompra" id="productosCompra"></div>
-        <div class="total" id="total"></div>
-        <button>Finalizar Compra</button>
-    </div>
-</body>
-</head>
+                <div class="productosCompra" id="productosCompra">
+                    <!-- Aquí puedes agregar información sobre los productos en el carrito -->
+                    <div>
+                        <img src="./img/libro6.png" alt="Libro 1">
+                        <p>Libro 1</p>
+                        <p>$1234.00</p>
+                    </div>
+                    <div>
+                        <img src="./img/libro6a.png" alt="Libro 2">
+                        <p>Libro 2</p>
+                        <p>$1500.00</p>
+                    </div>
+                </div>
+    
+                <div class="total" id="total">
+                    Total: $.00
+                </div>
+                <button> <a href="index">Compra</a></button>
+            </div>
+        </main>
+    </body>
+    
+    </html>

@@ -26,6 +26,11 @@ app.get('/register', (req, res) => {
    res.sendFile(path.join(__dirname,'views','register.html'))
  })
 
+ //ruta carrito
+app.get('/MisCompras', (req, res) => {
+  res.sendFile(path.join(__dirname,'views','productCart.html'))
+}) 
+
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`)
 })
