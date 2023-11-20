@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const app = express()
-const port = 3000
+const port = 3001
 
 //configuracion de la carpeta estatica
 const publicPath = path.join(__dirname,'public');
@@ -27,8 +27,13 @@ app.get('/register', (req, res) => {
  })
 
  //ruta carrito
-app.get('/MisCompras', (req, res) => {
+/*app.get('/MisCompras', (req, res) => {
   res.sendFile(path.join(__dirname,'views','productCart.html'))
+}) */
+
+ //ruta carrito otro
+ app.get('/MisCompras', (req, res) => {
+  res.sendFile(path.join(__dirname,'views','carrito.html'))
 }) 
 
 app.listen(port, () => {
