@@ -1,0 +1,74 @@
+<!-- HEAD -->
+<%- include('../partials/head.ejs') %>
+  <link rel="stylesheet" href="../css/login-register.css" />
+
+<body>
+    <!-- HEADER -->
+    <%- include('../partials/header.ejs') %>
+
+    <main>
+        <section>
+            <div class="contenedor">
+              <div class="formulario">
+                <form>
+                  <h2>Regístrate</h2>
+      
+                  <div class="input-contenedor">
+                    <i class="fa-solid fa-user" icon></i>
+      
+                    <input type="text" placeholder="Nombre Completo" />
+                  </div>
+      
+                  <div class="input-contenedor">
+                    <i class="fa-solid fa-envelope" icon></i>
+      
+                    <input type="email" placeholder="Correo Electronico" />
+                  </div>
+      
+                  <div class="input-contenedor">
+                    <i class="fa-solid fa-key"></i>
+      
+                    <input type="password" placeholder="Contraseña" />
+                  </div>
+                  <div class="input-contenedor">
+                    <i class="fa-solid fa-key"></i>
+      
+                    <input type="password" placeholder="Repite contraseña" />
+                  </div>
+                </form>
+      
+                <div>
+                  <button id="registro-btn">Registrarme</button>
+
+      
+                  <div class="registrar">
+                    <p>
+                      ¿Ya tenés cuenta? - 
+                      <a class="link" href="http://localhost:3000/login">Iniciar Sección</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    </main>
+
+      <!-- FOOTER -->
+      <%- include('../partials/footer.ejs') %>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        // Obtener el botón de registro por su ID
+        const registroBtn = document.getElementById("registro-btn");
+    
+        // Agregar un manejador de clic al botón de registro
+        registroBtn.addEventListener("click", function() {
+          // Realizar la redirección a index.html
+          window.location.href = "/";
+        });
+      });
+    </script>
+    
+
+</body>
+</html>

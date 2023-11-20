@@ -1,0 +1,295 @@
+<!-- HEAD -->
+<%- include('../partials/head.ejs') %>
+  <link rel="stylesheet" href="../css/productDetail.css" />
+
+  <body>
+    <!-- HEADER -->
+    <%- include('../partials/header.ejs') %>
+
+      <main>
+        <div class="container-img">
+          <div class="contenedorvisor">
+            <a href="javascript:void(0);">
+              <img class="grande muestra" src="../img/<%= getBook.imgTapa %>" />
+            </a>
+
+            <a href="javascript:void(0);">
+              <img class="miniatura" src="../img/<%= getBook.imgTapa%>" />
+              <img class="grande" src="../img/<%= getBook.imgTapa %>" />
+            </a>
+            <a href="javascript:void(0);">
+              <img class="miniatura" src="../img/<%= getBook.imgPortada %>" />
+              <img class="grande" src="../img/<%= getBook.imgPortada %>" />
+            </a>
+          </div>
+        </div>
+
+        <div class="container-info-product">
+          <div class="container-name-product">
+            <span>
+              <h2 class="title-book">
+                <%= getBook.titulo %>
+              </h2>
+            </span>
+          </div>
+
+          <div class="container-rating">
+            <label for=""><i class="fa-solid fa-star"></i></label>
+            <label for=""><i class="fa-solid fa-star"></i></label>
+            <label for=""><i class="fa-solid fa-star"></i></label>
+            <label for=""><i class="fa-regular fa-star"></i></label>
+            <label for=""><i class="fa-regular fa-star"></i></label>
+            <span> 5 Comentarios</span>
+          </div>
+
+          <div class="container-price">
+            <span><b>$ <%= getBook.price %></b></span>
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+
+          <div class="container-details-product">
+            <div class="form-group">
+              <label for="formato">Formato</label>
+              <select name="formato" id="formato">
+                <option disabled selected value="">Escoge una opción</option>
+                <option value="impreso">Impreso</option>
+                <option value="digital">Digital</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="container-add-cart">
+            <div class="container-quantity">
+              <input type="number" placeholder="1" value="1" min="1" class="input-quantity" />
+              <div class="btn-increment-decrement">
+                <i class="fa-solid fa-chevron-up" id="increment"></i>
+                <i class="fa-solid fa-chevron-down" id="decrement"></i>
+              </div>
+            </div>
+            <button class="btn-add-to-cart">
+              <i class="fa-solid fa-plus"></i>
+              Añadir al carrito
+            </button>
+          </div>
+
+          <div class="container-description">
+            <div class="title-description">
+              <h4>Descripción</h4>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="text-description">
+              <p>
+                <%= getBook.descripcion %>
+              </p>
+            </div>
+          </div>
+
+          <div class="container-additional-information">
+            <div class="title-additional-information">
+              <h4>Información adicional</h4>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="text-additional-information hidden">
+              <p>
+                <%= getBook.descripcionDetallada %>
+              </p>
+            </div>
+          </div>
+
+          <div class="container-reviews">
+            <div class="title-reviews">
+              <h4 class="Title-seccion">Comentarios</h4>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="text-reviews hidden">
+              <div class="comments-container">
+                <ul id="comments-list" class="comments-list">
+                  <li>
+                    <div class="comment-main-level">
+                      <!-- Avatar -->
+                      <div class="comment-avatar">
+                        <img src="../img/avatar_1.webp" alt="" />
+                      </div>
+                      <!-- Contenedor del Comentario -->
+                      <div class="comment-box">
+                        <div class="comment-head">
+                          <h6 class="comment-name by-author">Agustin Ortiz</h6>
+                          <span>hace 20 minutos</span>
+                          <i class="fa fa-reply"></i>
+                          <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="comment-content">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit. Velit omnis animi et iure laudantium vitae,
+                          praesentium optio, sapiente distinctio illo?
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Respuestas de los comentarios -->
+                    <ul class="comments-list reply-list">
+                      <li>
+                        <!-- Avatar -->
+                        <div class="comment-avatar">
+                          <img src="../img/avatar_2.webp" alt="" />
+                        </div>
+                        <!-- Contenedor del Comentario -->
+                        <div class="comment-box">
+                          <div class="comment-head">
+                            <h6 class="comment-name">Claudia Rojero</h6>
+                            <span>hace 10 minutos</span>
+                            <i class="fa fa-reply"></i>
+                            <i class="fa fa-heart"></i>
+                          </div>
+                          <div class="comment-content">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Velit omnis animi et iure laudantium vitae,
+                            praesentium optio, sapiente distinctio illo?
+                          </div>
+                        </div>
+                      </li>
+
+                      <li>
+                        <!-- Avatar -->
+                        <div class="comment-avatar">
+                          <img src="../img/avatar_1.webp" alt="" />
+                        </div>
+                        <!-- Contenedor del Comentario -->
+                        <div class="comment-box">
+                          <div class="comment-head">
+                            <h6 class="comment-name by-author">Agustin Ortiz</h6>
+                            <span>hace 10 minutos</span>
+                            <i class="fa fa-reply"></i>
+                            <i class="fa fa-heart"></i>
+                          </div>
+                          <div class="comment-content">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                            elit. Velit omnis animi et iure laudantium vitae,
+                            praesentium optio, sapiente distinctio illo?
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li>
+                    <div class="comment-main-level">
+                      <!-- Avatar -->
+                      <div class="comment-avatar">
+                        <img src="../img/avatar_2.webp" alt="" />
+                      </div>
+                      <!-- Contenedor del Comentario -->
+                      <div class="comment-box">
+                        <div class="comment-head">
+                          <h6 class="comment-name">Claudia Rojero</h6>
+                          <span>hace 10 minutos</span>
+                          <i class="fa fa-reply"></i>
+                          <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="comment-content">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing
+                          elit. Velit omnis animi et iure laudantium vitae,
+                          praesentium optio, sapiente distinctio illo?
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="container-social">
+            <span>Compartir</span>
+            <div class="container-buttons-social">
+              <a href="#" title="Email"><i class="fa-solid fa-envelope"></i></a>
+              <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" title="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            </div>
+          </div>
+        </div>
+      </main>
+      <section class="container-related-products">
+        <h2>Productos Relacionados</h2>
+        <div class="card-list-products">
+          <% for( let i=1; i <=4; i++ ) { %>
+            <div class="card">
+              <div class="card-img">
+                <a href="<%= libros[i].id %>" target="">
+                  <img src="../img/<%= libros[i].imgTapa %>" alt="<%= libros[i].alt %>" />
+                </a>
+              </div>
+              <div class="info-card">
+                <div class="text-product">
+                  <h3>
+                    <%= libros[i].titulo %> - <%= libros[i].autor %>
+                  </h3>
+                  <p class="category"><i>
+                      <%= libros[i].categoria %>
+                    </i></p>
+                </div>
+              </div>
+              <div class="price"><b>$ <%= libros[i].price %></b></div>
+            </div>
+            <% } %>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <%- include('../partials/footer.ejs') %>
+
+        <script>
+          const inputQuantity = document.querySelector(".input-quantity");
+          const btnIncrement = document.querySelector("#increment");
+          const btnDecrement = document.querySelector("#decrement");
+
+          let valueByDefault = parseInt(inputQuantity.value);
+
+          // Funciones Click
+
+          btnIncrement.addEventListener("click", () => {
+            valueByDefault += 1;
+            inputQuantity.value = valueByDefault;
+          });
+
+          btnDecrement.addEventListener("click", () => {
+            if (valueByDefault === 1) {
+              return;
+            }
+            valueByDefault -= 1;
+            inputQuantity.value = valueByDefault;
+          });
+
+          // Toggle
+          // Constantes Toggle Titles
+          const toggleDescription = document.querySelector(".title-description");
+          const toggleAdditionalInformation = document.querySelector(
+            ".title-additional-information"
+          );
+          const toggleReviews = document.querySelector(".title-reviews");
+
+          // Constantes Contenido Texto
+          const contentDescription = document.querySelector(".text-description");
+          const contentAdditionalInformation = document.querySelector(
+            ".text-additional-information"
+          );
+          const contentReviews = document.querySelector(".text-reviews");
+
+          // Funciones Toggle
+          toggleDescription.addEventListener("click", () => {
+            contentDescription.classList.toggle("hidden");
+          });
+
+          toggleAdditionalInformation.addEventListener("click", () => {
+            contentAdditionalInformation.classList.toggle("hidden");
+          });
+
+          toggleReviews.addEventListener("click", () => {
+            contentReviews.classList.toggle("hidden");
+          });
+        </script>
+
+  </body>
+
+  </html>

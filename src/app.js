@@ -7,34 +7,18 @@ const port = 3001
 const publicPath = path.join(__dirname,'public');
 app.use(express.static(publicPath))
 
-app.get('/', (req, res) => {
-   res.sendFile(path.join(__dirname,'views', 'index.html'))
-});
+const mainRoutes = require('./routes/mainRoutes');
 
-//ruta Detalle de producto
-app.get("/detalleProducto", (req, res) => {
-   res.sendFile(path.join(__dirname, "views", "productDetail.html"));
- });
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-//ruta login
-app.get('/login', (req, res) => {
-   res.sendFile(path.join(__dirname,'views','login.html'))
- }) 
-
-//ruta registro
-app.get('/register', (req, res) => {
-   res.sendFile(path.join(__dirname,'views','register.html'))
- })
-
- //ruta carrito
-/*app.get('/MisCompras', (req, res) => {
-  res.sendFile(path.join(__dirname,'views','productCart.html'))
-}) */
-
- //ruta carrito otro
- app.get('/MisCompras', (req, res) => {
-  res.sendFile(path.join(__dirname,'views','carrito.html'))
-}) 
+app.get("/", mainRoutes);
+app.get("/register", mainRoutes);
+app.get("/login", mainRoutes);
+app.get("/productDetail", mainRoutes);
+app.get("/carrito", mainRoutes);
+app.get("/productCrud", mainRoutes);
+app.get('*', mainRoutes);
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`)
