@@ -1,3 +1,30 @@
+# RETROSPECTIVA - SPRINT 2
+
+_Teniendo  en cuenta que con el grupo ya trabajamos juntos en un SPRINT, y analizándolo entre todos, llegamos a la conclusión que:_
+
+## QUE HACER MAS 📋
+
+* Mejorar la comunicación para plantear dudas.
+* Mejorar la velocidad de trabajo.
+
+## QUE CONSERVAR 🤓
+
+* La actitud positiva e iniciativa por trabajar.
+* La ayuda mutua que tenemos en nuestro grupo.
+
+## DONDE EMPEZAR 📋
+
+* ................
+
+## EN QUE DETENERSE 📢
+
+* Por momentos, para autoevaluarnos.
+
+## QUE HACER MENOS 📋
+
+* ...................
+
+
 # RETROSPECTIVA - SPRINT 1
 
 
@@ -30,28 +57,3 @@ _Teniendo  en cuenta que con el grupo ya trabajamos juntos en un SPRINT, y anali
 * Es bueno mirar de vez en cuando métricas agiles, como mirar la velocidad del equipo por ejemplo, pero no en cada sprint. Deberíamos hacerlo solo en una vez por tiempo con una retrospectiva.
 
 
-# RETROSPECTIVA - SPRINT 2
-
-_Teniendo  en cuenta que con el grupo ya trabajamos juntos en un SPRINT, y analizándolo entre todos, llegamos a la conclusión que:_
-
-## QUE HACER MAS 📋
-
-* Mejorar la comunicación para plantear dudas.
-* Mejorar la velocidad de trabajo.
-
-## QUE CONSERVAR 🤓
-
-* La actitud positiva e iniciativa por trabajar.
-* La ayuda mutua que tenemos en nuestro grupo.
-
-## DONDE EMPEZAR 📋
-
-* ................
-
-## EN QUE DETENERSE 📢
-
-* Por momentos, para autoevaluarnos.
-
-## QUE HACER MENOS 📋
-
-* ...................
