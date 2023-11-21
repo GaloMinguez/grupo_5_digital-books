@@ -6,24 +6,28 @@ _Teniendo  en cuenta que con el grupo ya trabajamos juntos en un SPRINT, y anali
 
 * Mejorar la comunicación para plantear dudas.
 * Mejorar la velocidad de trabajo.
-* Brindar mas informacion.
+* Ponernos de acuerdo más rápido para la toma de decisiones.
 
 ## QUE CONSERVAR 🤓
 
 * Seguir escuchando el feedback del equipo.
+* El énfasis que pone uno de los miembros, que nos alienta e impulsa a continuar y resolver inconvenientes.
 * La ayuda mutua que tenemos en nuestro grupo.
 
 ## DONDE EMPEZAR 📋
 
-* Invitar a los integrantes a realizar mas reuniones
+* Invitar a los integrantes a realizar mas reuniones.
+* Hacer hincapié en la distribución de tareas, en el momento que nos entregan el proyecto.      
+* Automáticamente poner fecha de puesta en común, previa a la entrega.
 
 ## EN QUE DETENERSE 📢
 
 * Dejar de ponerse a la defensiva.
+* Por momentos, para autoevaluarnos y pedir ayuda si es necesario.
 
 ## QUE HACER MENOS 📋
 
-* ...................
+* Dejar de esperar hasta último momento para la toma de decisiones.
 
 
 # RETROSPECTIVA - SPRINT 1
