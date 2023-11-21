@@ -6,19 +6,20 @@ _Teniendo  en cuenta que con el grupo ya trabajamos juntos en un SPRINT, y anali
 
 * Mejorar la comunicación para plantear dudas.
 * Mejorar la velocidad de trabajo.
+* Brindar mas informacion.
 
 ## QUE CONSERVAR 🤓
 
-* La actitud positiva e iniciativa por trabajar.
+* Seguir escuchando el feedback del equipo.
 * La ayuda mutua que tenemos en nuestro grupo.
 
 ## DONDE EMPEZAR 📋
 
-* ................
+* Invitar a los integrantes a realizar mas reuniones
 
 ## EN QUE DETENERSE 📢
 
-* Por momentos, para autoevaluarnos.
+* Dejar de ponerse a la defensiva.
 
 ## QUE HACER MENOS 📋
 
