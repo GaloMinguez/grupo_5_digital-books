@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="../css/login-register.css" />
+  <link rel="stylesheet" href="../css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  <title>Digital Books-Login</title>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="busqueda-container">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input id="busqueda" placeholder="Buscar productos" />
+      </div>
+      <div id="logo">
+        <a href="http://localhost:3000/" target=""
+          ><img class="logo" src="/img/LOGO-DB.png"
+        /></a>
+      </div>
+
+      <div class="cuentas">
+        <ul>
+          <li><a href="register" target="">Crear cuenta</a></li>
+          <li>|</li>
+          <li><a href="login" target="">Iniciar sesión</a></li>
+          <li>|</li>
+          <li><a href="MisCompras" target="">Mis compras</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <ul id="header-down">
+        <li class="header-down"><a href="/" target="">home</a></li>
+        <a>|</a>
+        <li class="header-down"><a href="" target="">venta</a></li>
+        <a>|</a>
+        <li class="header-down"><a href="" target="">contacto</a></li>
+        <a>|</a>
+        <li class="header-down"><a href="" target="">Ayuda</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="contenedor">
+        <div class="formulario">
+          <form>
+            <h2>Iniciar Sección</h2>
+
+            <div class="input-contenedor">
+              <i class="fa-solid fa-envelope"></i>
+              <input type="email" placeholder="Correo Electronico" />
+             
+            </div>
+
+            <div class="input-contenedor">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password"  placeholder="Contraseña"/>
+              <label for="#"></label>
+            </div>
+
+            <div class="olvidar">
+              <label>
+                <input type="checkbox" /> Recordar
+                <a href="#">¿Has olvidado la contraseña?</a>
+              </label>
+            </div>
+          </form>
+
+          <div>
+            <button id="acceso-btn">Acceder</button>
+            <div class="registrar">
+              <p>
+                No tengo cuenta -
+                <a class="link" href="http://localhost:3000/register"
+                  >Crear una</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer">
+         <div class="footer">
+              <a href="http://localhost:3000/"><img class="logo" src="/img/LOGO-DB.png"></a>
+              <div id="footer-top">
+                   <h1> Acerca de nosotros</h1>
+                   <p id="descripcion">Desde el año 2005 nos constituimos como una empresa socialmente
+                        responsable, que además de vender libros, se enfoca en fomentar la lectura en las personas
+                        de cualquier rincon del mundo, a través de recomendaciones de libros.</p>
+              </div>
+         </div>
+
+         <div class="footer">
+              <div class="footer-mid">
+                   <h4 class="titulos-footer">NAVEGACION</h4>
+                   <ul>
+                        <li><a href="">Home</a></li>
+                        <li>Contacto</li>
+                        <li>Venta</li>
+                        <li>Ayuda</li>
+                   </ul>
+              </div>
+              <div class="footer-mid">
+                   <h4 class="titulos-footer">MEDIOS DE PAGO</h4>
+                   <div id="medios-de-pago">
+                        <i class="fa-solid fa-money-check-dollar fa-xl"></i>
+                        <i class="fa-brands fa-cc-mastercard fa-xl"></i>
+                        <i class="fa-brands fa-cc-visa fa-xl"></i>
+                        <i class="fa-brands fa-cc-paypal fa-xl"></i>
+                        <i class="fa-brands fa-cc-amazon-pay fa-xl"></i>
+                   </div>
+                   <h4 class="titulos-footer">FORMAS DE ENVIO</h4>
+                   <div id="formas-de-envio">
+                        <i class="fa-solid fa-person-walking fa-xl"></i>
+                        <i class="fa-solid fa-dolly fa-xl"></i>
+                        <i class="fa-solid fa-truck fa-xl"></i>
+                        <i class="fa-solid fa-truck-fast fa-xl"></i>
+                   </div>
+              </div>
+              <div class="footer-mid">
+                   <h4 class="titulos-footer">CONTACTANOS</h4>
+                   <p><i class="fa-brands fa-whatsapp fa-lg"></i> +54-3855-99-9999</p>
+                   <p><i class="fa-brands fa-whatsapp fa-lg"></i> +54-3855-88-8888</p>
+                   <p><i class="fa-regular fa-envelope fa-lg"></i> Digital_Books@gmail.com</p>
+                   <p><i class="fa-solid fa-house fa-lg"></i> Almamula 77, Santiago del Estero
+                        , CP 4200</p>
+              </div>
+              <div class="footer-mid">
+                   <h4 class="titulos-footer">REDES SOCIALES</h4>
+              </div>
+         </div>
+
+         <div class="footer-down">
+              <i class="fa-solid fa-copyright"></i>
+              <a id="copyright">Digital Books</a>
+         </div>
+    </div>
+</footer>
+
+  <!-- retorno a index -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Obtener el botón de registro por su ID
+      const registroBtn = document.getElementById("acceso-btn");
+  
+      // Agregar un manejador de clic al botón de registro
+      registroBtn.addEventListener("click", function() {
+        // Realizar la redirección a la raíz del sitio ("/")
+        window.location.href = "/";
+      });
+    });
+  </script>
+  
+</body>
+</html>
