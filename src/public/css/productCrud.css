@@ -1,16 +1,78 @@
-body{
-	width:715px;
-	margin:0 auto;
-	}
 
 h1{
 	text-align:center;
-	}
-	
-form{
-	width:715px;
+	text-decoration: underline;
+	margin-bottom: 10px;
+} 
+.createform{
+	margin:auto;
+	margin-top: 60px;
 }
-img{
-	width:40px;
-	height:20px;
+	
+.titulo-formulario{
+	padding: 10px 0;
+	font-size: 20px;
+}
+
+.control-formulario input{
+	margin: 20px 0;
+	border: none;
+	border-radius: 6px;
+}
+
+.category{
+	font-size:x-large;
+}
+
+.category option{
+	background-color:  #f59a4f;
+}
+
+.format label{
+	margin:10px;
+	font-size: 25px;
+}
+
+.format{
+	text-align: center;
+}
+
+.control-formulario input:hover,textarea:hover{
+	border: 3px solid #fb7201;
+}
+	
+.control{
+	width: 100%;
+	padding: 10px 10px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.subir-archivo{
+	font-size: 25px;
+	padding: 10px 0;
+}
+	
+.container-botones button{
+	width: 180px;
+	height: 80px;
+	margin: 10px;
+	background-color:  #fb7201;
+	color:#ebebeb;
+	border: none;
+	border-radius: 6px;
+	font-size: 20px;
+	padding: 10px;
+}
+	
+.container-botones{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin-bottom: 20px;
+}
+	
+	
+button:hover{
+	color: rgba(255, 40, 12, 0.884);
 }
