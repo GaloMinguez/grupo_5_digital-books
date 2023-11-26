@@ -15,12 +15,11 @@ app.set("views", path.join(__dirname, "views"));
 app.get("/", mainRoutes);
 app.get("/register", mainRoutes);
 app.get("/login", mainRoutes);
-app.get("/productDetail", mainRoutes);
-app.get("/carrito", mainRoutes);
+app.get("/products", mainRoutes);
+app.get("/productCart", mainRoutes);
 app.get("/productCrud", mainRoutes);
 app.get("*", mainRoutes);
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
-

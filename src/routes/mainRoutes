@@ -11,9 +11,9 @@ router.get('/login', mainController.login);
 
 router.get('/productCrud', mainController.productCrud);
 
-router.get('/productDetail/:id', mainController.productDetail);
+router.get('/products/:id', mainController.productDetail);
 
-router.get('/carrito', mainController.carrito);
+router.get('/productCart', mainController.productCart);
 
 router.get('*', mainController.error);
 

@@ -1,4 +1,4 @@
-const libros = require('../data/libros')
+const libros = require('../data/products.json')
 
 const controller = {
     index: (req, res) => res.render('index'),
@@ -13,7 +13,7 @@ const controller = {
         res.send('El producto no existe');
     },
     productCrud: (req, res) => res.render('../views/products/productCrud'),
-    carrito: (req, res) => res.render('../views/products/carrito', { libros }),
+    productCart: (req, res) => res.render('../views/products/productCart', { libros }),
     error: (req, res) => res.render('page_404'),
 }
 

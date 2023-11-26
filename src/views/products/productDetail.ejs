@@ -10,16 +10,16 @@
         <div class="container-img">
           <div class="contenedorvisor">
             <a href="javascript:void(0);">
-              <img class="grande muestra" src="../img/<%= getBook.imgTapa %>" />
+              <img class="grande muestra" src="../img/<%= getBook.imgTop %>" />
             </a>
 
             <a href="javascript:void(0);">
-              <img class="miniatura" src="../img/<%= getBook.imgTapa%>" />
-              <img class="grande" src="../img/<%= getBook.imgTapa %>" />
+              <img class="miniatura" src="../img/<%= getBook.imgTop%>" />
+              <img class="grande" src="../img/<%= getBook.imgTop %>" />
             </a>
             <a href="javascript:void(0);">
-              <img class="miniatura" src="../img/<%= getBook.imgPortada %>" />
-              <img class="grande" src="../img/<%= getBook.imgPortada %>" />
+              <img class="miniatura" src="../img/<%= getBook.imgBack %>" />
+              <img class="grande" src="../img/<%= getBook.imgBack %>" />
             </a>
           </div>
         </div>
@@ -28,7 +28,7 @@
           <div class="container-name-product">
             <span>
               <h2 class="title-book">
-                <%= getBook.titulo %>
+                <%= getBook.title %>
               </h2>
             </span>
           </div>
@@ -43,7 +43,9 @@
           </div>
 
           <div class="container-price">
-            <span><b>$ <%= getBook.price %></b></span>
+            <span><b>$ <%= getBook.price %></b> <% if (getBook.discount > 0) { %>
+            - <%= getBook.discount %>% OFF
+            <% } %></span>
             <i class="fa-solid fa-angle-right"></i>
           </div>
 
@@ -79,7 +81,7 @@
             </div>
             <div class="text-description">
               <p>
-                <%= getBook.descripcion %>
+                <%= getBook.description %>
               </p>
             </div>
           </div>
@@ -91,7 +93,7 @@
             </div>
             <div class="text-additional-information hidden">
               <p>
-                <%= getBook.descripcionDetallada %>
+                <%= getBook.descriptionD %>
               </p>
             </div>
           </div>
@@ -217,20 +219,22 @@
             <div class="card">
               <div class="card-img">
                 <a href="<%= libros[i].id %>" target="">
-                  <img src="../img/<%= libros[i].imgTapa %>" alt="<%= libros[i].alt %>" />
+                  <img src="../img/<%= libros[i].imgTop %>" alt="<%= libros[i].alt %>" />
                 </a>
               </div>
               <div class="info-card">
                 <div class="text-product">
                   <h3>
-                    <%= libros[i].titulo %> - <%= libros[i].autor %>
+                    <%= libros[i].title %> - <%= libros[i].author %>
                   </h3>
                   <p class="category"><i>
-                      <%= libros[i].categoria %>
+                      <%= libros[i].genre %>
                     </i></p>
                 </div>
               </div>
-              <div class="price"><b>$ <%= libros[i].price %></b></div>
+              <div class="price"><b>$ <%= libros[i].price %></b><% if (libros[i].discount>0) { %>
+               - <%= libros[i].discount %>% OFF
+              <% } %></div>
             </div>
             <% } %>
         </div>
