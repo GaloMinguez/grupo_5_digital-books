@@ -1,72 +1,79 @@
 <!-- HEAD -->
 <%- include('../partials/head.ejs') %>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
-    <link rel="stylesheet" type="text/css" href="../css/productCrud.css" />
 
-    <script type="text/javascript" src="../js/jquery.js"></script>
-    <script type="text/javascript" src="../js/crud.js"></script>
+<link rel="stylesheet" href="../css/login-register.css" />
+<link rel="stylesheet" type="text/css" href="../css/productCrud.css" />
 
-    <body>
-        <h1> CATÁLOGO DE PRODUCTOS</h1>
-        <div class="container">
 
-            <div class="row">
-                <form class="box__forms" action="/" method="get">
-                    <!-- datos producto -->
-                    <fieldset class="data__book">
-                        <input type="text" name="title" id="title" placeholder="Titulo del Libro" required>
-                        <br>
-                        <input type="text" name="author" id="author" placeholder="Autor del libro" required>
-                        <br>
-                        <!-- datos de categoria -->
-                        <legend>Categorias:</legend>
-                        <article>
-                            <input type="checkbox" name="recreativo" id="recreativo" value="recreativo">
-                            <label for="text">Recreativo</label>
-                        </article>
-                        <article>
-                            <input type="checkbox" name="salud" id="salud" value="salud">
-                            <label for="text">Salud</label>
-                        </article>
-                        <article>
-                            <input type="checkbox" name="literario" id="literario" value="literario">
-                            <label for="text">Literario</label>
-                        </article>
-                        <br>
-                        <!-- datos de Descripcion -->
-                        <input type="text" name="descripcion" id="descripcion" placeholder="Descripcion" required>
-                        <br>
-                        <input type="text" name="descripcionDetallada" id="descripcionDetallada"
-                            placeholder="Descripcion Detallada" required>
-                        <br>
-                        <!-- foto de libro -->
-                        <fieldset>
-                            <legend>Tapa de libro:</legend>
-                            <input type="file" name="photo-bookTapa" id="photo-bookTapa">
-                            <legend>Portada de libro:</legend>
-                            <input type="file" name="photo-bookPortada" id="photo-bookPortada">
-                        </fieldset>
-                        <br>
-                        <input type="text" name="altFoto" id="altFoto" placeholder="Descripcion de foto" required>
-                        <br>
-                        <input type="number" step="0.01" class="form-control" id="precio"
-                            placeholder="Descripcion Detallada" required />
-                        <br>
-                        <button type="button" id="crear" class="btn btn-success">Crear Tabla </button>
-                        <button type="button" id="insertar" class="btn btn-success">Insertar Registro </button>
-                        <button type="button" id="modificar" class="btn btn-danger">Modificar Registro </button>
-                        <button type="button" id="listar" class="btn btn-success">Mostrar/Actualizar </button>
-                        <button type="button" id="borrarTodo" class="btn btn-danger">ELIMINAR TODO </button>
-                    </fieldset>
-                </form>
-                <hr />
-                <h3> LISTA DE PRODUCTOS </h3>
-                <table class="table table-borderer table-hover" id="listaProductos" style="width:715px">
-                </table>
-            </div>
+<!-- HEADER -->
+<%- include('../partials/header.ejs') %>
 
-        </div>
 
-    </body>
+<body>
+ <main>
+     <section>
+           <form action="/" method="POST" class="createform">
+             <div>
+                 <h1>CATÁLOGO DE PRODUCTOS DB</h1>
+                 <h3>Datos del Producto:</h3>
+             </div>
 
-    </html>
+              <div class="control-formulario">
+                 <input type="text" name="titulo-libro" placeholder="Titulo del Libro" class="control">
+                 <input type="text" name="autor-libro" placeholder="Autor del Libro" class="control">
+             </div>
+
+             <div>
+                 <h3>Seleccione categoria</h3>
+                 <label for="categoria" >
+                     <select name="categoria" class="category">
+                         <option value="Artisticos">Artisticos</option>
+                         <option value="Consulta y referencia">Consulta y referencia</option>
+                         <option value="Entretenimiento">Entretenimiento</option>
+                         <option value="Infantiles">Infantiles</option>
+                         <option value="Literatura">Literatura</option>
+                         <option value="Recreativos">Recreativos</option>
+                         <option value="Salud">Salud</option>
+                     </select>
+                 </label>
+               </div>
+    
+              <h3 class="titulo-formulario">Formato Disponible:</h3>
+              <div class="format">
+                 <label for="pdf">PDF
+                      <input type="checkbox" name="formato">
+                 </label>
+                 <label for="impreso">IMPRESO
+                     <input type="checkbox" name="formato">
+                 </label>
+              </div>
+
+              <div>
+                 <h3 class="descripcion">Descripcion:</h3>
+                 <textarea name="description" id="description" placeholder="Inserte Descripción de Producto" class="control"></textarea> 
+              </div>
+              
+              <h3 class="imagen-libro">Imagen del libro:</h3>
+              <h4 class="tapa-libro">Tapa Libro:</h4>
+              <input class="subir-archivo" type="file">
+              <h4 class="tapa-libro">Portada Libro:</h4>
+              <input class="subir-archivo" type="file">
+              
+              <div class="control-formulario">
+                 <input type="number" name="precio" placeholder="Precio del Libro" class="control"  min="1" required>
+              </div>
+    
+              <div class="container-botones">
+                 <button type="submit" id="insertar" class="btn btn-success">Insertar producto</button>
+                 <button type="submit" id="modificar" class="btn btn-danger">Modificar Producto </button>
+                  <button type="reset" id="borrarTodo" class="btn btn-danger">Eliminar Producto </button>
+              </div>
+          </form>
+     </section>
+</main>
+</body>
+
+<!-- FOOTER -->
+<%- include('../partials/footer.ejs') %>
+</html>
+

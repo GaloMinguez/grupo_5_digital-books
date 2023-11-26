@@ -175,7 +175,7 @@ body {
   -o-transition: all 0.75s ease;
   transition: all 0.75s ease;
 
-  height: 500px;
+  height: 400px;
   width: 300%;
 }
 
@@ -465,4 +465,46 @@ body {
   margin-left: 3px;
   position: relative;
   bottom: 1px;
+}
+
+/*seccion de mas vendidos y ofertas*/
+.container-producto-mas-vendidos {
+  width: 80%; /* Ajusta el ancho según tus necesidades */
+  margin: auto; /* Centra el contenedor */
+  text-align: center;
+  
+}
+.container-producto-oferta {
+  width: 80%; /* Ajusta el ancho según tus necesidades */
+  margin: auto; /* Centra el contenedor */
+  text-align: center;
+  
+}
+
+.card-list-products {
+  display: flex;
+  justify-content: space-between; /* Espaciado uniforme entre los elementos */
+}
+
+.card {
+  width: 23%; /* Ajusta el ancho de cada tarjeta según tus necesidades */
+  border: 1px solid #ddd; /* Borde para separar visualmente las tarjetas */
+  margin-bottom: 20px; /* Espaciado entre las tarjetas hacia abajo */
+  margin-right: 20px; /* Espaciado entre las tarjetas hacia la derecha */
+  background-color: #fff;
+}
+
+
+
+.card-img img {
+  width: 100%; /* Ajusta el ancho de la imagen para que ocupe todo el contenedor */
+}
+
+.info-card {
+  padding: 10px;
+}
+
+.price {
+  text-align: center;
+  margin-top: 10px;
 }

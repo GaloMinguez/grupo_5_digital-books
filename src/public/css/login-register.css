@@ -18,11 +18,14 @@ section{
 
 main{
     background: url('/img/DigitalBooksfondo.png') ;
+    background-repeat:no-repeat;
+	background-size:cover;	
 }
 .contenedor{
 
     position: relative;
-    width: 600px;
+    width: 90%;
+    max-width: 600px;
     border:2px solid rgb(172, 172, 172);
     border-radius: 20px;
    background-color: rgb(253, 228, 211);
@@ -134,4 +137,20 @@ button:hover{
 
 .registrar p a:hover{
     text-decoration: underline;
+}
+
+@media (max-width: 460px){
+ main{
+    background: none;
+ }
+ section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+
+}
+.registrar{
+    margin: 10px 0 5px;
+}
 }
