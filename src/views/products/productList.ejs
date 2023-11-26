@@ -15,7 +15,9 @@
                                 <%= libro.title %>
                             </span>
                             <img src="img/<%= libro.imgTop %>" alt="<%= libro.alt %>" class="img-item">
-                            <span class="precio-item">$<%= libro.price %></span>
+                            <span class="precio-item">$<%= libro.price %><% if (libro.discount > 0) { %>
+                                - <%= libro.discount %>% OFF
+                                <% } %></span>
 
                             <a class="boton-item" href="products/<%= libro.id %>" target="">Ver Detalle</span></a>
                         </div>
