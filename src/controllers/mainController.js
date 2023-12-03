@@ -15,7 +15,19 @@ const controller = {
     },
     productCrud: (req, res) => res.render('../views/products/productCrud'),
     productCart: (req, res) => res.render('../views/products/productCart', { libros }),
+    productDelete: (req, res) => {
+        const id = req.params.id;
+        const index = libros.findIndex(libro => libro.id == id);
+        if (index !== -1) {
+            libros.splice(index, 1);
+            saveDataToFile();
+            res.redirect('index');
+        } else {
+            res.send('El producto no existe');
+        }
+    },
     error: (req, res) => res.render('page_404'),
+    
 }
 
 module.exports = controller;
