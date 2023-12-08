@@ -28,10 +28,12 @@ const controller = {
     productCreate:(req, res)=> res.render('../views/products/productCreate'),
     // post form
     productSave: (req,res)=>{
+        console.log(req.files)
         const libroNuevo = {
             id: Date.now(),
-            ...req.body,
-            img: req.file.filename || 'default.png'
+            imgTop: req.file.imgTop.filename || 'default.png',
+            imgBack: req.file.imgBack.filename || 'default.png',
+            ...req.body
         }
         libros.push(libroNuevo)
         // convertir a json

@@ -19,7 +19,11 @@ router.get('/productCart', mainController.productCart);
 //vista del form d creacion
 router.get('/productCreate', mainController.productCreate);
 // proceso de creacion produc
-router.post('/productCreate' , upload.single('imgTop'), mainController.productSave); 
+//router.post('/productCreate' , upload.single('imgTop'), upload.single('imgBack'), mainController.productSave); 
+
+let multerWithFields = upload.fields([{ name: 'imgTop', maxCount: 1 }, { name: 'imgBack', maxCount: 1 }]) 
+router.post('/productCreate', multerWithFields, mainController.productSave) 
+
 // mostrar form de edicion del producto
 router.get('/productEdit/:id', mainController.productEdit);
 // Proceso de actualizacion del product
