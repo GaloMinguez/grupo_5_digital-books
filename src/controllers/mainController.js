@@ -25,13 +25,17 @@ const controller = {
      
     productCart: (req, res) => res.render('../views/products/productCart', { libros }),
     //get form
-    productCreate:(req, res)=> res.render('../views/products/productCreate'),
+    //productCreate:(req, res)=> res.render('../views/products/productCreate'),
+    productCreate: (req, res) => {
+		res.render('../views/products/productCreate.ejs')
+	},
     // post form
-    productSave: (req,res)=>{
+    /*productSave: (req,res)=>{
         const libroNuevo = {
             id: Date.now(),
             ...req.body,
-            img: req.file.filename || 'default.png'
+            imgTop: req.files.filename || 'default.png',
+            imgBack: req.files.filename || 'default.png'
         }
         libros.push(libroNuevo)
         // convertir a json
@@ -40,7 +44,21 @@ const controller = {
         fs.writeFileSync(pathLibros, listaLibrosJSON)
         // redireccionamos a home
         res.redirect('/')
-    },
+    },*/
+
+    store: (req, res) => {
+		//log(req.file); //para un solo archivo, para varios es req.files
+		const newProduct = {
+			id: uuidv4(),  //id unico uuid // npm install uuid
+			//id : products.length + 1,
+			imgTop: req.file.filename,
+			//image: 'default-image.png',
+			...req.body //spread operator // propagacion
+		}	
+		products.push(newProduct)
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '))
+		res.redirect('/')
+	},
 
     productEdit:  (req, res) => {
         const id = req.params.id

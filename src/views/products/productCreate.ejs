@@ -12,7 +12,7 @@
 <body>
  <main>
      <section>
-           <form action="/productCreate" method="POST" enctype="multipart/form-data" class="createform">
+           <form action="/products/productCreate" method="POST" enctype="multipart/form-data" class="createform">
              <div>
                  <h1>INGRESAR NUEVO PRODUCTO DB</h1>
                 
@@ -45,9 +45,6 @@
 
              <label for="imgTop">Ingresar Imagen de Tapa del Libro</label>
              <input type="file" name="imgTop" class="subir-archivo">
-
-             <label for="imgBack">Ingresar Imagen de portada del Libro</label>
-             <input type="file" name="imgBack" class="subir-archivo">
 
              <label for="price">Precio</label>
              <input type="number" name="precio" placeholder="Precio del Libro" class="control">
