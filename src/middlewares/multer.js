@@ -11,16 +11,6 @@ const storage = multer.diskStorage({
     }
 })
 
-const storage1 = multer.diskStorage({
-  destination: function(req, file, cb){
-      cb(null, path.join(__dirname, '../public/img'))
-  },
-  filename1: function(req, file, cb){
-      let nombre = `${Date.now()}-${file.originalname}`
-      cb(null, nombre)
-  }
-})
-
 const fileFilter = function (req, file, cb) {
     // Verifica si el archivo es una imagen
     console.log('tipo de archivo ', file.mimetype);
@@ -33,7 +23,7 @@ const fileFilter = function (req, file, cb) {
 
   const upload = multer({
     storage:storage,
-    storage1:storage1
+    fileFilter:fileFilter
 })
 
 module.exports = upload;

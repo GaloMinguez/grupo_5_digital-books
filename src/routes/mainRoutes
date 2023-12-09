@@ -27,7 +27,8 @@ router.post('/productCreate', multerWithFields, mainController.productSave)
 // mostrar form de edicion del producto
 router.get('/productEdit/:id', mainController.productEdit);
 // Proceso de actualizacion del product
-router.put('/productEdit/:id', upload.single('img'), mainController.productUpDate);
+//router.put('/productEdit/:id', upload.single('img'), mainController.productUpDate);
+router.put('/productEdit/:id', multerWithFields, mainController.productUpDate);
 
 router.get('*', mainController.error);
 
