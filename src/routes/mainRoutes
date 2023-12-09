@@ -30,6 +30,9 @@ router.get('/productEdit/:id', mainController.productEdit);
 //router.put('/productEdit/:id', upload.single('img'), mainController.productUpDate);
 router.put('/productEdit/:id', multerWithFields, mainController.productUpDate);
 
+//proceso para borrar productos
+router.post('/products/delete/:productId', mainController.productDelete);
+
 router.get('*', mainController.error);
 
 

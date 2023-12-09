@@ -27,6 +27,7 @@ app.use("/login", mainRoutes);
 app.use("/products", mainRoutes);
 app.use("/productCart", mainRoutes);
 app.use("/productCreate", mainRoutes);
+app.use("/productDelete", mainRoutes);
 
 
 app.get("*", mainRoutes);

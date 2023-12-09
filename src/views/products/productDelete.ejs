@@ -1,0 +1,28 @@
+<!-- HEAD -->
+<%- include('../partials/head.ejs') %>
+
+<link rel="stylesheet" href="../css/login-register.css" />
+<link rel="stylesheet" type="text/css" href="../css/productDelete.css" /> <!-- Puedes agregar un archivo de estilos específico para la página de eliminación -->
+
+<!-- HEADER -->
+<%- include('../partials/header.ejs') %>
+
+<body>
+  <main>
+    <section>
+      <form action="/products/productDelete/<%= getBook._id %>" method="POST" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este producto?');" class="delete-form">
+        <div>
+          <h1>ELIMINAR PRODUCTO</h1>
+        </div>
+
+        <div class="container-botones">
+          <button type="submit" id="EliminarProducto" class="btn btn-danger">Eliminar producto</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+
+<!-- FOOTER -->
+<%- include('../partials/footer.ejs') %>
+</html>
