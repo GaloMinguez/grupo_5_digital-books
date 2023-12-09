@@ -30,12 +30,13 @@ const controller = {
 		res.render('../views/products/productCreate.ejs')
 	},
     // post form
-    /*productSave: (req,res)=>{
+    productSave: (req,res)=>{
         const libroNuevo = {
-            id: Date.now(),
-            ...req.body,
-            imgTop: req.files.filename || 'default.png',
-            imgBack: req.files.filename || 'default.png'
+            id : libros.length + 1,
+            //id: Date.now(),
+            imgTop: req.files.imgTop[0].filename || 'default.png',
+            imgBack: req.files.imgBack[0].filename || 'default.png',
+            ...req.body
         }
         libros.push(libroNuevo)
         // convertir a json
@@ -44,21 +45,7 @@ const controller = {
         fs.writeFileSync(pathLibros, listaLibrosJSON)
         // redireccionamos a home
         res.redirect('/')
-    },*/
-
-    store: (req, res) => {
-		//log(req.file); //para un solo archivo, para varios es req.files
-		const newProduct = {
-			id: uuidv4(),  //id unico uuid // npm install uuid
-			//id : products.length + 1,
-			imgTop: req.file.filename,
-			//image: 'default-image.png',
-			...req.body //spread operator // propagacion
-		}	
-		products.push(newProduct)
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '))
-		res.redirect('/')
-	},
+    },
 
     productEdit:  (req, res) => {
         const id = req.params.id
@@ -75,16 +62,20 @@ const controller = {
         const { title, author,genre,description,descriptionD,price,discount} = req.body
 
         const productoAEditar = libros.find(libro => libro.id == id)
-
+        
         productoAEditar.title = title || productoAEditar.title
         productoAEditar.author = author || productoAEditar.author
         productoAEditar.description = description || productoAEditar.description
         productoAEditar.descriptionD = descriptionD || productoAEditar.descriptionD
         productoAEditar.price = price || productoAEditar.price
         productoAEditar.discount = discount || productoAEditar.discount
-        productoAEditar.imgTop = req.file.filename || productoAEditar.imgTop
+        
+        productoAEditar.imgTop = req.files.imgTop[0].filename ? req.files.imgTop[0].filename : productoAEditar.imgTop
+        productoAEditar.imgBack = req.files.imgBack[0].filename ? req.files.imgBack[0].filename : productoAEditar.imgBack
 
-        fs.writeFileSync(pathPlatos, JSON.stringify(libros, null, ' '))
+        //productoAEditar.imgTop = req.file.filename || productoAEditar.imgTop
+        
+        fs.writeFileSync(pathLibros, JSON.stringify(libros, null, ' '))
 
         res.redirect('/')
     },

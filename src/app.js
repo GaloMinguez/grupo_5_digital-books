@@ -6,8 +6,7 @@ const app = express();
 
 const port = 3001;
 
-app.use(express.urlencoded( {extended: true}))
-app.use(logger('dev'));
+app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(methodOverride('_method'))
 
@@ -22,12 +21,12 @@ const mainRoutes = require("./routes/mainRoutes");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-app.get("/", mainRoutes);
-app.get("/register", mainRoutes);
-app.get("/login", mainRoutes);
-app.get("/products", mainRoutes);
-app.get("/productCart", mainRoutes);
-app.get("/products/productCreate", mainRoutes);
+app.use("/", mainRoutes);
+app.use("/register", mainRoutes);
+app.use("/login", mainRoutes);
+app.use("/products", mainRoutes);
+app.use("/productCart", mainRoutes);
+app.use("/productCreate", mainRoutes);
 
 
 app.get("*", mainRoutes);

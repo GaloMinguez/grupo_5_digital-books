@@ -1,3 +1,32 @@
+# RETROSPECTIVA - SPRINT 3
+
+_Teniendo en cuenta que con el grupo ya trabajamos juntos en varios SPRINT, y analizándolo entre todos, llegamos a la conclusión que: _
+
+## QUE HACER MAS 📋
+
+* Avisar cuando algún integrante del equipo tiene algún tipo de inconveniente que lo pueda atrasar en su tarea designada, ya sea personales o lo que fuere, así el resto de los integrantes ven de reorganizarse.
+* Mayor comunicación en general.
+
+## QUE CONSERVAR 🤓
+
+* Continuar con la ayuda mutua que hay entre los integrantes del equipo.
+* El constante interés de uno de los miembros de saber e informar como vamos con el trabajo.
+
+## DONDE EMPEZAR 📋
+
+* Reunirnos más seguido para simplificar la distribución de tareas. 
+* Continuar haciendo hincapié en la distribución de tareas, en el momento que nos entregan el proyecto y en poner una fecha de puesta común previa a la entrega.    
+
+## EN QUE DETENERSE 📢
+
+* Adquirir constantemente información que nos nutren nuestros conocimientos.
+* Autoevaluarnos luego de finalizado cada SPRINT, para saber en que nivel nos encontramos.
+
+## QUE HACER MENOS 📋
+
+* Quedarse callados…, ya que la falta de comunicación puede llegar a ser el principal problema cuando se trabaja en equipo.
+
+
 # RETROSPECTIVA - SPRINT 2
 
 _Teniendo  en cuenta que con el grupo ya trabajamos juntos en un SPRINT, y analizándolo entre todos, llegamos a la conclusión que:_
