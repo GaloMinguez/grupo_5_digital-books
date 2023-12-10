@@ -78,8 +78,11 @@ const controller = {
         productoAEditar.price = price || productoAEditar.price
         productoAEditar.discount = discount || productoAEditar.discount
         
-        productoAEditar.imgTop = req.files.imgTop[0].filename ? req.files.imgTop[0].filename : productoAEditar.imgTop
-        productoAEditar.imgBack = req.files.imgBack[0].filename ? req.files.imgBack[0].filename : productoAEditar.imgBack
+        console.log(req.files);
+        if (!req.files){
+            productoAEditar.imgTop = req.files ? req.files.imgTop[0].filename : productoAEditar.imgTop
+            productoAEditar.imgBack = req.files ? req.files.imgBack[0].filename : productoAEditar.imgBack
+        }
 
         //productoAEditar.imgTop = req.file.filename || productoAEditar.imgTop
         
