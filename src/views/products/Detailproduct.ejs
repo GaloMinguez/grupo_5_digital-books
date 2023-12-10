@@ -1,0 +1,117 @@
+<!-- HEAD -->
+<%- include('../partials/head.ejs') %>
+  <link rel="stylesheet" href="../css/productDetail.css" />
+
+  <body>
+    <!-- HEADER -->
+    <%- include('../partials/header.ejs') %>
+
+      <main>
+        <div class="container-img">
+          <div class="contenedorvisor">
+            <a href="javascript:void(0);">
+              <img class="grande muestra" src="../img/<%= getBook.imgTop %>" />
+            </a>
+
+            <a href="javascript:void(0);">
+              <img class="miniatura" src="../img/<%= getBook.imgTop%>" />
+              <img class="grande" src="../img/<%= getBook.imgTop %>" />
+            </a>
+            <a href="javascript:void(0);">
+              <img class="miniatura" src="../img/<%= getBook.imgBack %>" />
+              <img class="grande" src="../img/<%= getBook.imgBack %>" />
+            </a>
+          </div>
+        </div>
+
+        <div class="container-info-product">
+          <div class="container-name-product">
+            <span>
+              <h2 class="title-book">
+                <%= getBook.title %>
+              </h2>
+            </span>
+          </div>
+
+          <div class="container-rating">
+            <label for=""><i class="fa-solid fa-star"></i></label>
+            <label for=""><i class="fa-solid fa-star"></i></label>
+            <label for=""><i class="fa-solid fa-star"></i></label>
+            <label for=""><i class="fa-regular fa-star"></i></label>
+            <label for=""><i class="fa-regular fa-star"></i></label>
+            <span> 5 Comentarios</span>
+          </div>
+
+          <div class="container-price">
+            <span><b>$ <%= getBook.price %></b> <% if (getBook.discount > 0) { %>
+            - <%= getBook.discount %>% OFF
+            <% } %></span>
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+
+          <div class="container-description">
+            <div class="title-description">
+              <h4>Descripción</h4>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="text-description">
+              <p>
+                <%= getBook.description %>
+              </p>
+            </div>
+          </div>
+
+          <div class="container-additional-information">
+            <div class="title-additional-information">
+              <h4>Información adicional</h4>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="text-additional-information">
+              <p>
+                <%= getBook.descriptionD %>
+              </p>
+            </div>
+          </div>
+
+          <a href="/productEdit/<%= getBook.id %>" class="action-button edit">EDITAR PRODUCTO</a>
+          <form action="/productDelete/<%= getBook.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+              <button type="submit" class="action-button delete">ELIMINAR</button>
+          </form>
+        </div>
+      </main>
+
+      <!-- FOOTER -->
+      <%- include('../partials/footer.ejs') %>
+
+      <script>
+        // Toggle
+        // Constantes Toggle Titles
+        const toggleDescription = document.querySelector(".title-description");
+        const toggleAdditionalInformation = document.querySelector(
+          ".title-additional-information"
+        );
+        const toggleReviews = document.querySelector(".title-reviews");
+
+        // Constantes Contenido Texto
+        const contentDescription = document.querySelector(".text-description");
+        const contentAdditionalInformation = document.querySelector(
+          ".text-additional-information"
+        );
+        const contentReviews = document.querySelector(".text-reviews");
+
+        // Funciones Toggle
+        toggleDescription.addEventListener("click", () => {
+          contentDescription.classList.toggle("hidden");
+        });
+
+        toggleAdditionalInformation.addEventListener("click", () => {
+          contentAdditionalInformation.classList.toggle("hidden");
+        });
+
+        toggleReviews.addEventListener("click", () => {
+          contentReviews.classList.toggle("hidden");
+        });
+      </script>
+  </body>
+
+  </html>
