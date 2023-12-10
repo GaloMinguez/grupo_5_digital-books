@@ -268,17 +268,5 @@
   "price": 2050,
   "discount": 15,
   "category": "visited"
- },
- {
-  "id": 19,
-  "imgTop": "1702158199285-libro50a.png",
-  "imgBack": "1702158199335-libro70a.png",
-  "title": "libro de prueba",
-  "author": "autor de prueba",
-  "genre": "Recreativos",
-  "description": "descripcion minima",
-  "descriptionD": "descripcion detallada del libro",
-  "price": "20000",
-  "discount": "5"
  }
 ]

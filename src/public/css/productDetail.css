@@ -95,6 +95,24 @@
 	color: var(--color-texto);
   }
   
+  .action-button {
+	border: none;
+	border-radius: 8px;
+	font-size: 1.2em;
+	color: #ffffff;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 15px 30px;
+	margin-top: 15px;
+	width: 240px;
+  }
+  .action-button.edit {
+	background-color: chocolate;
+  }
+  .action-button.delete {
+	background-color: rgb(248, 69, 37);
+  }
   /* Estilos para el logo (ajusta el ancho según sea necesario) */
   #logo {
 	flex: 1; /* Toma todo el espacio disponible para empujar los elementos de cuentas a la derecha */
