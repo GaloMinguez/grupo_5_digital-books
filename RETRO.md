@@ -1,4 +1,4 @@
-# RETROSPECTIVA - SPRINT 3
+# RETROSPECTIVA - SPRINT 4
 
 _Teniendo en cuenta que con el grupo ya trabajamos juntos en varios SPRINT, y analizándolo entre todos, llegamos a la conclusión que: _
 
@@ -27,7 +27,7 @@ _Teniendo en cuenta que con el grupo ya trabajamos juntos en varios SPRINT, y an
 * Quedarse callados…, ya que la falta de comunicación puede llegar a ser el principal problema cuando se trabaja en equipo.
 
 
-# RETROSPECTIVA - SPRINT 2
+# RETROSPECTIVA - SPRINT 3
 
 _Teniendo  en cuenta que con el grupo ya trabajamos juntos en un SPRINT, y analizándolo entre todos, llegamos a la conclusión que:_
 
@@ -59,7 +59,7 @@ _Teniendo  en cuenta que con el grupo ya trabajamos juntos en un SPRINT, y anali
 * Dejar de esperar hasta último momento para la toma de decisiones.
 
 
-# RETROSPECTIVA - SPRINT 1
+# RETROSPECTIVA - SPRINT 2
 
 
 _Teniendo  en cuenta que con el grupo ya trabajamos juntos en un SPRINT, y analizándolo entre todos, llegamos a la conclusión que:_
