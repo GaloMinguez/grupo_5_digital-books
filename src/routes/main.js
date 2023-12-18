@@ -7,10 +7,6 @@ const upload = require('../middlewares/multer');
 
 router.get('/', mainController.index);
 
-router.get('/register', mainController.register);
-
-router.get('/login', mainController.login);
-
 router.get('/products', mainController.productList);
 
 router.get('/products/:id', mainController.productDetail);
@@ -21,22 +17,20 @@ router.get('/productCart', mainController.productCart);
 //vista del form d creacion
 router.get('/productCreate', mainController.productCreate);
 // proceso de creacion produc
-//router.post('/productCreate' , upload.single('imgTop'), upload.single('imgBack'), mainController.productSave); 
 
 let multerWithFields = upload.fields([{ name: 'imgTop', maxCount: 1 }, { name: 'imgBack', maxCount: 1 }])
 router.post('/productCreate', multerWithFields, mainController.productSave) 
 
 // mostrar form de edicion del producto
 router.get('/productEdit/:id', mainController.productEdit);
+
 // Proceso de actualizacion del producto
-//router.put('/productEdit/:id', upload.single('img'), mainController.productUpDate);
 router.put('/productEdit/:id', multerWithFields, mainController.productUpDate);
 
 // Proceso de eliminacion del producto
 router.delete('/productDelete/:id', mainController.productDelete); 
 
-router.get('*', mainController.error);
-
+//router.get('*', mainController.error);
 
 
 module.exports = router;

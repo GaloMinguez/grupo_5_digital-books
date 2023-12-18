@@ -1,37 +1,52 @@
 <header>
-    <div class="header-top">
+     <div class="header-top">
 
 
-         <div class="busqueda-container">
-              <i class="fa-solid fa-magnifying-glass"></i>
-              <input id="busqueda" placeholder="Buscar productos">
-         </div>
-         <div id="logo">
-              <a href="/"><img class="logo" src="/img/LOGO-DB.png"></a>
-         </div>
-
-         <div class="cuentas">
-              <ul>
-                  <li><a href="register" target="">Crear cuenta</a></li>
-                  <li>|</li>
-                  <li><a href="login" target="">Iniciar sesión</a></li>
-                  <li>|</li>
-                  <li><a href="/productCart" target="">Mis compras</a></li>
-              </ul>
+          <div class="busqueda-container">
+               <i class="fa-solid fa-magnifying-glass"></i>
+               <input id="busqueda" placeholder="Buscar productos">
           </div>
-    </div>
+          <div id="logo">
+               <a href="/"><img class="logo" src="/img/LOGO-DB.png"></a>
+          </div>
 
-    <div>
-         <ul id="header-down">
-              <il class="header-down"><a href="/" target="">home</a></il>
-              <a>|</a>
-              <il class="header-down"><a href="/products" target="">productos</a></il>
-              <a>|</a>
-              <il class="header-down"><a href="" target="">venta</a></il>
-              <a>|</a>
-              <il class="header-down"><a href="" target="">contacto</a></il>
-              <a>|</a>
-              <il class="header-down"><a href="" target="">Ayuda</a></il>
-         </ul>
-    </div>
+          <div class="cuentas">
+               <ul>
+                    <% if (locals.isLogged) { %>
+                         <li>
+                              <a class="nav-link dropdown-toggle" href="/users/profile" id="dropUser" role="button"
+                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                   <img src="/img/users/<%= locals.userLogged.avatar %>" width="40"
+                                        style="border-radius: 100%;">
+                              </a>
+                              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                   <a class="dropdown-item" href="/users/profile">Mi perfil</a>
+                                   <li>
+                                        <hr class="dropdown-divider">
+                                   </li>
+                                   <a class="dropdown-item" href="/users/logout">Logout</a>
+                              </ul>
+                         </li>
+                         <li><a href="/productCart">Mis compras</a></li>
+                         <% } else { %>
+                              <li class="nav-item"><a class="nav-link" href="/users/register">Crear cuenta</a></li>
+                              <li class="nav-item"><a class="nav-link" href="/users/login">Iniciar sesión</a></li>
+                              <% } %>
+               </ul>
+          </div>
+     </div>
+
+     <div>
+          <ul id="header-down">
+               <il class="header-down"><a href="/" target="">home</a></il>
+               <a>|</a>
+               <il class="header-down"><a href="/products" target="">productos</a></il>
+               <a>|</a>
+               <il class="header-down"><a href="" target="">venta</a></il>
+               <a>|</a>
+               <il class="header-down"><a href="" target="">contacto</a></il>
+               <a>|</a>
+               <il class="header-down"><a href="" target="">Ayuda</a></il>
+          </ul>
+     </div>
 </header>

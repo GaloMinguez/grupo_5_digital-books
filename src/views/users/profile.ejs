@@ -1,0 +1,35 @@
+<!-- HEAD -->
+<%- include('../partials/head.ejs', {title: 'Formulario de Perfil' }) %>
+<link rel="stylesheet" href="../css/login-register.css" />
+
+	<body>
+		<!-- HEADER -->
+		<%- include('../partials/header.ejs') %>
+			<!-- /Header -->
+
+			<!-- Container -->
+			<main>
+				<section class="section-login">
+					<div class="contenedor-login">
+						<div class="row">
+							<div class="col-md-3">
+								<h3>Hola <%= user.fullName %></h3>
+								<img src="/img/users/<%= user.avatar %>">
+								<br>
+								<br>
+								<div class="alert alert-success">
+									<%= user.email %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<!-- //Container -->
+
+			<!-- FOOTER -->
+			<%- include('../partials/footer.ejs') %>
+				<!-- /footer -->
+	</body>
+
+	</html>
