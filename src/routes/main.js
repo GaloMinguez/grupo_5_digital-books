@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const guestCartMiddleware = require('../middlewares/guestCartMiddleware');
 const mainController = require('../controllers/mainController');
 
 const upload = require('../middlewares/multer');
@@ -13,7 +13,9 @@ router.get('/products/:id', mainController.productDetail);
 
 router.get('/detail/:id', mainController.detailProduct);
 
-router.get('/productCart', mainController.productCart);
+router.get('/productCart', guestCartMiddleware, mainController.productCart);
+router.get('/cart', mainController.productCart);
+
 //vista del form d creacion
 router.get('/productCreate', mainController.productCreate);
 // proceso de creacion produc
