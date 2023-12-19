@@ -1,11 +1,13 @@
 <header>
      <div class="header-top">
 
-
           <div class="busqueda-container">
-               <i class="fa-solid fa-magnifying-glass"></i>
-               <input id="busqueda" placeholder="Buscar productos">
+               <form action="/search" method="GET" class="search-form">
+                    <input type="text" name="keywords" placeholder="Buscar productos, marcas y más" class="search-form_input">
+                    <button type="submit" class="search-form_button"><i class="fa-solid fa-magnifying-glass"></i></button>
+               </form>
           </div>
+
           <div id="logo">
                <a href="/"><img class="logo" src="/img/LOGO-DB.png"></a>
           </div>

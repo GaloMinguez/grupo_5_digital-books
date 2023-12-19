@@ -7,6 +7,8 @@ const upload = require('../middlewares/multer');
 
 router.get('/', mainController.index);
 
+router.get('/search', mainController.search); 
+
 router.get('/products', mainController.productList);
 
 router.get('/products/:id', mainController.productDetail);
