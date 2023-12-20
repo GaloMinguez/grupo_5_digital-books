@@ -2,6 +2,7 @@
 <html lang="es">
   <!-- Include Head -->
   <%- include('partials/head', {title: 'Resultados de tu búsqueda'}) %>
+  <link rel="stylesheet" href="../css/results.css" />
   <body>
     <!-- Header -->
     <%- include('partials/header') %>
@@ -21,7 +22,7 @@
 				<section class="product-box">
 				  <a href="/products/<%= libro.id %>">
 					<figure class="product-box_image">
-					  <img
+					  <img class="img-item"
 						src="/img/<%= libro.imgTop %>"
 						alt="imagen de producto"
 					  />
