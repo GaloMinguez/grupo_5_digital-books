@@ -11,8 +11,12 @@ const libros = JSON.parse(fs.readFileSync(pathLibros, 'utf-8'));
 
 const controller = {
     index: (req, res) => res.render('index'),
-    register: (req, res) => res.render('../views/users/register'),
-    login: (req, res) => res.render('../views/users/login'),
+    search: (req, res) => {
+		palabra = (req.query.keywords).toLowerCase();
+		const pFound = libros.some(libro => libro.title.toLowerCase().includes(palabra))
+		const pToSearch = libros.filter(libro => libro.title.toLowerCase().includes(palabra));
+		res.render('results.ejs', { pToSearch, palabra, pFound });
+	},
     productList: (req, res) => res.render('../views/products/productList', { libros }),    
     productDetail: (req, res) => {
         const id = req.params.id;
@@ -32,11 +36,12 @@ const controller = {
     },
      
     productCart: (req, res) => res.render('../views/products/productCart', { libros }),
+
     //get form
-    //productCreate:(req, res)=> res.render('../views/products/productCreate'),
     productCreate: (req, res) => {
 		res.render('../views/products/productCreate.ejs')
 	},
+
     // post form
     productSave: (req,res)=>{
         const libroNuevo = {
@@ -63,8 +68,7 @@ const controller = {
         }
         res.send('El libro que quieres editar no existe')
     },
-
-    
+   
     productUpDate: (req, res) => {
         const { id } = req.params
         const { title, author,genre,description,descriptionD,price,discount} = req.body
@@ -83,8 +87,6 @@ const controller = {
             productoAEditar.imgTop = req.files ? req.files.imgTop[0].filename : productoAEditar.imgTop
             productoAEditar.imgBack = req.files ? req.files.imgBack[0].filename : productoAEditar.imgBack
         }
-
-        //productoAEditar.imgTop = req.file.filename || productoAEditar.imgTop
         
         fs.writeFileSync(pathLibros, JSON.stringify(libros, null, ' '))
 
@@ -99,8 +101,8 @@ const controller = {
 		fs.unlinkSync(path.join(__dirname, '../public/img', productToDelete.imgTop))
         fs.unlinkSync(path.join(__dirname, '../public/img', productToDelete.imgBack))
 		res.redirect('/')
-    },
-    error: (req, res) => res.render('page_404'),
+    }
+    //error: (req, res) => res.render('page_404'),
     
 }
 

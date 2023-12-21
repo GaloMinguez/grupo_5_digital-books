@@ -1,69 +1,62 @@
 <!-- HEAD -->
-<%- include('../partials/head.ejs') %>
-  <link rel="stylesheet" href="../css/login-register.css" />
+<%- include('../partials/head.ejs', {title: 'Formulario de Registro' }) %>
+	<link rel="stylesheet" href="../css/login-register.css" />
 
-  <body>
-    <!-- HEADER -->
-    <%- include('../partials/header.ejs') %>
+	<body>
+		<!-- HEADER -->
+		<%- include('../partials/header.ejs') %>
 
-      <main>
-        <section>
-          <div class="contenedor">
-            <div class="formulario">
-              <form>
-                <h2>Iniciar Sección</h2>
+			<!-- Login-Form -->
+			<main>
+				<section class="section-login">
+					<div class="contenedor-login">
+						<div class="row">
+							<div class="formulario">
+								<h2>Formulario de Login</h2>
 
-                <div class="input-contenedor">
-                  <i class="fa-solid fa-envelope"></i>
-                  <input type="email" placeholder="Correo Electronico" />
+								<form method="POST" action="/users/login">
+										<div class="input-contenedor">
+											<i class="fa-solid fa-envelope"></i>
+											<input type="email" name="email" placeholder="Correo electrónico"
+												class="form-control" />
+											<% if (locals.errors && errors.email) { %>
+												<div class="text-danger">
+													<%= errors.email.msg %>
+												</div>
+												<% } %>
+										</div>
 
-                </div>
+										<div class="input-contenedor">
+											<i class="fa-solid fa-lock"></i>
+											<input type="password" placeholder="Contraseña" name="password"
+												class="form-control" />
+											<label for="#"></label>
+											<div class="invalid-feedback">
+											</div>
+										</div>
 
-                <div class="input-contenedor">
-                  <i class="fa-solid fa-lock"></i>
-                  <input type="password" placeholder="Contraseña" />
-                  <label for="#"></label>
-                </div>
+										<div class="col-md-6 my-2">
+											<div class="form-group form-check">
+												<label class="form-check-label">
+													<input type="checkbox" class="form-check-input"
+														name="remember_user"> Recordar mi usuario
+												</label>
+											</div>
+										</div>
+										
+										<div class="col-12 my-3">
+											<button type="submit" class="btn btn-primary">Loguearme</button>
+										</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<!-- //Login-Form -->
 
-                <div class="olvidar">
-                  <label>
-                    <input type="checkbox" /> Recordar
-                    <a href="#">¿Has olvidado la contraseña?</a>
-                  </label>
-                </div>
-              </form>
+			<!-- FOOTER -->
+			<%- include('../partials/footer.ejs') %>
+	</body>
 
-              <div>
-                <button id="acceso-btn">Acceder</button>
-                <div class="registrar">
-                  <p>
-                    No tengo cuenta -
-                    <a class="link" href="/register">Crear una</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <!-- FOOTER -->
-      <%- include('../partials/footer.ejs') %>
-
-        <!-- retorno a index -->
-        <script>
-          document.addEventListener("DOMContentLoaded", function () {
-            // Obtener el botón de registro por su ID
-            const registroBtn = document.getElementById("acceso-btn");
-
-            // Agregar un manejador de clic al botón de registro
-            registroBtn.addEventListener("click", function () {
-              // Realizar la redirección a la raíz del sitio ("/")
-              window.location.href = "/";
-            });
-          });
-        </script>
-
-  </body>
-
-  </html>
+	</html>
