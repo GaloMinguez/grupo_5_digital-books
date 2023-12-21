@@ -1,3 +1,29 @@
+# RETROSPECTIVA - SPRINT 5
+
+_Teniendo en cuenta que con el grupo ya trabajamos juntos en varios SPRINT, y analizándolo entre todos, llegamos a la conclusión que: _
+
+## QUE HACER MAS 📋
+
+* Participar todos de las tomas de decisiones.
+* Celebrar los éxitos de cada Sprint para destacar el trabajo del grupo.
+
+## QUE CONSERVAR 🤓
+
+* La compresión que tienen todos cuando algún integrante tiene alguna complicación, ya sea temático o personal.
+* Que antes de molestarse ven la manera de resolverlo.
+
+## DONDE EMPEZAR 📋
+
+* Ponernos de acuerdos en implementar reuniones semanales para dar parte de los avances y dificultades.    
+
+## EN QUE DETENERSE 📢
+
+* En hacer hincapié en reuniones virtuales o presenciales para que todos se sientan con libertad de expresarse y crear un vínculo más allá de lo profesional.
+
+## QUE HACER MENOS 📋
+
+* Dejar de esperar que uno de los compañeros este preguntando como vamos con el trabajo y ser más comunicativos, así avanzar mas rápido.
+
 # RETROSPECTIVA - SPRINT 4
 
 _Teniendo en cuenta que con el grupo ya trabajamos juntos en varios SPRINT, y analizándolo entre todos, llegamos a la conclusión que: _
