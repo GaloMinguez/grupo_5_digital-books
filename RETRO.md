@@ -1,6 +1,6 @@
 # RETROSPECTIVA - SPRINT 5
 
-_Teniendo en cuenta que con el grupo ya trabajamos juntos en varios SPRINT, y analizándolo entre todos, llegamos a la conclusión que: _
+_Teniendo en cuenta que con el grupo ya trabajamos juntos en varios SPRINT, y analizándolo entre todos, llegamos a la conclusión que:_
 
 ## QUE HACER MAS 📋
 
@@ -26,7 +26,7 @@ _Teniendo en cuenta que con el grupo ya trabajamos juntos en varios SPRINT, y an
 
 # RETROSPECTIVA - SPRINT 4
 
-_Teniendo en cuenta que con el grupo ya trabajamos juntos en varios SPRINT, y analizándolo entre todos, llegamos a la conclusión que: _
+_Teniendo en cuenta que con el grupo ya trabajamos juntos en varios SPRINT, y analizándolo entre todos, llegamos a la conclusión que:_
 
 ## QUE HACER MAS 📋
 
