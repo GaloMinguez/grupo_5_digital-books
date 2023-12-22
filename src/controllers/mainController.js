@@ -102,7 +102,6 @@ const controller = {
         fs.unlinkSync(path.join(__dirname, '../public/img', productToDelete.imgBack))
 		res.redirect('/')
     }
-    //error: (req, res) => res.render('page_404'),
     
 }
 

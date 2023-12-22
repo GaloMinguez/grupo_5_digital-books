@@ -47,16 +47,21 @@ app.use('/', mainRoutes);
 //app.use('/products', productsRoutes);
 app.use('/users', userRoutes);
 
+app.use('*', (req, res) => {
+  res.render('./page_404');
+});
+
+
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
 
 // ************ DON'T TOUCH FROM HERE ************
 // ************ catch 404 and forward to error handler ************
-app.use((req, res, next) => next(createError(404)));
+//app.use((req, res, next) => next(createError(404)));
 
 // ************ error handler ************
-app.use((err, req, res, next) => {
+/*app.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.path = req.path;
@@ -65,7 +70,7 @@ app.use((err, req, res, next) => {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
+});*/
 
 // ************ exports app - dont'touch ************
 module.exports = app;
