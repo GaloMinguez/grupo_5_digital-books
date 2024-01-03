@@ -88,7 +88,6 @@ const controller = {
 		return res.redirect('/');
 	}
 
-	//error: (req, res) => res.render('page_404')
 }
 
 module.exports = controller;

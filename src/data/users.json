@@ -25,18 +25,18 @@
  },
  {
   "id": 4,
-  "fullName": "Tully Baddow",
-  "email": "tbaddow3@prnewswire.com",
-  "password": "fW0+M+L&yZqxuNJG",
-  "category": "Admin",
-  "avatar": "pletzale.jpg"
+  "fullName": "Yoda",
+  "email": "cliente@gmail.com",
+  "password": "$2a$10$/PcwNFkUFIf5O/nPJ.jFh.ie2qJvCjN1HphXFDuwjRbB1AgyXzbku",
+  "category": "Customer",
+  "avatar": "1702848993337-avatar2.jpg"
  },
  {
   "id": 5,
   "fullName": "Miguel Alejandro Nieva",
-  "email": "malnieva@gmail.com",
+  "email": "admin@gmail.com",
   "password": "$2a$10$/PcwNFkUFIf5O/nPJ.jFh.ie2qJvCjN1HphXFDuwjRbB1AgyXzbku",
-  "category": "Customer",
+  "category": "Admin",
   "avatar": "1702917393923-avatar1.jpg"
  }
 ]
