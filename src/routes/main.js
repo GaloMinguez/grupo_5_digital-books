@@ -10,6 +10,8 @@ router.get('/', mainController.index);
 
 router.get('/search', mainController.search); 
 
+router.get('/detail/:id', guestDetailMiddleware, mainController.detailProduct);
+
 router.get('/productCart', guestCartMiddleware, mainController.productCart);
 
 module.exports = router;

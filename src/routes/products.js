@@ -9,7 +9,7 @@ router.get('/', productController.productList);
 
 router.get('/:id', productController.productDetail);
 
-router.get('/detail/:id', guestDetailMiddleware, productController.detailProduct);
+//router.get('/detail/:id', guestDetailMiddleware, productController.detailProduct);
 
 //vista del form d creacion
 router.get('/productCreate', guestDetailMiddleware, productController.productCreate);
