@@ -268,5 +268,17 @@
   "price": 2050,
   "discount": 15,
   "category": "visited"
+ },
+ {
+  "id": 19,
+  "imgTop": "1704474224885-nosoyviejo.jpg",
+  "imgBack": "1704474224889-lorvale.jpg",
+  "title": "Titulo de prueba",
+  "author": "yo",
+  "genre": "Consulta y referencia",
+  "description": "descripcion de prueba",
+  "descriptionD": "descripcion detallada del libro de prueba descripcion detallada del libro de prueba descripcion detallada del libro de prueba descripcion detallada del libro de prueba",
+  "price": "35500",
+  "discount": "5"
  }
 ]

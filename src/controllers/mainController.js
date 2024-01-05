@@ -16,14 +16,6 @@ const controller = {
 		const pToSearch = libros.filter(libro => libro.title.toLowerCase().includes(palabra));
 		res.render('results.ejs', { pToSearch, palabra, pFound });
 	},
-    detailProduct: (req, res) => {
-        const id = req.params.id;
-        const getBook = libros.find(libro => libro.id == id);
-        if (getBook) {
-            return res.render('../views/products/Detailproduct', { libros, getBook })
-        }
-        res.send('El producto no existe');
-    },    
     productCart: (req, res) => res.render('../views/products/productCart', { libros })
     
 }

@@ -73,10 +73,8 @@
             </div>
           </div>
 
-          <a href="/products/productEdit/<%= getBook.id %>" class="action-button edit">EDITAR PRODUCTO</a>
-          <form action="/products/productDelete/<%= getBook.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-              <button type="submit" class="action-button delete">ELIMINAR</button>
-          </form>
+          <a href="/productEdit/<%= getBook.id %>" class="action-button edit">EDITAR</a>
+          <a href="/productDelete/<%= getBook.id %>" class="action-button delete">ELIMINAR</a>
         </div>
       </main>
 

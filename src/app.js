@@ -39,12 +39,12 @@ app.use(userLoggedMiddleware);
 
 // ************ WRITE YOUR CODE FROM HERE ************
 // ************ Route System require and use() ************
-const mainRoutes = require('./routes/main'); // Rutas main
+//const mainRoutes = require('./routes/main'); // Rutas main
 const productsRoutes = require('./routes/products'); // Rutas /products
 const userRoutes = require('./routes/users'); // Rutas /users
 
-app.use('/', mainRoutes);
-app.use('/products', productsRoutes);
+//app.use('/', mainRoutes);
+app.use('/', productsRoutes);
 app.use('/users', userRoutes);
 
 app.use('*', (req, res) => {

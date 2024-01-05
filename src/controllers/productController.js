@@ -7,13 +7,6 @@ const pathLibros= path.join(__dirname, '../data/products.json');
 const libros = JSON.parse(fs.readFileSync(pathLibros, 'utf-8'));
 
 const controller = {
-    index: (req, res) => res.render('index'),
-    search: (req, res) => {
-		palabra = (req.query.keywords).toLowerCase();
-		const pFound = libros.some(libro => libro.title.toLowerCase().includes(palabra))
-		const pToSearch = libros.filter(libro => libro.title.toLowerCase().includes(palabra));
-		res.render('results.ejs', { pToSearch, palabra, pFound });
-	},
     productList: (req, res) => res.render('../views/products/productList', { libros }),    
     productDetail: (req, res) => {
         const id = req.params.id;
@@ -31,9 +24,6 @@ const controller = {
         }
         res.send('El producto no existe');
     },
-     
-    productCart: (req, res) => res.render('../views/products/productCart', { libros }),
-
     //get form
     productCreate: (req, res) => {
 		res.render('../views/products/productCreate.ejs')
@@ -89,8 +79,13 @@ const controller = {
 
         res.redirect('/')
     },
-    
-    productDelete: (req, res) => {
+    productDelete: function (req, res) {
+        db.Product.findByPk(req.params.id)
+            .then(product => {
+                res.render('../views/products/productDelete.ejs', { product:product });
+            });
+    },
+    productDestroy: (req, res) => {
 		const id = req.params.id
 		productToDelete = libros.find(libro => libro.id == id)
 		const pToDelete = libros.filter(libro => libro.id != req.params.id)
