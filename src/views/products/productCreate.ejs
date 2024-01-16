@@ -23,19 +23,14 @@
                <label for="author">Autor</label>
                <input type="text" name="author" placeholder="Autor del Libro" class="control">
             
-
-             <label for="genre">Género</label>
-                <select name="genre" class="category">
-                    <option value="Artisticos">Artisticos</option>
-                    <option value="Consulta y referencia">Consulta y referencia</option>
-                    <option value="Entretenimiento">Entretenimiento</option>
-                    <option value="Infantiles">Infantiles</option>
-                    <option value="Literatura">Literatura</option>
-                    <option value="Recreativos">Recreativos</option>
-                    <option value="Salud">Salud</option>
-                    <option value="Otros">Otros</option>
-                </select>
-            
+               <label for="genre">Género</label>
+               <select name="genero" class="category">
+                 <% for( let i=0; i < genres.length; i++ ) { %>
+                     <option value="<%= genres[i].id %>" >
+                       <%= genres[i]?.name || 'No tiene genero' %>
+                     </option>
+                     <% } %>
+               </select>
 
              <label for="description">Descripcion</label>
              <textarea name="description" id="description" placeholder="Inserte Descripción de Producto" class="control"></textarea> 
@@ -46,7 +41,7 @@
              <label for="imgTop">Ingresar Imagen de Tapa del Libro</label>
              <input type="file" name="imgTop" class="subir-archivo">
 
-             <label for="imgTop">Ingresar Imagen de Contratapa del Libro</label>
+             <label for="imgBack">Ingresar Imagen de Contratapa del Libro</label>
              <input type="file" name="imgBack" class="subir-archivo">
 
              <label for="price">Precio</label>

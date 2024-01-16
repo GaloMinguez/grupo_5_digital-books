@@ -1,100 +1,133 @@
-const fs = require ('fs');
 const path = require('path');
 const { log } = require('console');
 
-const pathLibros= path.join(__dirname, '../data/products.json');
+const db = require('../database/models');
+const sequelize = db.sequelize;
 
-const libros = JSON.parse(fs.readFileSync(pathLibros, 'utf-8'));
-
-const controller = {
-    productList: (req, res) => res.render('../views/products/productList', { libros }),    
+const productsController = {
+    productListAbm: (req, res) => {
+        db.Producto.findAll({
+            include: [{association: "genero"}]
+        })
+        .then(libros => {
+            res.render('../views/products/productAbm', { libros })    
+        })
+    },
+    productList: (req, res) => {
+        db.Producto.findAll({
+            include: [{association: "genero"}]
+        })
+        .then(libros => {
+            res.render('../views/products/productList', { libros })    
+        })
+    },
     productDetail: (req, res) => {
-        const id = req.params.id;
-        const getBook = libros.find(libro => libro.id == id);
-        if (getBook) {
-            return res.render('../views/products/productDetail', { libros, getBook })
-        }
-        res.send('El producto no existe');
+        let pedidoProducto = db.Producto.findByPk(req.params.id);
+
+        let pedidoProductos =  db.Producto.findAll({
+            include: [{association: "genero"}]
+        });
+
+        Promise.all([pedidoProducto, pedidoProductos])
+        .then(function([producto, productos]){
+            res.render("../views/products/productDetail", {getBook:producto, libros:productos});
+        });
+        //preguntar como envio un mensaje si el producto no existe
+        //res.send('El producto no existe');
     },
+
     detailProduct: (req, res) => {
-        const id = req.params.id;
-        const getBook = libros.find(libro => libro.id == id);
-        if (getBook) {
-            return res.render('../views/products/Detailproduct', { libros, getBook })
-        }
-        res.send('El producto no existe');
+        db.Producto.findByPk(req.params.id, {
+            include: [{association: "genero"}]
+            }).then(producto => {
+                res.render("../views/products/Detailproduct", {getBook:producto});
+            });
+        //res.send('El producto no existe');
     },
+
     //get form
     productCreate: (req, res) => {
-		res.render('../views/products/productCreate.ejs')
-	},
+        db.Genero.findAll()
+        .then(function(generos){
+            return res.render("../views/products/productCreate", {genres: generos});
+        })
+    },
 
     // post form
-    productSave: (req,res)=>{
-        const libroNuevo = {
-            id : libros.length + 1,
-            //id: Date.now(),
-            imgTop: req.files.imgTop[0].filename || 'default.png',
-            imgBack: req.files.imgBack[0].filename || 'default.png',
-            ...req.body
+    productSave: async (req, res) => {
+        try {
+            await db.Producto.create({
+                title: req.body.title,
+                author: req.body.author,
+                genre_id: req.body.genre,
+                description: req.body.description,
+                descriptionD: req.body.descriptionD,
+                imgTop: req.files.imgTop[0].filename || 'default.png',
+                imgBack: req.files.imgBack[0].filename || 'default.png',   
+                price: req.body.price,
+                discount: req.body.discount
+            });    
+            res.redirect("/");            
+        } catch (error) {
+            console.log(error);
         }
-        libros.push(libroNuevo)
-        // convertir a json
-        let listaLibrosJSON = JSON.stringify(libros, null, ' ')
-        // escribir el json
-        fs.writeFileSync(pathLibros, listaLibrosJSON)
-        // redireccionamos a home
-        res.redirect('/')
     },
 
-    productEdit:  (req, res) => {
-        const id = req.params.id
-        const libro = libros.find(libro => libro.id == id)
-        if(libro){
-            res.render('../views/products/productEdit', { libro: libro })
-        }
-        res.send('El libro que quieres editar no existe')
+    productEdit:  (req, res) =>{
+        let pedidoProducto = db.Producto.findByPk(req.params.id);
+
+        let pedidoGeneros = db.Genero.findAll();
+
+        Promise.all([pedidoProducto, pedidoGeneros])
+        .then(function([producto, generos]){
+            res.render("../views/products/productEdit", {libro:producto, genres:generos});
+        });
+        //res.send('El libro que quieres editar no existe')
     },
    
-    productUpDate: (req, res) => {
-        const { id } = req.params
-        const { title, author,genre,description,descriptionD,price,discount} = req.body
-
-        const productoAEditar = libros.find(libro => libro.id == id)
-        
-        productoAEditar.title = title || productoAEditar.title
-        productoAEditar.author = author || productoAEditar.author
-        productoAEditar.description = description || productoAEditar.description
-        productoAEditar.descriptionD = descriptionD || productoAEditar.descriptionD
-        productoAEditar.price = price || productoAEditar.price
-        productoAEditar.discount = discount || productoAEditar.discount
-        
-        console.log(req.files);
-        if (!req.files){
-            productoAEditar.imgTop = req.files ? req.files.imgTop[0].filename : productoAEditar.imgTop
-            productoAEditar.imgBack = req.files ? req.files.imgBack[0].filename : productoAEditar.imgBack
+    productUpDate: async (req, res) => {
+        try {           
+            db.Producto.update({
+                title: req.body.title,
+                author: req.body.author,
+                genre_id: req.body.genre,
+                description: req.body.description,
+                descriptionD: req.body.descriptionD,
+                imgTop: req.files.imgTop[0].filename || 'default.png',
+                imgBack: req.files.imgBack[0].filename || 'default.png',   
+                price: req.body.price,
+                discount: req.body.discount
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            });
+            res.redirect("/detail/" + req.params.id)
+        } catch (error) {
+            console.log(error);
         }
-        
-        fs.writeFileSync(pathLibros, JSON.stringify(libros, null, ' '))
-
-        res.redirect('/')
     },
-    productDelete: function (req, res) {
-        db.Product.findByPk(req.params.id)
+
+    productDelete: (req, res) => {
+        db.Producto.findByPk(req.params.id)
             .then(product => {
-                res.render('../views/products/productDelete.ejs', { product:product });
+                res.render('../views/products/productDelete', { product:product });
             });
     },
-    productDestroy: (req, res) => {
-		const id = req.params.id
-		productToDelete = libros.find(libro => libro.id == id)
-		const pToDelete = libros.filter(libro => libro.id != req.params.id)
-		fs.writeFileSync(pathLibros, JSON.stringify(pToDelete, null, ' '))
-		fs.unlinkSync(path.join(__dirname, '../public/img', productToDelete.imgTop))
-        fs.unlinkSync(path.join(__dirname, '../public/img', productToDelete.imgBack))
-		res.redirect('/')
-    }
+
+    productDestroy: async (req, res) => {
+        try {
+            db.Producto.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
     
+            res.redirect("/")          
+        } catch (error) {
+            console.log(error);
+        }
+    }  
 }
 
-module.exports = controller;
+module.exports = productsController;

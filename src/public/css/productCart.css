@@ -47,6 +47,10 @@ header h1{
 .contenedor .contenedor-items .item .img-item{
     width: 100%;
 }
+.contenedor .contenedor-items .item .img-itemusuario{
+    width: 100px;
+    height: 100px;
+}
 .contenedor .contenedor-items .item:hover{
     box-shadow: 0 0 10px #666;
     scale: 1.05;
@@ -56,6 +60,13 @@ header h1{
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
+}
+.contenedor .contenedor-items .item .titulo-itemuser{
+    display: block;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 15px;
 }
 .contenedor .contenedor-items .item .precio-item{
     display: block;

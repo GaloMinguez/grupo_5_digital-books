@@ -16,7 +16,7 @@
             Resultados de la búsqueda para: <%= palabra %>
           </h2>
         </div>
-        <% if (pFound) { %>
+        <% if (pFound>0) { %>
         <div class="col-12 col-sm-6 col-lg-3">
 			<% pToSearch.forEach(libro => { %>
 				<section class="product-box">

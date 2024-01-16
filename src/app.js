@@ -47,9 +47,9 @@ const userRoutes = require('./routes/users'); // Rutas /users
 app.use('/', productsRoutes);
 app.use('/users', userRoutes);
 
-app.use('*', (req, res) => {
-  res.render('./page_404');
-});
+/*app.use('*', (req, res) => {
+  res.render('../views/page_404');
+});*/
 
 
 app.listen(port, () => {
