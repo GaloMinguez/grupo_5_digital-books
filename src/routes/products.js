@@ -15,6 +15,8 @@ router.get('/productCart', guestCartMiddleware, mainController.productCart);
 
 router.get('/products', productController.productList);
 
+router.get('/productAbm', guestDetailMiddleware, productController.productListAbm);
+
 router.get('/products/:id', productController.productDetail);
 
 router.get('/detail/:id', guestDetailMiddleware, productController.detailProduct);
@@ -33,10 +35,10 @@ router.get('/productEdit/:id', guestDetailMiddleware, productController.productE
 router.put('/productEdit/:id', multerWithFields, productController.productUpDate);
 
 // mostrar form de borrado del producto
-router.delete('/productDelete/:id', guestDetailMiddleware, productController.productDelete); 
+router.get('/productDelete/:id', guestDetailMiddleware, productController.productDelete); 
 
 // Proceso de eliminacion del producto
-router.delete('/productDelete/:id', guestDetailMiddleware, productController.productDestroy); 
+router.post('/productDelete/:id', guestDetailMiddleware, productController.productDestroy); 
 
 
 module.exports = router;

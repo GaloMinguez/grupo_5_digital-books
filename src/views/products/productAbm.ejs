@@ -1,0 +1,37 @@
+<!-- HEAD -->
+<%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="../css/productCart.css" />
+
+    <body>
+        <!-- HEADER -->
+        <%- include('../partials/header.ejs') %>
+
+            <section class="contenedor">
+                <!-- Contenedor de elementos -->
+                <div class="contenedor-items">
+                    <div class="item">
+                        <span class="titulo-item">
+                            CREAR PRODUCTO
+                        </span>
+                        <img src="img/default.png" alt="imagen crear" class="img-item">
+
+                        <a class="boton-item" href="/productCreate" target="">Crear Producto</span></a>
+                    </div>
+
+                    <% libros.forEach(libro=> { %>
+                        <div class="item">
+                            <span class="titulo-item">
+                                <%= libro.title %>
+                            </span>
+                            <img src="img/<%= libro.imgTop %>" alt="<%= libro.alt %>" class="img-item">
+
+                            <a class="boton-item" href="/detail/<%= libro.id %>" target="">Ver Producto</span></a>
+                        </div>
+                        <% }) %>
+                </div>
+            </section>
+    </body>
+    <!-- FOOTER -->
+    <%- include('../partials/footer.ejs') %>
+
+        </html>

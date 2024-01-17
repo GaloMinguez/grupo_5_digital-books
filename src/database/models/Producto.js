@@ -45,12 +45,24 @@ module.exports = function(sequelize, dataTypes){
         },
         stock:{
             type: dataTypes.INTEGER
+        },
+        createdAt: {
+			allowNull: false,
+			type: dataTypes.DATE
+		},
+		updatedAt: {
+			allowNull: false,
+			type: dataTypes.DATE
+		},
+        deletedAt:{
+            type: dataTypes.DATE
         }
     }
 
     let config = {
         tableName: "products",
-        timestamps: false
+        paranoid: true,
+        timestamps: true
     }
     
     let Producto = sequelize.define(alias, cols, config);
