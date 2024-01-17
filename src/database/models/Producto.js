@@ -55,12 +55,12 @@ module.exports = function(sequelize, dataTypes){
     
     let Producto = sequelize.define(alias, cols, config);
 
-    Producto.associate = function(models){
+    /*Producto.associate = function(models){
         Producto.belongsTo(models.Genero, {
             as: "genero",
             foreignKey: "genre_id"
         });
-    }
+    }*/
 
     return Producto;
 }

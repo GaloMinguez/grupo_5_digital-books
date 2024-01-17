@@ -2,6 +2,9 @@ const fs = require ('fs');
 const path = require('path');
 const { log } = require('console');
 
+const db = require('../database/models');
+const sequelize = db.sequelize;
+
 const pathLibros= path.join(__dirname, '../data/products.json');
 
 const libros = JSON.parse(fs.readFileSync(pathLibros, 'utf-8'));
