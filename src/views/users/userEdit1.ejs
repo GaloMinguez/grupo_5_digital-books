@@ -1,0 +1,79 @@
+<!-- HEAD -->
+<%- include('../partials/head.ejs', {title: 'Formulario de Registro' }) %>
+  <link rel="stylesheet" href="../css/login-register.css" />
+
+  <body>
+    <!-- HEADER -->
+    <%- include('../partials/header.ejs') %>
+
+      <main>
+        <section class="section-register">
+          <div class="contenedor-register">
+            <div class="formulario">
+                <form action="/userEdit/<%= usuario.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <h2>Edicion de Usuario</h2>
+
+                <div class="input-contenedor">
+                  <i class="fa-solid fa-user" icon></i>
+                  <label for="name" class="form-label"></label>
+                  <input type="text" id="full_Name" name="full_Name" 
+                  placeholder="Nombre Completo" class="form-input" 
+                  value="<%= usuario.full_Name %>">
+                </div>
+
+                <div class="input-contenedor">
+                  <i class="fa-solid fa-envelope" icon></i>
+                  <input type="text" id="email" name="email" 
+                  placeholder="Correo electronico" class="form-input" 
+                  value="<%= usuario.email %>">
+                </div>
+
+                <div class="input-contenedor">
+                    <i class="fa-solid fa-icons"></i>
+
+
+                  <input type="password" name="password" placeholder="Contraseña"
+                    class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>">
+                  <% if (locals.errors && errors.password) { %>
+                    <div class="text-danger">
+                      <%= errors.password.msg %>
+                    </div>
+                    <% } %>
+                </div>
+
+
+
+                <div class="input-contenedor">
+                  <div>
+                    <label>Imagen de perfil</label>
+                    <input type="file" name="avatar"
+                      class="<%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
+                    <% if (locals.errors && errors.avatar) { %>
+                      <div class="text-danger">
+                        <%= errors.avatar.msg %>
+                      </div>
+                      <% } %>
+                  </div>
+                </div>
+
+                <div>
+                  <button type="submit" class="btn btn-primary">Registrarme</button>
+                  <div class="registrar">
+                    <p>
+                      ¿Ya tenés cuenta? -
+                      <a class="link" href="/users/login">Iniciar Sección</a>
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- FOOTER -->
+      <%- include('../partials/footer.ejs') %>
+
+  </body>
+
+  </html>
