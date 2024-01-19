@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 const guestCartMiddleware = require('../middlewares/guestCartMiddleware');
 const guestDetailMiddleware = require('../middlewares/guestDetailMiddleware');
+
 const mainController = require('../controllers/mainController');
 const productController = require('../controllers/productController');
+const usersController = require('../controllers/userController');
 
 const upload = require('../middlewares/multer');
 
@@ -40,5 +42,6 @@ router.get('/productDelete/:id', guestDetailMiddleware, productController.produc
 // Proceso de eliminacion del producto
 router.post('/productDelete/:id', guestDetailMiddleware, productController.productDestroy); 
 
+router.get('/userEdit/:id', guestDetailMiddleware, usersController.userEdit);
 
 module.exports = router;

@@ -127,15 +127,20 @@ const controller = {
         })
     },
 
-	userEdit:  (req, res) =>{
-        let pedidoUsuario = db.Usuario.findByPk(req.params.id);
+	userEdit: async (req, res) =>{
+		try {
+			//Si necesitamos buscar por otro atributo usamos findOne
+			const pedidoUsuario = await db.Usuario.findByPk(req.params.id, {
+			  include: ["categoria"],
+			});
+			const pedidoCategorias = await db.Categoria.findAll();
 
-        let pedidoCategorias = db.Categoria.findAll();
-
-        Promise.all([pedidoUsuario, pedidoCategorias])
-        .then(function([usuario, categorias]){
-            res.render("../views/users/userEdit", {usuario:usuario, categorias:categorias});
-        });
+			//res.json(pedidoUsuario);
+			//res.json(pedidoCategorias);
+			res.render("../views/users/userEdit1", {usuario:pedidoUsuario, categorias:pedidoCategorias});
+		  } catch (error) {
+			console.log(error);
+		  }
         //res.send('El libro que quieres editar no existe')
     },
    
