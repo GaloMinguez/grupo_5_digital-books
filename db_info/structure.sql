@@ -30,7 +30,8 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `updatedAt` TIMESTAMP NULL,
   `deletedAt` TIMESTAMP NULL,
   `status` VARCHAR(10) NULL,
-  PRIMARY KEY (`id`));
+  PRIMARY KEY (`id`),
+  KEY `usuario_id` (`userd_id`));
 
 
 -- -----------------------------------------------------
@@ -60,7 +61,9 @@ CREATE TABLE IF NOT EXISTS `detailCart` (
   `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` TIMESTAMP NULL,
   `deletedAt` TIMESTAMP NULL,
-  PRIMARY KEY (`cart_item_id`));
+  PRIMARY KEY (`cart_item_id`),
+  KEY `cart_id` (`cart_id`),
+  KEY `product_id` (`product_id`));
 
 
 -- -----------------------------------------------------
@@ -77,7 +80,9 @@ CREATE TABLE IF NOT EXISTS `detailOrder` (
   `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` TIMESTAMP NULL,
   `deletedAt` TIMESTAMP NULL,
-  PRIMARY KEY (`order_item_id`));
+  PRIMARY KEY (`order_item_id`),
+  KEY `order_id` (`order_id`),
+  KEY `product_id` (`product_id`););
 
 
 -- -----------------------------------------------------
@@ -110,7 +115,9 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` TIMESTAMP NULL,
   `deletedAt` TIMESTAMP NULL,
-  PRIMARY KEY (`id`));
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `payment_id` (`payment_id`););
 
 
 -- -----------------------------------------------------
@@ -147,7 +154,8 @@ CREATE TABLE IF NOT EXISTS `products` (
   `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `updateAt` TIMESTAMP NULL,
   `deleteAt` TIMESTAMP NULL,
-  PRIMARY KEY (`id`));
+  PRIMARY KEY (`id`),
+  KEY `usuario_id` (`genre_id`));
 
 
 -- -----------------------------------------------------
@@ -165,8 +173,32 @@ CREATE TABLE IF NOT EXISTS `users` (
   `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
   `updatedAt` TIMESTAMP NULL,
   `deletedat` TIMESTAMP NULL,
-  PRIMARY KEY (`id`));
+  PRIMARY KEY (`id`),
+  KEY `category_id` (`category_id`));
 
+--
+-- Estructura de tabla para la tabla `sequelizemeta`
+--
+
+CREATE TABLE `sequelizemeta` (
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `sequelizemeta`
+--
+
+INSERT INTO `sequelizemeta` (`name`) VALUES
+('01_categorias.js'),
+('02_productos.js'),
+('03_usuarios.js'),
+('04_generos.js'),
+('05_carrocompras.js'),
+('06_pedidos.js');
+('07_carrodetalle.js');
+('08_pedidodetalle.js');
+
+-- --------------------------------------------------------
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

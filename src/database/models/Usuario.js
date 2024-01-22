@@ -21,10 +21,23 @@ module.exports = (sequelize, dataTypes) => {
         avatar: {
             type: dataTypes.STRING
         },
+        createdAt: {
+			allowNull: false,
+			type: dataTypes.DATE,
+            defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
+		},
+		updatedAt: {
+			allowNull: false,
+			type: dataTypes.DATE
+		},
+        deletedAt:{
+            type: dataTypes.DATE
+        }
     };
     let config = {
         tableName: 'users',
-        timestamps: false
+        timestamps: true,
+        deletedAt: false
     };
     const Usuario = sequelize.define(alias, cols, config)
 

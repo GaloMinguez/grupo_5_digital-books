@@ -1,12 +1,15 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Genero';
+    let alias = 'CarroCompras';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
+        user_id:{
+            type: dataTypes.INTEGER
+        },
+        status: {
             type: dataTypes.STRING
         },
         createdAt: {
@@ -23,18 +26,18 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tableName: 'genres',
+        tableName: 'cart',
         timestamps: true,
         deletedAt: false
     };
-    const Genero = sequelize.define(alias, cols, config)
+    const CarroCompras = sequelize.define(alias, cols, config)
     
-    Genero.associate = function(models){
-        Genero.hasMany(models.Producto, {
-            as: "producto",
-            foreignKey: "genre_id"
+    CarroCompras.associate = function(models){
+        CarroCompras.hasMany(models.Usuario, {
+            as: "usuario",
+            foreignKey: "user_id"
         })
     }
 
-    return Genero;
+    return CarroCompras;
 }

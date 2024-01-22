@@ -1,16 +1,11 @@
 module.exports = {
     up: (queryInterface, Sequelize) => {
       return queryInterface.bulkInsert("category", [
-        { nombre: "Electrónicos" },
-        { nombre: "Ropa" },
-        { nombre: "Libros" },
-        { nombre: "Hogar y Jardín" },
-        { nombre: "Deportes y aire libre" },
-        { nombre: "Juguetes y juegos" },
-        { nombre: "Salud y belleza" },
+        { name: "Administrador" },
+        { name: "Cliente" },
       ]);
     },
     down: (queryInterface, Sequelize) => {
-      return queryInterface.bulkDelete("categorias", null, {});
+      return queryInterface.bulkDelete("category", null, {});
     },
   };

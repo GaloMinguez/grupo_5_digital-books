@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = 'Genero';
+    let alias = 'TipoPago';
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -23,18 +23,18 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tableName: 'genres',
+        tableName: 'payments',
         timestamps: true,
         deletedAt: false
     };
-    const Genero = sequelize.define(alias, cols, config)
+    const TipoPago = sequelize.define(alias, cols, config)
     
-    Genero.associate = function(models){
-        Genero.hasMany(models.Producto, {
-            as: "producto",
-            foreignKey: "genre_id"
+    TipoPago.associate = function(models){
+        TipoPago.hasMany(models.Pedido, {
+            as: "pedido",
+            foreignKey: "payment_id"
         })
     }
 
-    return Genero;
+    return TipoPago;
 }

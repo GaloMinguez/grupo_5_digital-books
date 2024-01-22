@@ -1,17 +1,17 @@
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('detailcart', {
-            cart_item_id: {
+        return queryInterface.createTable('detailorder', {
+            order_item_id: {
                 type: Sequelize.INTEGER,
                 autoIncrement: true,
                 primaryKey: true,
                 allowNull: false,
             },
-            cart_id: {
+            order_id: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
                 references: {
-                    model: 'cart',
+                    model: 'orders',
                     key: 'id'
                 },
             },   
@@ -23,8 +23,12 @@ module.exports = {
                     key: 'id'
                 },
             },    
-            cantidad: {
+            quantity: {
                 type: Sequelize.INTEGER,
+                allowNull: true,
+            },
+            quantity: {
+                priceBuy: Sequelize.DECIMAL,
                 allowNull: true,
             },
             createdAt: {
@@ -43,6 +47,6 @@ module.exports = {
         });
     },
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('detailcart');
+        return queryInterface.dropTable('detailorder');
     }
 };
