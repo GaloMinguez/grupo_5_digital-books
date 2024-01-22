@@ -11,6 +11,10 @@ module.exports = {
         type: Sequelize.STRING(255),
         allowNull: false,
       },
+      author: {
+        type: Sequelize.STRING(150),
+        allowNull: false,
+      },
       genre_id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -28,20 +32,20 @@ module.exports = {
         allowNull: true,
       },
       publisher: {
-        type: Sequelize.STRING(45),
+        type: Sequelize.STRING(80),
         allowNull: false,
       },
       imgTop: {
-        type: Sequelize.STRING(45),
+        type: Sequelize.STRING(60),
         defaultValue: 'default.png',
         allowNull: true,
       },
       imgBack: {
-        type: Sequelize.STRING(45),
+        type: Sequelize.STRING(60),
         allowNull: true,
       },
       alt: {
-        type: Sequelize.STRING(20),
+        type: Sequelize.STRING(30),
         allowNull: true,
       },
       price: {
@@ -58,19 +62,6 @@ module.exports = {
       },
       stock: {
         type: Sequelize.INTEGER,
-        allowNull: true,
-      },
-      createdAt: {
-        type: Sequelize.TIMESTAMP,
-        allowNull: true,
-        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP()')
-      },
-      updatedAt: {
-        type: Sequelize.TIMESTAMP,
-        allowNull: true,
-      },
-      deletedAt: {
-        type: Sequelize.TIMESTAMP,
         allowNull: true,
       }
     });

@@ -22,35 +22,23 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DECIMAL,
             allowNull: false,
         },        
-        createdAt: {
-			allowNull: false,
-			type: dataTypes.DATE,
-            defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
-		},
-		updatedAt: {
-			allowNull: false,
-			type: dataTypes.DATE
-		},
-        deletedAt:{
-            type: dataTypes.DATE
-        }
     };
     let config = {
         tableName: 'detailOrder',
-        timestamps: true,
+        timestamps: false,
         deletedAt: false
     };
     const PedidoDetalle = sequelize.define(alias, cols, config)
     
     PedidoDetalle.associate = function(models){
-        PedidoDetalle.hasMany(models.CarroCompras, {
+        PedidoDetalle.belongsTo(models.Pedido, {
             as: "pedido",
             foreignKey: "order_id"
         })
     }
 
     PedidoDetalle.associate = function(models){
-        PedidoDetalle.hasMany(models.Producto, {
+        PedidoDetalle.belongsTo(models.Producto, {
             as: "producto",
             foreignKey: "product_id"
         })

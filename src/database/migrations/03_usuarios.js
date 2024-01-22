@@ -8,7 +8,7 @@ module.exports = {
                 allowNull: false,
             },
             fullName: {
-                type: Sequelize.STRING(30),
+                type: Sequelize.STRING(100),
                 allowNull: false,
             },
             email: {
@@ -16,7 +16,7 @@ module.exports = {
                 allowNull: false,
             },
             password: {
-                type: Sequelize.STRING(32),
+                type: Sequelize.STRING(255),
                 allowNull: false,
             },
             category_id: {
@@ -28,21 +28,8 @@ module.exports = {
                 },
             },
             avatar: {
-                type: Sequelize.STRING(65),
+                type: Sequelize.STRING(155),
                 defaultValue: 'default.png',
-            },
-            createdAt: {
-                type: Sequelize.TIMESTAMP,
-                allowNull: true,
-                defaultValue: Sequelize.literal('CURRENT_TIMESTAMP()')
-            },
-            updatedAt: {
-                type: Sequelize.TIMESTAMP,
-                allowNull: true,
-            },
-            deletedAt: {
-                type: Sequelize.TIMESTAMP,
-                allowNull: true,
             }
         });
     },
