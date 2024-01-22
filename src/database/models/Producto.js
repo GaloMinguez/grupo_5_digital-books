@@ -48,7 +48,8 @@ module.exports = function(sequelize, dataTypes){
         },
         createdAt: {
 			allowNull: false,
-			type: dataTypes.DATE
+			type: dataTypes.DATE,
+            defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
 		},
 		updatedAt: {
 			allowNull: false,
@@ -66,6 +67,13 @@ module.exports = function(sequelize, dataTypes){
     }
     
     let Producto = sequelize.define(alias, cols, config);
+
+    Producto.associate = function(models){
+        Producto.hasMany(models.Genero, {
+            as: "genero",
+            foreignKey: "genre_id"
+        })
+    }
 
     /*Producto.associate = function(models){
         Producto.belongsTo(models.Genero, {
