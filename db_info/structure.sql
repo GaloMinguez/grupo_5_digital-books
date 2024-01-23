@@ -8,15 +8,15 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema DigitalHouse_db
+-- Schema DigitalBooks_db
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `DigitalHouse_db` ;
+DROP SCHEMA IF EXISTS `DigitalBooks_db` ;
 
 -- -----------------------------------------------------
 -- Schema DigitalHouse_db
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `DigitalHouse_db` DEFAULT CHARACTER SET utf8 ;
-USE `DigitalHouse_db` ;
+CREATE SCHEMA IF NOT EXISTS `DigitalBooks_db` DEFAULT CHARACTER SET utf8 ;
+USE `DigitalBooks_db` ;
 
 -- -----------------------------------------------------
 -- Table `cart`
@@ -26,12 +26,8 @@ DROP TABLE IF EXISTS `cart` ;
 CREATE TABLE IF NOT EXISTS `cart` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `user_id` INT NOT NULL,
-  `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` TIMESTAMP NULL,
-  `deletedAt` TIMESTAMP NULL,
   `status` VARCHAR(10) NULL,
-  PRIMARY KEY (`id`),
-  KEY `usuario_id` (`userd_id`));
+  PRIMARY KEY (`id`));
 
 
 -- -----------------------------------------------------
@@ -42,9 +38,6 @@ DROP TABLE IF EXISTS `category` ;
 CREATE TABLE IF NOT EXISTS `category` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(50) NOT NULL,
-  `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` TIMESTAMP NULL,
-  `deletedAt` TIMESTAMP NULL,
   PRIMARY KEY (`id`));
 
 
@@ -58,12 +51,7 @@ CREATE TABLE IF NOT EXISTS `detailCart` (
   `cart_id` INT NOT NULL,
   `product_id` INT NOT NULL,
   `cantidad` INT NOT NULL,
-  `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` TIMESTAMP NULL,
-  `deletedAt` TIMESTAMP NULL,
-  PRIMARY KEY (`cart_item_id`),
-  KEY `cart_id` (`cart_id`),
-  KEY `product_id` (`product_id`));
+  PRIMARY KEY (`cart_item_id`));
 
 
 -- -----------------------------------------------------
@@ -77,12 +65,7 @@ CREATE TABLE IF NOT EXISTS `detailOrder` (
   `product_id` INT NOT NULL,
   `quantity` INT NULL,
   `priceBuy` DECIMAL(8,2) NULL,
-  `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` TIMESTAMP NULL,
-  `deletedAt` TIMESTAMP NULL,
-  PRIMARY KEY (`order_item_id`),
-  KEY `order_id` (`order_id`),
-  KEY `product_id` (`product_id`););
+  PRIMARY KEY (`order_item_id`));
 
 
 -- -----------------------------------------------------
@@ -93,9 +76,6 @@ DROP TABLE IF EXISTS `genres` ;
 CREATE TABLE IF NOT EXISTS `genres` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(30) NOT NULL,
-  `createdAt` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` TIMESTAMP NULL,
-  `deletedAt` TIMESTAMP NULL,
   PRIMARY KEY (`id`));
 
 
@@ -112,12 +92,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `status` VARCHAR(10) NULL,
   `dateOrder` DATE NULL,
   `amountTotal` DECIMAL(10,2) NULL,
-  `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` TIMESTAMP NULL,
-  `deletedAt` TIMESTAMP NULL,
-  PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
-  KEY `payment_id` (`payment_id`););
+  PRIMARY KEY (`id`));
 
 
 -- -----------------------------------------------------
@@ -151,11 +126,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `discount` DOUBLE NULL,
   `category` VARCHAR(40) NULL,
   `stock` INT NULL,
-  `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updateAt` TIMESTAMP NULL,
-  `deleteAt` TIMESTAMP NULL,
-  PRIMARY KEY (`id`),
-  KEY `usuario_id` (`genre_id`));
+  PRIMARY KEY (`id`));
 
 
 -- -----------------------------------------------------
@@ -170,11 +141,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` VARCHAR(32) NOT NULL,
   `category_id` INT NOT NULL,
   `avatar` VARCHAR(65) NULL,
-  `createdAt` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
-  `updatedAt` TIMESTAMP NULL,
-  `deletedat` TIMESTAMP NULL,
-  PRIMARY KEY (`id`),
-  KEY `category_id` (`category_id`));
+  PRIMARY KEY (`id`));
 
 --
 -- Estructura de tabla para la tabla `sequelizemeta`
@@ -194,8 +161,8 @@ INSERT INTO `sequelizemeta` (`name`) VALUES
 ('03_usuarios.js'),
 ('04_generos.js'),
 ('05_carrocompras.js'),
-('06_pedidos.js');
-('07_carrodetalle.js');
+('06_pedidos.js'),
+('07_carrodetalle.js'),
 ('08_pedidodetalle.js');
 
 -- --------------------------------------------------------

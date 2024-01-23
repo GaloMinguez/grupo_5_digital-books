@@ -18,19 +18,6 @@ module.exports = {
             status: {
                 type: Sequelize.STRING(10),
                 allowNull: true,
-            },
-            createdAt: {
-                type: Sequelize.TIMESTAMP,
-                allowNull: true,
-                defaultValue: Sequelize.literal('CURRENT_TIMESTAMP()')
-            },
-            updatedAt: {
-                type: Sequelize.TIMESTAMP,
-                allowNull: true,
-            },
-            deletedAt: {
-                type: Sequelize.TIMESTAMP,
-                allowNull: true,
             }
         });
     },

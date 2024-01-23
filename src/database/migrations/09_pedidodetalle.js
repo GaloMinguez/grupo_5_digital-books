@@ -27,21 +27,8 @@ module.exports = {
                 type: Sequelize.INTEGER,
                 allowNull: true,
             },
-            quantity: {
-                priceBuy: Sequelize.DECIMAL,
-                allowNull: true,
-            },
-            createdAt: {
-                type: Sequelize.TIMESTAMP,
-                allowNull: true,
-                defaultValue: Sequelize.literal('CURRENT_TIMESTAMP()')
-            },
-            updatedAt: {
-                type: Sequelize.TIMESTAMP,
-                allowNull: true,
-            },
-            deletedAt: {
-                type: Sequelize.TIMESTAMP,
+            priceBuy: {
+                type: Sequelize.DECIMAL(10,2),
                 allowNull: true,
             }
         });
