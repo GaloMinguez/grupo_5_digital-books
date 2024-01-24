@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
-  <!-- Include Head -->
-  <%- include('partials/head', {title: 'Resultados de tu búsqueda'}) %>
-  <link rel="stylesheet" href="../css/results.css" />
+<!-- Include Head -->
+<%- include('partials/head', {title: 'Resultados de tu búsqueda' }) %>
+  <link rel="stylesheet" href="../css/results1.css" />
+
   <body>
     <!-- Header -->
     <%- include('partials/header') %>
-    <!-- /Header -->
+      <!-- /Header -->
 
-    <!-- todos los productos -->
-    <div class="container products-wrapper">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="products-title">
-            Resultados de la búsqueda para: <%= palabra %>
-          </h2>
-        </div>
-        <% if (pFound>0) { %>
-        <div class="col-12 col-sm-6 col-lg-3">
-			<% pToSearch.forEach(libro => { %>
-				<section class="product-box">
-				  <a href="/products/<%= libro.id %>">
-					<figure class="product-box_image">
-					  <img class="img-item"
-						src="/img/<%= libro.imgTop %>"
-						alt="imagen de producto"
-					  />
-					</figure>
-					<article class="product-box_data">
-            <% const precioFinal = libro.price - (libro.discount * libro.price / 100)  %>
-					  <h2>$ <%= precioFinal %></h2>
-					  <span><%= libro.discount %>% OFF</span>
-					  <p><%= libro.title %></p>
-					</article>
-				  </a>
-				</section>
-			<% }) %>
-        </div>
-        <% } else { %>
-        <div class="col-12">
-          <h2 class="products-title" style="color: tomato">
-            No hay productos que coincidan con esa búsqueda
-          </h2>
-        </div>
-        <% } %>
-      </div>
-    </div>
-    <!-- /todos los productos -->
+      <section class="contenedor">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="products-title">
+              Resultados de la búsqueda para: <%= palabra %>
+            </h2>
+          </div>
+          <!-- Contenedor de elementos -->
+          <div class="contenedor-items">
+            <!-- todos los productos -->
+            <% if (pFound>0) { %>
+              <% pToSearch.forEach(libro=> { %>
+                <div class="item">
+                  <a href="/products/<%= libro.id %>">
+                    <figure class="product-box_image">
+                      <img class="img-item" src="/img/<%= libro.imgTop %>" alt="imagen de producto" />
+                    </figure>
+                    <article class="product-box_data">
+                      <% const precioFinal=libro.price - (libro.discount * libro.price / 100) %>
+                        <h2>$ <%= precioFinal %>
+                        </h2>
+                        <span>
+                          <%= libro.discount %>% OFF
+                        </span>
+                        <p>
+                          <%= libro.title %>
+                        </p>
+                    </article>
+                  </a>
+                </div>
+                <% }) %>
+            <% } else { %>
+                  <div class="col-12">
+                    <h2 class="products-title" style="color: tomato">
+                      No hay productos que coincidan con esa búsqueda
+                    </h2>
+                  </div>
+            <% } %>
+            <!-- /todos los productos -->
+          </div>
+      </section>
 
-    <!-- footer -->
-    <%- include('partials/footer') %>
-    <!-- /footer -->
+      <!-- footer -->
+      <%- include('partials/footer') %>
+        <!-- /footer -->
   </body>
+
 </html>

@@ -16,9 +16,9 @@
                 <div class="input-contenedor">
                   <i class="fa-solid fa-user" icon></i>
                   <label for="name" class="form-label"></label>
-                  <input type="text" id="full_Name" name="full_Name" 
+                  <input type="text" id="fullName" name="fullName" 
                   placeholder="Nombre Completo" class="form-input" 
-                  value="<%= usuario.full_Name %>">
+                  value="<%= usuario.fullName %>">
                 </div>
 
                 <div class="input-contenedor">
@@ -30,18 +30,15 @@
 
                 <div class="input-contenedor">
                     <i class="fa-solid fa-icons"></i>
-
-
-                  <input type="password" name="password" placeholder="Contraseña"
-                    class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>">
-                  <% if (locals.errors && errors.password) { %>
-                    <div class="text-danger">
-                      <%= errors.password.msg %>
-                    </div>
-                    <% } %>
+                    <label for="category_id">Categoria</label>
+                    <p>
+                        <select name="category_id" id="" required>
+                            <% categorias.forEach( categoria => { %>
+                            <option value="<%= categoria.id %>" <% if (usuario.category.id == categoria.id) { %><%= 'selected' %><% }; %>><%= categoria.name %></option>
+                            <% }); %>
+                        </select>
+                    </p>    
                 </div>
-
-
 
                 <div class="input-contenedor">
                   <div>
@@ -57,13 +54,7 @@
                 </div>
 
                 <div>
-                  <button type="submit" class="btn btn-primary">Registrarme</button>
-                  <div class="registrar">
-                    <p>
-                      ¿Ya tenés cuenta? -
-                      <a class="link" href="/users/login">Iniciar Sección</a>
-                    </p>
-                  </div>
+                  <button type="submit" class="btn btn-primary">Actualizar</button>
                 </div>
               </form>
             </div>

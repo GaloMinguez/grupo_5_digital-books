@@ -17,10 +17,10 @@ header h1{
     padding: 30px 0;
 }
 .contenedor{
-    max-width: 1200px;
+    width: 1200px;
     padding: 10px;
     margin: auto;
-    display: flex;
+    display: block;
     justify-content: space-between;
     /* oculto lo que queda fuera del .contenedor */
     contain: paint;
@@ -37,31 +37,21 @@ header h1{
     transition: .3s;
 }
 .contenedor .contenedor-items .item{
-    max-width: 200px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     margin: auto;
     border: 1px solid #666;
     border-radius: 10px;
     padding: 20px;
     transition: .3s;
 }
-.contenedor .contenedor-items .item .img-item{
+.contenedor .contenedor-items .item .img-itemusuario{
     width: 100%;
     height: 60%;
-}
-.contenedor .contenedor-items .item .img-itemusuario{
-    width: 100px;
-    height: 100px;
 }
 .contenedor .contenedor-items .item:hover{
     box-shadow: 0 0 10px #666;
     scale: 1.05;
-}
-.contenedor .contenedor-items .item .titulo-item{
-    display: block;
-    font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
 }
 .contenedor .contenedor-items .item .titulo-itemuser{
     display: block;
