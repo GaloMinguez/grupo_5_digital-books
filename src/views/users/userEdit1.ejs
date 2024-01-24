@@ -34,10 +34,10 @@
                     <p>
                         <select name="category_id" id="" required>
                             <% categorias.forEach( categoria => { %>
-                            <option value="<%= categoria.id %>" <% if (usuario.category.id == categoria.id) { %><%= 'selected' %><% }; %>><%= categoria.name %></option>
+                            <option value="<%= categoria.id %>" <% if (usuario.category_id == categoria.id) { %><%= 'selected' %><% }; %>><%= categoria.name %></option>
                             <% }); %>
                         </select>
-                    </p>    
+                    </p>
                 </div>
 
                 <div class="input-contenedor">

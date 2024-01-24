@@ -34,7 +34,7 @@ header h1{
     grid-row-gap: 30px;
     /* width: 60%; */
     width: 100%;
-    transition: .3s;
+    /*transition: .3s;*/
 }
 .contenedor .contenedor-items .item{
     width: 300px;
@@ -43,16 +43,16 @@ header h1{
     border: 1px solid #666;
     border-radius: 10px;
     padding: 20px;
-    transition: .3s;
+    /*transition: .3s;*/
 }
 .contenedor .contenedor-items .item .img-itemusuario{
     width: 100%;
     height: 60%;
 }
-.contenedor .contenedor-items .item:hover{
+/*.contenedor .contenedor-items .item:hover{
     box-shadow: 0 0 10px #666;
     scale: 1.05;
-}
+}*/
 .contenedor .contenedor-items .item .titulo-itemuser{
     display: block;
     font-weight: bold;
@@ -76,6 +76,11 @@ header h1{
     padding: 5px 15px;
     border-radius: 5px;
     cursor: pointer;
+    transition: .3s;
+}
+.contenedor .contenedor-items .item .boton-item:hover{
+    box-shadow: 0 0 10px #666;
+    scale: 1.05;
 }
 /* seccion carrito */
 .carrito{

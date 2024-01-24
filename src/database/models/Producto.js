@@ -54,24 +54,6 @@ module.exports = function (sequelize, dataTypes) {
     timestamps: false,
   };
 
-<<<<<<< HEAD
-    Producto.associate = function(models){
-<<<<<<< HEAD
-=======
-        Producto.hasMany(models.Genero, {
-            as: "genero",
-            foreignKey: "genre_id"
-        })
-    }
-
-    /*Producto.associate = function(models){
->>>>>>> 15617949f9fde5736735aaa26d1e20ebc9fb7a24
-        Producto.belongsTo(models.Genero, {
-            as: "genero",
-            foreignKey: "genre_id"
-        });
-    }
-=======
   let Producto = sequelize.define(alias, cols, config);
 
   Producto.associate = function (models) {
@@ -80,7 +62,6 @@ module.exports = function (sequelize, dataTypes) {
       foreignKey: "genre_id",
     });
   };
->>>>>>> 5b13334af4d2cd2f9cbbfed64801d1e82af612ee
 
   return Producto;
 };

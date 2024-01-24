@@ -7,7 +7,6 @@ function userLoggedMiddleware(req, res, next) {
 
 	let emailInCookie = req.cookies.userEmail;
 
-console.log(emailInCookie);
 	/*let userFromCookie = db.Usuario.findOne({
 		where: {
 			email : emailInCookie
