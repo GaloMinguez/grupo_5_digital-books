@@ -1,6 +1,6 @@
 <!-- HEAD -->
 <%- include('../partials/head.ejs') %>
-    <link rel="stylesheet" href="../css/productCart.css" />
+    <link rel="stylesheet" href="../css/userlist.css" />
 
     <body>
         <!-- HEADER -->
@@ -9,10 +9,10 @@
             <section class="contenedor">
                 <!-- Contenedor de elementos -->
                 <div class="contenedor-items">
-                    <% usuarios.forEach(usuario=> { %>
+                    <% usuarios.forEach(usuario => { %>
                         <div class="item">
                             <span class="titulo-itemuser">
-                                <%= usuario.full_Name %>
+                                <%= usuario.fullName %>
                             </span>
                             <img src="/img/users/<%= usuario.avatar %>" alt="sin imagen" class="img-itemusuario">
 

@@ -135,14 +135,14 @@ const controller = {
 			});
 			const pedidoCategorias = await db.Categoria.findAll();
 
-			//res.json(pedidoUsuario);
-			//res.json(pedidoCategorias);
-			res.render("../views/users/userEdit1", {usuario:pedidoUsuario, categorias:pedidoCategorias});
-		  } catch (error) {
+			res.render("../views/users/userEdit1", { usuario:pedidoUsuario, categorias:pedidoCategorias });
+		} catch (error) {
 			console.log(error);
-		  }
+		}
+	},
+	//res.json(pedidoUsuario);
+	//res.json(pedidoCategorias);
         //res.send('El libro que quieres editar no existe')
-    },
    
     userUpDate: async (req, res) => {
         try {           
