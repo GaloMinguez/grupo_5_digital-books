@@ -74,9 +74,14 @@ header h1{
     display: block;
     text-align: center;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 18px;
 }
-
+.contenedor .contenedor-items .item .precio-desc-item{
+    font-size: 15px;
+    color: green;
+    text-decoration: line-through;
+    text-align: center;
+}
 .contenedor .contenedor-items .item .boton-item{
     display: block;
     margin: 10px auto;

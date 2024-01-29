@@ -43,9 +43,27 @@
           </div>
 
           <div class="container-price">
-            <span><b>$ <%= getBook.price %></b> <% if (getBook.discount > 0) { %>
-            - <%= getBook.discount %>% OFF
-            <% } %></span>
+            <div style="width: 25%; float:left">
+              <% if (getBook.discount>0) { %>
+                <span class="precio-desc-item">
+                  <% } else { %>
+                    <span class="precio-item">
+                      <br>
+                      <% } %>
+                        <%= new Intl.NumberFormat('en-US', { style: 'currency' , minimumFractionDigits: 2,
+                          currency: "USD" }).format(getBook.price) %>
+                    </span>
+            </div>
+            <div style="width: 75%; float:right">
+              <span class="precio-item">
+                <% if (getBook.discount> 0) { %>
+                  <%= new Intl.NumberFormat('en-US', { style: 'currency' , minimumFractionDigits: 2, currency: "USD"
+                    }).format(getBook.price - (getBook.price * getBook.discount / 100)) %> - <%= getBook.discount %>%
+                      Off
+                      <% } %>
+              </span>
+            </div>
+
             <i class="fa-solid fa-angle-right"></i>
           </div>
           <div class="container-details-product">
@@ -69,7 +87,7 @@
             </div>
             <button class="btn-add-to-cart">
               <i class="fa-solid fa-plus"></i>
-              <a href="/productCart">Añadir al carrito</a> 
+              <a href="/productCart">Añadir al carrito</a>
             </button>
           </div>
 
@@ -212,7 +230,7 @@
         </div>
       </main>
       <section class="container-related-products">
-        <h2>Productos Relacionados</h2>
+        <h2 style="font-size: 30px;">Productos Relacionados</h2>
         <div class="card-list-products">
           <% for( let i=1; i <=4; i++ ) { %>
             <div class="card">
@@ -223,7 +241,7 @@
               </div>
               <div class="info-card">
                 <div class="text-product">
-                  <h3>
+                  <h3 class="titulo-libro-rela">
                     <%= libros[i].title %> - <%= libros[i].author %>
                   </h3>
                   <p class="category"><i>
@@ -231,9 +249,24 @@
                     </i></p>
                 </div>
               </div>
-              <div class="price"><b>$ <%= libros[i].price %></b><% if (libros[i].discount>0) { %>
-               - <%= libros[i].discount %>% OFF
-              <% } %></div>
+              <div>
+                <% if (libros[i].discount>0) { %>
+                  <span class="precio-desc-item">
+                    <% } else { %>
+                      <span class="precio-item">
+                        <br>
+                        <% } %>
+                          <%= new Intl.NumberFormat('en-US', { style: 'currency' , minimumFractionDigits: 2,
+                            currency: "USD" }).format(libros[i].price) %>
+                      </span>
+              </div>
+              <span class="precio-item">
+                <% if (libros[i].discount> 0) { %>
+                  <%= new Intl.NumberFormat('en-US', { style: 'currency' , minimumFractionDigits: 2, currency: "USD"
+                    }).format(libros[i].price - (libros[i].price * libros[i].discount / 100)) %>-<%= libros[i].discount
+                      %>% Off
+                      <% } %>
+              </span>
             </div>
             <% } %>
         </div>

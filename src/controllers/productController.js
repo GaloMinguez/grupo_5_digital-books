@@ -13,13 +13,15 @@ const productsController = {
             res.render('../views/products/productAbm', { libros })    
         })
     },
-    productList: (req, res) => {
-        db.Producto.findAll({
-            include: [{association: "genero"}]
-        })
-        .then(libros => {
-            res.render('../views/products/productList', { libros })    
-        })
+    productList: async (req, res) => {
+        try {
+            let libros = await db.Producto.findAll({
+                include: [{association: "genero"}]
+            })
+            res.render('../views/products/productList', { libros })
+        } catch (error) {
+             console.log(error);            
+        }
     },
     productDetail: (req, res) => {
         let pedidoProducto = db.Producto.findByPk(req.params.id);

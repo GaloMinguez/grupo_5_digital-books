@@ -1,185 +1,342 @@
 <!-- HEAD -->
 <%- include('./partials/head.ejs') %>
+  <style>
+    #galeria {
+      margin: auto;
+      width: 100%;
+      max-width: 960px;
+      padding: 0 20px 20px;
+      box-sizing: border-box;
+      column-count: 4;
 
-<body>
-     <!-- HEADER -->
-     <%- include('./partials/header.ejs') %>
-     
-     <main>
-          <!-- SLIDER DE PRODUCTOS -->
-          <div id="carrusel-contenido">
-               <div id="carrusel-caja">
-                    <div class="container-productos">
-                         <div class="descripcion-productos">
-                              <h2>Producto <b>Literario</b></h2>
-                              <h1>90 minutos en el cielo</h1>
-                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident debitis nihil
-                                   incidunt quisquam ab reiciendis consequuntur iure.</p>
+      /* Espacio entre columnas */
+      -moz-column-gap: 20px;
+      -webkit-column-gap: 20px;
+      column-gap: 20px;
 
-                              <a class="btn" href="products/11" target="">¡Solicitalo aquí!<span
-                                        class="fas fa-angle-right"></span></a>
-                         </div>
+      /* Filete entre columnas */
+      /*-moz-column-rule: 1px solid #bbb;
+      -webkit-column-rule: 1px solid #bbb;
+      column-rule: 1px solid #bbb;*/
+    }
+    #galeria header {
+      -webkit-column-span: all;
+      column-span: all;
+    }
+    article {
+      background: #fff;
+      border-radius: 10px;
+      border: 1.5px solid #fcb038;
+      margin: 0 0 20px 0;
+      text-align: center;
+      max-width: 100%;
+      filter: opacity(70%);
+      /*Evitamos que se corte al cambiar de columna*/
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+    article img {
+      width: 100%;
+    }
+    article:hover {
+      transition: .5s ease;
+      filter: opacity(100%);
+    }
+    figure {
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+    /* Móviles en horizontal o tablets en vertical */
+    @media (max-width: 767px) {
+      #galeria {
+        columns: 2;
+      }
+    }
+    /* Móviles en vertical */
+    @media (max-width: 480px) {
+      #galeria {
+        columns: 1;
+      }
+    }
+  </style>
 
-                         <div class="imagen-productos">
-                              <a href="products/11" target="">
-                                   <img src="./img/libro110a.png" alt="">
-                              </a>
-                         </div>
-                    </div>
+  <body>
+    <!-- HEADER -->
+    <%- include('./partials/header.ejs') %>
 
-                    <div class="container-productos">
-                         <div class="descripcion-productos">
-                              <h2>Producto <b>Recreativo</b></h2>
-                              <h1>El secreto de la paz personal</h1>
-                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident debitis nihil
-                                   incidunt quisquam ab reiciendis consequuntur iure.</p>
+      <main>
+        <!-- SLIDER DE PRODUCTOS -->
+        <div id="carrusel-contenido">
+          <div id="carrusel-caja">
+            <div class="container-productos">
+              <div class="descripcion-productos">
+                <h2>Producto <b>Literario</b></h2>
+                <h1>90 minutos en el cielo</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident debitis nihil
+                  incidunt quisquam ab reiciendis consequuntur iure.</p>
 
-                              <a class="btn" href="products/3" target="">¡Solicitalo aquí!<span
-                                        class="fas fa-angle-right"></span></a>
-                         </div>
+                <a class="btn" href="products/11" target="">¡Solicitalo aquí!<span
+                    class="fas fa-angle-right"></span></a>
+              </div>
 
-                         <div class="imagen-productos">
-                              <a href="products/3" target="">
-                                   <img src="./img/libro30a.png" alt="">
-                              </a>
-                         </div>
-                    </div>
+              <div class="imagen-productos">
+                <a href="products/11" target="">
+                  <img src="./img/libro110a.png" alt="">
+                </a>
+              </div>
+            </div>
 
-                    <div class="container-productos">
-                         <div class="descripcion-productos">
-                              <h2>Producto <b>Recreativo</b></h2>
-                              <h1>Como emprender tu propio negocio</h1>
-                              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident debitis nihil
-                                   incidunt quisquam ab reiciendis consequuntur iure.</p>
+            <div class="container-productos">
+              <div class="descripcion-productos">
+                <h2>Producto <b>Recreativo</b></h2>
+                <h1>El secreto de la paz personal</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident debitis nihil
+                  incidunt quisquam ab reiciendis consequuntur iure.</p>
 
-                              <a class="btn" href="products/4" target="">¡Solicitalo aquí!<span
-                                        class="fas fa-angle-right"></span></a>
-                         </div>
+                <a class="btn" href="products/3" target="">¡Solicitalo aquí!<span class="fas fa-angle-right"></span></a>
+              </div>
 
-                         <div class="imagen-productos">
-                              <a href="products/4" target="">
-                                   <img src="./img/libro40a.png" alt="">
-                              </a>
-                         </div>
-                    </div>
-               </div>
+              <div class="imagen-productos">
+                <a href="products/3" target="">
+                  <img src="./img/libro30a.png" alt="">
+                </a>
+              </div>
+            </div>
+
+            <div class="container-productos">
+              <div class="descripcion-productos">
+                <h2>Producto <b>Recreativo</b></h2>
+                <h1>Como emprender tu propio negocio</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident debitis nihil
+                  incidunt quisquam ab reiciendis consequuntur iure.</p>
+
+                <a class="btn" href="products/4" target="">¡Solicitalo aquí!<span class="fas fa-angle-right"></span></a>
+              </div>
+
+              <div class="imagen-productos">
+                <a href="products/4" target="">
+                  <img src="./img/libro40a.png" alt="">
+                </a>
+              </div>
+            </div>
           </div>
-          <!-- FIN SLIDER DE PRODUCTOS -->
+        </div>
+        <!-- FIN SLIDER DE PRODUCTOS -->
 
-           <!-- Muestra de productos en general -->
+        <!-- Muestra de productos en general -->
 
-           <section class="container-producto-mas-vendidos">
-               <h2>Novedades Mas Vendidas</h2>
-               <div class="card-list-products">
-                 <div class="card">
-                   <div class="card-img">
-                     <img src="./img/libro3.png" alt="producto-1" />
-                   </div>
-                   <div class="info-card">
-                     <div class="text-product">
-                       <h3>El fin de la Inflacion - Javier Milei</h3>
-                       <p class="category"><i>Economia, De referencia</i></p>
-                     </div>
-                   </div>
-                   <div class="price"><b>$ 6.450</b></div>
-                 </div>
-                 <div class="card">
-                   <div class="card-img">
-                     <img src="./img/libro8.png" alt="producto-2" />
-                   </div>
-                   <div class="info-card">
-                     <div class="text-product">
-                       <h3>El Eternauta - Hector G. Oesterheld</h3>
-                       <p class="category"><i>Recreativo, Historieta</i></p>
-                     </div>
-                   </div>
-                   <div class="price"><b>$ 5400.00</b></div>
-                 </div>
-                 <div class="card">
-                   <div class="card-img">
-                     <img src="./img/libro9.png" alt="producto-3" />
-                   </div>
-                   <div class="info-card">
-                     <div class="text-product">
-                       <h3>Chainsaw Man 01 - Tatsuki Fujimoto</h3>
-                       <p class="category"><i>Historieta, Recreativo</i></p>
-                     </div>
-                   </div>
-                   <div class="price"><b>$ 2800.00</b></div>
-                 </div>
-                 <div class="card">
-                   <div class="card-img">
-                     <img src="./img/libro9a.png" alt="producto-4" />
-                   </div>
-                   <div class="info-card">
-                     <div class="text-product">
-                       <h3>Messirve - Verónica de Andrés, Florencia Andrés</h3>
-                       <p class="category"><i>Infantil, De referencia</i></p>
-                     </div>
-                   </div>
-                   <div class="price"><b>$ 5950.00</b></div>
-                 </div>
-               </div>
-             </section>
+        <section class="container-producto-mas-vendidos">
+          <header>
+            <h2>NOVEDADES MAS VENDIDAS</h2>
+            <br>
+          </header>
+          <div class="card-list-products">
+            <article>
+              <a target=""
+                href="products/1">
+                <figure>
+                  <img src="./img/libro10a.png" alt="producto-1" />
+                  <figcaption><b>Inteligencia emocional</b></figcaption>
+                  <p class="category"><i>Divulgativo</i></p>
+                  <div class="price"><b>$15,000.00</b></div>
+                </figure>
+              </a>
+            </article>     
+            <article>
+              <a target=""
+                href="products/3">
+                <figure>
+                  <img src="./img/libro30a.png" alt="producto-1" />
+                  <figcaption><b>El secreto de la paz personal</b></figcaption>
+                  <p class="category"><i>Texto</i></p>
+                  <div class="price"><b>$35,000.00</b></div>
+                </figure>
+              </a>
+            </article> 
+            <article>
+              <a target=""
+                href="products/5">
+                <figure>
+                  <img src="./img/libro50a.png" alt="producto-1" />
+                  <figcaption><b>Padre rico, padre pobre</b></figcaption>
+                  <p class="category"><i>Literatura</i></p>
+                  <div class="price"><b>$32,000.00</b></div>
+                </figure>
+              </a>
+            </article>  
+            <article>
+              <a target=""
+                href="products/7">
+                <figure>
+                  <img src="./img/libro70a.png" alt="producto-1" />
+                  <figcaption><b>El metodo rico</b></figcaption>
+                  <p class="category"><i>Practico</i></p>
+                  <div class="price"><b>$54,000.00</b></div>
+                </figure>
+              </a>
+            </article>        
+          </div>
+          <!--<div class="card-list-products">
+            <div class="card">
+              <div class="card-img">
+                <img src="./img/libro3.png" alt="producto-1" />
+              </div>
+              <div class="info-card">
+                <div class="text-product">
+                  <h3>El fin de la Inflacion</h3>
+                  <h3>Javier Milei</h3>
+                  <p class="category"><i>Economia, De referencia</i></p>
+                </div>
+              </div>
+              <div class="price"><h2><b>$6,450.00</b></h2></div>
+              <br>
+            </div>
+            <div class="card">
+              <div class="card-img">
+                <img src="./img/libro8.png" alt="producto-2" />
+              </div>
+              <div class="info-card">
+                <div class="text-product">
+                  <h3>El Eternauta</h3>
+                  <h3>Hector G. Oesterheld</h3>
+                  <p class="category"><i>Recreativo, Historieta</i></p>
+                </div>
+              </div>
+              <div class="price"><h2><b>$5,400.00</b></h2></div>
+            </div>
+            <div class="card">
+              <div class="card-img">
+                <img src="./img/libro9.png" alt="producto-3" />
+              </div>
+              <div class="info-card">
+                <div class="text-product">
+                  <h3>Chainsaw Man 01 - Tatsuki Fujimoto</h3>
+                  <p class="category"><i>Historieta, Recreativo</i></p>
+                </div>
+              </div>
+              <div class="price"><b>$2,800.00</b></div>
+            </div>
+            <div class="card">
+              <div class="card-img">
+                <img src="./img/libro9a.png" alt="producto-4" />
+              </div>
+              <div class="info-card">
+                <div class="text-product">
+                  <h3>Messirve - Verónica de Andrés, Florencia Andrés</h3>
+                  <p class="category"><i>Infantil, De referencia</i></p>
+                </div>
+              </div>
+              <div class="price"><b>$5,950.00</b></div>
+            </div>
+          </div>-->
+        </section>
 
-          <section class="container-producto-oferta">
-               <h2>Productos en oferta</h2>
-               <div class="card-list-products">
-                 <div class="card">
-                   <div class="card-img">
-                     <img src="./img/libro3a.png" alt="producto-1" />
-                   </div>
-                   <div class="info-card">
-                     <div class="text-product">
-                       <h3>Enferme para sanar - Marina Borensztein</h3>
-                       <p class="category"><i>Recreativo, De referencia</i></p>
-                     </div>
-                   </div>
-                   <div class="price"><b>$ 3500.00</b></div>
-                 </div>
-                 <div class="card">
-                   <div class="card-img">
-                     <img src="./img/libro4.png" alt="producto-2" />
-                   </div>
-                   <div class="info-card">
-                     <div class="text-product">
-                       <h3>Nadie puede hacerte infeliz - Claudio Maria Dominguez</h3>
-                       <p class="category"><i>Recreativo</i></p>
-                     </div>
-                   </div>
-                   <div class="price"><b>$ 2555.00</b></div>
-                 </div>
-                 <div class="card">
-                   <div class="card-img">
-                     <img src="./img/libro5.png" alt="producto-3" />
-                   </div>
-                   <div class="info-card">
-                     <div class="text-product">
-                       <h3>Las mil y una novelas - Cecilia Absatz</h3>
-                       <p class="category"><i>Literatura, Recreativo</i></p>
-                     </div>
-                   </div>
-                   <div class="price"><b>$ 1005.00</b></div>
-                 </div>
-                 <div class="card">
-                   <div class="card-img">
-                     <img src="./img/libro6.png" alt="producto-4" />
-                   </div>
-                   <div class="info-card">
-                     <div class="text-product">
-                       <h3>El Poder del metabolismo - Frank Suarez</h3>
-                       <p class="category"><i>Recreativo, De referencia</i></p>
-                     </div>
-                   </div>
-                   <div class="price"><b>$ 2050.00</b></div>
-                 </div>
-               </div>
-             </section>
+        <section class="container-producto-oferta">
+          <header>
+            <br>
+            <br>
+            <h2>PRODUCTOS EN OFERTA</h2>
+            <br>
+          </header>
+          <div class="card-list-products">
+            <article>
+              <a target=""
+                href="products/2">
+                <figure>
+                  <img src="./img/libro20a.png" alt="producto-1" />
+                  <figcaption><b>Sabiduría Financiera</b></figcaption>
+                  <p class="category"><i>Literatura</i></p>
+                  <div class="price"><b>$25,000.00</b></div>
+                </figure>
+              </a>
+            </article>  
+            <article>
+              <a target=""
+                href="products/4">
+                <figure>
+                  <img src="./img/libro40a.png" alt="producto-1" />
+                  <figcaption><b>Emprender tu propio negocio</b></figcaption>
+                  <p class="category"><i>Texto</i></p>
+                  <div class="price"><b>$18,000.00</b></div>
+                </figure>
+              </a>
+            </article> 
+            <article>
+              <a target=""
+                href="products/6">
+                <figure>
+                  <img src="./img/libro60a.png" alt="producto-1" />
+                  <figcaption><b>Controlar la ansiedad</b></figcaption>
+                  <p class="category"><i>Divulgativo</i></p>
+                  <div class="price"><b>$18,000.00</b></div>
+                </figure>
+              </a>
+            </article> 
+            <article>
+              <a target=""
+                href="products/10">
+                <figure>
+                  <img src="./img/libro100a.png" alt="producto-1" />
+                  <figcaption><b>El poder de creer en ti</b></figcaption>
+                  <p class="category"><i>Texto</i></p>
+                  <div class="price"><b>$25,000.00</b></div>
+                </figure>
+              </a>
+            </article> 
+            <!--<div class="card">
+              <div class="card-img">
+                <img src="./img/libro3a.png" alt="producto-1" />
+              </div>
+              <div class="info-card">
+                <div class="text-product">
+                  <h3>Enferme para sanar - Marina Borensztein</h3>
+                  <p class="category"><i>Recreativo, De referencia</i></p>
+                </div>
+              </div>
+              <div class="price"><b>$ 3500.00</b></div>
+            </div>
+            <div class="card">
+              <div class="card-img">
+                <img src="./img/libro4.png" alt="producto-2" />
+              </div>
+              <div class="info-card">
+                <div class="text-product">
+                  <h3>Nadie puede hacerte infeliz - Claudio Maria Dominguez</h3>
+                  <p class="category"><i>Recreativo</i></p>
+                </div>
+              </div>
+              <div class="price"><b>$2,555.00</b></div>
+            </div>
+            <div class="card">
+              <div class="card-img">
+                <img src="./img/libro5.png" alt="producto-3" />
+              </div>
+              <div class="info-card">
+                <div class="text-product">
+                  <h3>Las mil y una novelas - Cecilia Absatz</h3>
+                  <p class="category"><i>Literatura, Recreativo</i></p>
+                </div>
+              </div>
+              <div class="price"><b>$1,005.00</b></div>
+            </div>
+            <div class="card">
+              <div class="card-img">
+                <img src="./img/libro6.png" alt="producto-4" />
+              </div>
+              <div class="info-card">
+                <div class="text-product">
+                  <h3>El Poder del metabolismo - Frank Suarez</h3>
+                  <p class="category"><i>Recreativo, De referencia</i></p>
+                </div>
+              </div>
+              <div class="price"><b>$2,050.00</b></div>
+            </div>-->
+          </div>
+        </section>
+      </main>
 
-     </main>
+      <!-- FOOTER -->
+      <%- include('./partials/footer.ejs') %>
+  </body>
 
-     <!-- FOOTER -->
-     <%- include('./partials/footer.ejs') %>
-</body>
-
-</html>
+  </html>
