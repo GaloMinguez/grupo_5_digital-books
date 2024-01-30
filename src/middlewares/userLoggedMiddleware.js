@@ -7,16 +7,14 @@ function userLoggedMiddleware(req, res, next) {
 
 	let emailInCookie = req.cookies.userEmail;
 
-	/*let userFromCookie = db.Usuario.findOne({
+/*	let userFromCookie = db.Usuario.findOne({
 		where: {
 			email : emailInCookie
 		}
 	});*/
 
-
 	let userFromCookie = User.findByField('email', emailInCookie);
 
-	console.log(userFromCookie);
 	if (userFromCookie) {
 		req.session.userLogged = userFromCookie;
 	}

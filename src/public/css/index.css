@@ -367,7 +367,7 @@ body {
 #logo {
   display: flex;
   width: 25%;
-  justify-content: right;
+  justify-content: center;
 }
 .logo {
   display: flex;
@@ -431,7 +431,7 @@ body {
   place-items: center;
 }
 .footer{
-    width: 95%;
+    width: 100%;
     display: flex;
     padding: 5px;
 }

@@ -1,6 +1,6 @@
 <!-- HEAD -->
-<%- include('../partials/head.ejs', {title: 'Formulario de Registro' }) %>
-  <link rel="stylesheet" href="../css/login-register.css" />
+<%- include('../partials/head.ejs', {title: 'Formulario de Edicion' }) %>
+  <link rel="stylesheet" href="../css/userEdit.css" />
 
   <body>
     <!-- HEADER -->
@@ -29,20 +29,20 @@
                 </div>
 
                 <div class="input-contenedor">
-                    <i class="fa-solid fa-icons"></i>
-                    <label for="category_id">Categoria</label>
-                    <p>
-                        <select name="category_id" id="" required>
-                            <% categorias.forEach( categoria => { %>
-                            <option value="<%= categoria.id %>" <% if (usuario.category_id == categoria.id) { %><%= 'selected' %><% }; %>><%= categoria.name %></option>
-                            <% }); %>
-                        </select>
-                    </p>
+                  <i class="fa-solid fa-icons"></i>
+                  <label for="category_id"></label>
+                      <p>
+                          <select class="list-categoria" name="category_id" id="category_id" required>
+                              <% categorias.forEach( categoria => { %>
+                              <option value="<%= categoria.id %>" <% if (usuario.category_id == categoria.id) { %><%= 'selected' %><% }; %>><%= categoria.name %></option>
+                              <% }); %>
+                          </select>
+                      </p>
                 </div>
 
                 <div class="input-contenedor">
                   <div>
-                    <label>Imagen de perfil</label>
+                    <img class="imgPerfil" src="/img/users/<%= usuario.avatar %>">
                     <input type="file" name="avatar"
                       class="<%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
                     <% if (locals.errors && errors.avatar) { %>

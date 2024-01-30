@@ -36,22 +36,24 @@ const controller = {
 						msg: 'Este email ya está registrado'
 					}
 				},
+
 				oldData: req.body
 			});
 		}
 		
-			try {
-				await db.Usuario.create({
-					full_name: req.body.full_name,
-					email: req.body.email,
-					password: bcryptjs.hashSync(req.body.password, 10),
-					category_id: 2,
-					avatar: req.file.filename,
-				});    
-				res.redirect("/");            
-			} catch (error) {
-				console.log(error);
-			}
+		try {
+			const hash = bcryptjs.hashSync(req.body.password, 10);
+			await db.Usuario.create({
+				fullName: req.body.fullName,
+				email: req.body.email,
+				password: hash,
+				category_id: 2,
+				avatar: req.file.filename,
+			});    
+			res.redirect("/");            
+		} catch (error) {
+			console.log(error);
+		}
 
 
 			/*...req.body,
@@ -147,20 +149,18 @@ const controller = {
     userUpDate: async (req, res) => {
         try {           
             db.Usuario.update({
-				full_name: req.body.full_name,
+				fullName: req.body.fullName,
 				email: req.body.email,
-				password: bcryptjs.hashSync(req.body.password, 10),
-
-				category_id: 2,
-
-				avatar: req.file.filename,
-
-            }, {
+				//password: bcryptjs.hashSync(req.body.password, 10),
+				category_id: req.body.category_id,
+				//avatar: req.file.filename,
+            }, 
+			{
                 where: {
                     id: req.params.id
                 }
             });
-            res.redirect("/userList")
+            res.redirect("/users/userlist")
         } catch (error) {
             console.log(error);
         }

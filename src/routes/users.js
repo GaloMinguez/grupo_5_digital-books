@@ -33,9 +33,9 @@ router.get('/logout', usersController.logout);
 router.get('/userList', guestDetailMiddleware, usersController.userListAbm);
 
 // mostrar form de edicion del usuario
-router.get('/userEdit/:id', guestDetailMiddleware, usersController.userEdit);
+//router.get('/userEdit/:id', guestDetailMiddleware, usersController.userEdit);
 
 // Proceso de actualizacion del usuario
-router.put('/userEdit/:id', uploadFile.single('avatar'), usersController.userUpDate);
+//router.put('/userEdit/:id', uploadFile.single('avatar'), usersController.userUpDate);
 
 module.exports = router;

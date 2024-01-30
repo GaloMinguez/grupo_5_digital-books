@@ -16,12 +16,12 @@
                 <div class="input-contenedor">
                   <i class="fa-solid fa-user" icon></i>
 
-                  <input type="text" name="full_name" placeholder="Nombre Completo"
-                    class="form-control <%= locals.errors && errors.full_name ? 'is-invalid' : null %>"
-                    value="<%= locals.oldData ? oldData.full_name : null %>">
-                  <% if (locals.errors && errors.full_name) { %>
+                  <input type="text" name="fullName" placeholder="Nombre Completo"
+                    class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
+                    value="<%= locals.oldData ? oldData.fullName : null %>">
+                  <% if (locals.errors && errors.fullName) { %>
                     <div class="text-danger">
-                      <%= errors.full_name.msg %>
+                      <%= errors.fullName.msg %>
                     </div>
                     <% } %>
                 </div>
@@ -51,8 +51,13 @@
 
                 <div class="input-contenedor">
                   <i class="fa-solid fa-key"></i>
-
-                  <input type="password" placeholder="Repite contraseña" />
+                  <input type="password" name="cfpassword" placeholder="Repite contraseña"
+                    class="form-control <%= locals.errors && errors.cfpassword ? 'is-invalid' : null %>">
+                  <% if (locals.errors && errors.cfpassword) { %>
+                    <div class="text-danger">
+                      <%= errors.cfpassword.msg %>
+                    </div>
+                    <% } %>
                 </div>
 
                 <div class="input-contenedor">

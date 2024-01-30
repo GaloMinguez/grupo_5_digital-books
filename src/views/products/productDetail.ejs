@@ -241,12 +241,15 @@
               </div>
               <div class="info-card">
                 <div class="text-product">
-                  <h3 class="titulo-libro-rela">
-                    <%= libros[i].title %> - <%= libros[i].author %>
-                  </h3>
-                  <p class="category"><i>
-                      <%= libros[i].genre %>
-                    </i></p>
+                  <h4 class="titulo-libro-rela">
+                    <div>
+                      <%= libros[i].title %>
+                    </div>
+                    <%= libros[i].author %>
+                  </h4>
+                  <h5 class="titulo-libro-rela"><i>
+                      <%= libros[i].genero.name %>
+                    </i></h5>
                 </div>
               </div>
               <div>

@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+
+const uploadFile = require('../middlewares/multerMiddleware');
 const guestCartMiddleware = require('../middlewares/guestCartMiddleware');
 const guestDetailMiddleware = require('../middlewares/guestDetailMiddleware');
 
@@ -42,6 +44,11 @@ router.get('/productDelete/:id', guestDetailMiddleware, productController.produc
 // Proceso de eliminacion del producto
 router.post('/productDelete/:id', guestDetailMiddleware, productController.productDestroy); 
 
+// mostrar form de edicion del usuario
 router.get('/userEdit/:id', guestDetailMiddleware, usersController.userEdit);
+
+// Proceso de actualizacion del usuario
+router.put('/userEdit/:id', uploadFile.single('avatar'), usersController.userUpDate);
+
 
 module.exports = router;
