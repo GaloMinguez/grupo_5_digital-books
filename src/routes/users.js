@@ -9,7 +9,7 @@ const uploadFile = require('../middlewares/multerMiddleware');
 const validations = require('../middlewares/validateRegisterMiddleware');
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-
+const guestDetailMiddleware = require('../middlewares/guestDetailMiddleware');
 
 // Formulario de registro Cliente
 router.get('/register', guestMiddleware, usersController.register);
@@ -28,5 +28,14 @@ router.get('/profile', authMiddleware, usersController.profile);
 
 // Logout
 router.get('/logout', usersController.logout);
+
+// Listar usuarios
+router.get('/userList', guestDetailMiddleware, usersController.userListAbm);
+
+// mostrar form de edicion del usuario
+//router.get('/userEdit/:id', guestDetailMiddleware, usersController.userEdit);
+
+// Proceso de actualizacion del usuario
+//router.put('/userEdit/:id', uploadFile.single('avatar'), usersController.userUpDate);
 
 module.exports = router;

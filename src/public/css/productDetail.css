@@ -39,7 +39,6 @@
 	width: 100%;
   }
   
-  
   .header-top {
 	background: url('/img/banner4.png') center/cover no-repeat;
 	width: 100%;
@@ -49,8 +48,6 @@
 	align-items: center;
 	font-size: 18px;
   }
-  
-  
   
   .busqueda {
 	width: 25%;
@@ -64,7 +61,7 @@
   #logo {
 	display: flex;
 	width: 25%;
-	justify-content: right;
+	justify-content: center;
   }
   .logo {
 	display: flex;
@@ -235,11 +232,50 @@
 	justify-content: space-between;
   }
   
+.container-price .precio-item{
+    margin-top: 5px;
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.container-price .precio-desc-item{
+    font-size: 30px;
+    color: green;
+    text-decoration: line-through;
+    text-align: left;
+}
+
   .container-price span {
 	font-size: 24px;
 	font-weight: 300;
   }
   
+  .card-list-products .titulo-libro-rela {
+    display: block;
+    text-align: left;
+    font-size: 24px;
+	padding: 10px;
+  }
+
+  .card-list-products  .precio-item{
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+	padding: 10px;
+}
+
+.card-list-products .precio-desc-item{
+    font-size: 22px;
+    color: green;
+	display: block;
+    text-decoration: line-through;
+    text-align: center;
+}
+
   .container-details-product {
 	padding: 30px 0;
   }
@@ -445,7 +481,8 @@
   
   .card-img {
 	background: transparent;
-	margin-bottom: 15px;
+	margin: 15px;
+	width: 70%;
   }
   
   .card-img img {
@@ -483,7 +520,67 @@
   .text-product p:hover {
 	color:  #fb7201;
   }
+
+  .container-producto-oferta {
+	width: 80%; /* Ajusta el ancho según tus necesidades */
+	margin: auto; /* Centra el contenedor */
+	text-align: center;
+  }
+
+  .card-list-products {
+	display: flex;
+	justify-content: space-between; /* Espaciado uniforme entre los elementos */
+  }
+
+  .card {
+	width: 23%; /* Ajusta el ancho de cada tarjeta según tus necesidades */
+	border: 1px solid #ddd; /* Borde para separar visualmente las tarjetas */
+	margin-bottom: 20px; /* Espaciado entre las tarjetas hacia abajo */
+	margin-right: 20px; /* Espaciado entre las tarjetas hacia la derecha */
+	background-color: #fff;
+  }
   
+  .card-img img {
+	width: 100%; /* Ajusta el ancho de la imagen para que ocupe todo el contenedor */
+  }
+  
+  .info-card {
+	padding: 10px;
+  }
+  
+  .price {
+	text-align: center;
+	margin-top: 10px;
+  }
+  
+  .linea{
+    border-top: 5px solid #fcad02;
+    margin-bottom: 40px;
+    }
+	article {
+		background: #fff;
+		border-radius: 10px;
+		border: 1.5px solid #fcb038;
+		margin: 0 0 20px 0;
+		text-align: center;
+		max-width: 100%;
+		filter: opacity(70%);
+		/*Evitamos que se corte al cambiar de columna*/
+		break-inside: avoid;
+		page-break-inside: avoid;
+	  }
+	  article img {
+		width: 100%;
+	  }
+	  article:hover {
+		transition: .5s ease;
+		filter: opacity(100%);
+	  }
+	  figure {
+		padding: 1rem;
+		box-sizing: border-box;
+	  }
+	  
   /* MANEJANDO IMAGENES EN MINIATURA */
   /* Contenedor general del visor */
   .contenedorvisor {

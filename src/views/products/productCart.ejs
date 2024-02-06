@@ -15,7 +15,11 @@
                                 <%= libro.title %>
                             </span>
                             <img src="img/<%= libro.imgTop %>" alt="<%= libro.alt %>" class="img-item">
-                            <span class="precio-item">$<%= libro.price %></span>
+                            <span class="precio-item"><%= new Intl.NumberFormat('en-US', {
+                                style: 'currency',
+                                minimumFractionDigits: 2,
+                                currency: "USD"
+                              }).format(libro.price) %></span>
                             <button class="boton-item">Agregar al Carrito</button>
                         </div>
                         <% }) %>
@@ -36,7 +40,7 @@
                                     <input type="text" value="1" class="carrito-item-cantidad" disabled>
                                     <i class="fa-solid fa-plus sumar-cantidad"></i>
                                 </div>
-                                <span class="carrito-item-precio">$25.000,00</span>
+                                <span class="carrito-item-precio">$25,000.00</span>
                             </div>
                             <span class="btn-eliminar">
                                 <i class="fa-solid fa-trash"></i>
@@ -47,13 +51,14 @@
                         <div class="fila">
                             <strong>Tu Total</strong>
                             <span class="carrito-precio-total">
-                                $25.000,00
+                                $25,000.00
                             </span>
                         </div>
                         <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
                     </div>
                 </div>
             </section>
+
             <script>
                 //Variable que mantiene el estado visible del carrito
                 var carritoVisible = false;
@@ -261,7 +266,12 @@
                     }
                     total = Math.round(total * 100) / 100;
 
-                    document.getElementsByClassName('carrito-precio-total')[0].innerText = '$' + total.toLocaleString("es") + ",00";
+                    document.getElementsByClassName('carrito-precio-total')[0].innerText = new Intl.NumberFormat('en-US', {
+                                style: 'currency',
+                                minimumFractionDigits: 2,
+                                currency: "USD"
+                              }).format(total*1000) 
+                    //'$' + total.toLocaleString("es") + ",00";
 
                 }
             </script>

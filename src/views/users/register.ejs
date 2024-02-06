@@ -51,8 +51,13 @@
 
                 <div class="input-contenedor">
                   <i class="fa-solid fa-key"></i>
-
-                  <input type="password" placeholder="Repite contraseña" />
+                  <input type="password" name="cfpassword" placeholder="Repite contraseña"
+                    class="form-control <%= locals.errors && errors.cfpassword ? 'is-invalid' : null %>">
+                  <% if (locals.errors && errors.cfpassword) { %>
+                    <div class="text-danger">
+                      <%= errors.cfpassword.msg %>
+                    </div>
+                    <% } %>
                 </div>
 
                 <div class="input-contenedor">

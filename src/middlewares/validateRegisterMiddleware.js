@@ -6,9 +6,14 @@ module.exports = [
 	body('email')
 		.notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
-	body('password').notEmpty().withMessage('Tienes que escribir una contraseña'),
-	/*,
-	body('country').notEmpty().withMessage('Tienes que elegir un país'),*/
+	body('password').notEmpty().withMessage('Tienes que escribir una contraseña')
+		.isLength({ min:6 }).withMessage('Escribir una contraseña de 6 caracteres como minimo'),
+	body ('cfpassword').trim().custom((value, {req}) => {
+		if (value !== req.body.password) {
+			throw new Error('password not eqaul to confirm password')
+		}
+		return true; 
+		}),
 	body('avatar').custom((value, { req }) => {
 		let file = req.file;
 		let acceptedExtensions = ['.jpg', '.png', '.gif'];

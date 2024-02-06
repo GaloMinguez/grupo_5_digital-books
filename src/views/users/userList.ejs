@@ -1,0 +1,29 @@
+<!-- HEAD -->
+<%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="../css/userlist.css" />
+
+    <body>
+        <!-- HEADER -->
+        <%- include('../partials/header.ejs') %>
+
+            <section class="contenedor">
+                <!-- Contenedor de elementos -->
+                <div class="contenedor-items">
+                    <% usuarios.forEach(usuario => { %>
+                        <div class="item">
+                            <span class="titulo-itemuser">
+                                <%= usuario.fullName %>
+                            </span>
+                            <img src="/img/users/<%= usuario.avatar %>" alt="sin imagen" class="img-itemusuario">
+
+                            <a class="boton-item" href="/userEdit/<%= usuario.id %>" target="">Editar</span></a>
+                            <a class="boton-item" href="/userDelete/<%= usuario.id %>" target="">Eliminar</span></a>
+                        </div>
+                        <% }) %>
+                </div>
+            </section>
+    </body>
+    <!-- FOOTER -->
+    <%- include('../partials/footer.ejs') %>
+
+        </html>
