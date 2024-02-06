@@ -153,7 +153,7 @@ const controller = {
 				email: req.body.email,
 				//password: bcryptjs.hashSync(req.body.password, 10),
 				category_id: req.body.category_id,
-				//avatar: req.file.filename,
+				avatar: req.file.filename,
             }, 
 			{
                 where: {
