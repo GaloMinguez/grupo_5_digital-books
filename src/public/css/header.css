@@ -3,14 +3,14 @@
 }
 
 .logo img {
-    width: 130px;
+    width: 10px;
     cursor: pointer;
   }
   
 .search-form {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items:flex-start;
     padding: 20px;
   }
 
@@ -33,4 +33,29 @@
     border-left: solid 1px var(--light-gray);
     color: var(--gray);
     cursor: pointer;
+  }
+
+  .navbar {
+    overflow: hidden;
+    background-color: #fcb038;
+    /*position: fixed;*/
+    top: 0.5;
+    width: 100%;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    margin-left: 112px;
+    margin-right: 112px;
+  }
+  
+  .navbar a:hover {
+    background: beige;
+    color: black;
   }

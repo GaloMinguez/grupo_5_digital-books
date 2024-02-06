@@ -64,7 +64,7 @@
   #logo {
 	display: flex;
 	width: 25%;
-	justify-content: right;
+	justify-content: center;
   }
   .logo {
 	display: flex;
@@ -235,11 +235,50 @@
 	justify-content: space-between;
   }
   
+.container-price .precio-item{
+    margin-top: 5px;
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.container-price .precio-desc-item{
+    font-size: 30px;
+    color: green;
+    text-decoration: line-through;
+    text-align: left;
+}
+
   .container-price span {
 	font-size: 24px;
 	font-weight: 300;
   }
   
+  .card-list-products .titulo-libro-rela {
+    display: block;
+    text-align: left;
+    font-size: 24px;
+	padding: 10px;
+  }
+
+  .card-list-products  .precio-item{
+    margin-top: 5px;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+	padding: 10px;
+}
+
+.card-list-products .precio-desc-item{
+    font-size: 24px;
+    color: green;
+	display: block;
+    text-decoration: line-through;
+    text-align: center;
+}
+
   .container-details-product {
 	padding: 30px 0;
   }
@@ -445,7 +484,8 @@
   
   .card-img {
 	background: transparent;
-	margin-bottom: 15px;
+	margin: 15px;
+	width: 70%;
   }
   
   .card-img img {

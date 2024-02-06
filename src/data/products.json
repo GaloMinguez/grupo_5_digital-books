@@ -12,7 +12,8 @@
   "alt": "producto-1",
   "price": 15000,
   "discount": "12",
-  "category": "visited"
+  "category": "visited",
+  "stock": 2
  },
  {
   "id": 2,
@@ -27,7 +28,8 @@
   "alt": "producto-2",
   "price": 25000,
   "discount": 10,
-  "category": "in-sale"
+  "category": "in-sale",
+  "stock": 2
  },
  {
   "id": 3,
@@ -42,7 +44,8 @@
   "alt": "producto-3",
   "price": 35000,
   "discount": 0,
-  "category": "visited"
+  "category": "visited",
+  "stock": 2
  },
  {
   "id": 4,
@@ -57,7 +60,8 @@
   "alt": "producto-4",
   "price": 18000,
   "discount": 12,
-  "category": "in-sale"
+  "category": "in-sale",
+  "stock": 2
  },
  {
   "id": 5,
@@ -72,7 +76,8 @@
   "alt": "producto-5",
   "price": 32000,
   "discount": 0,
-  "category": "visited"
+  "category": "visited",
+  "stock": 2
  },
  {
   "id": 6,
@@ -87,7 +92,8 @@
   "alt": "producto-6",
   "price": 18000,
   "discount": 15,
-  "category": "in-sale"
+  "category": "in-sale",
+  "stock": 2
  },
  {
   "id": 7,
@@ -102,7 +108,8 @@
   "alt": "producto-7",
   "price": 54000,
   "discount": 0,
-  "category": "visited"
+  "category": "visited",
+  "stock": 2
  },
  {
   "id": 8,
@@ -117,7 +124,8 @@
   "alt": "producto-8",
   "price": 32000,
   "discount": 8,
-  "category": "visited"
+  "category": "visited",
+  "stock": 2
  },
  {
   "id": 9,
@@ -132,7 +140,8 @@
   "alt": "producto-9",
   "price": 42000,
   "discount": 5,
-  "category": "visited"
+  "category": "visited",
+  "stock": 2
  },
  {
   "id": 10,
@@ -147,7 +156,8 @@
   "alt": "producto-10",
   "price": 25000,
   "discount": 0,
-  "category": "in-sale"
+  "category": "in-sale",
+  "stock": 2
  },
  {
   "id": 11,
@@ -162,7 +172,8 @@
   "alt": "producto-110",
   "price": 25000,
   "discount": 15,
-  "category": "in-sale"
+  "category": "in-sale",
+  "stock": 2
  },
  {
   "id": 12,
@@ -177,7 +188,8 @@
   "alt": "producto-3",
   "price": 6450,
   "discount": 0,
-  "category": "in-sale"
+  "category": "in-sale",
+  "stock": 2
  },
  {
   "id": 13,
@@ -192,7 +204,8 @@
   "alt": "producto-8",
   "price": 5400,
   "discount": 14,
-  "category": "visited"
+  "category": "visited",
+  "stock": 2
  },
  {
   "id": 14,
@@ -207,7 +220,8 @@
   "alt": "producto-9",
   "price": 2800,
   "discount": 15,
-  "category": "visited"
+  "category": "visited",
+  "stock": 2
  },
  {
   "id": 15,
@@ -222,7 +236,8 @@
   "alt": "producto-9a",
   "price": 5950,
   "discount": 15,
-  "category": "in-sale"
+  "category": "in-sale",
+  "stock": 2
  },
  {
   "id": 16,
@@ -237,7 +252,8 @@
   "alt": "producto-3a",
   "price": 5950,
   "discount": 15,
-  "category": "in-sale"
+  "category": "in-sale",
+  "stock": 2
  },
  {
   "id": 17,
@@ -252,7 +268,8 @@
   "alt": "producto-4",
   "price": 2555,
   "discount": 15,
-  "category": "visited"
+  "category": "visited",
+  "stock": 2
  },
  {
   "id": 18,
@@ -267,6 +284,20 @@
   "alt": "producto-6",
   "price": 2050,
   "discount": 15,
-  "category": "visited"
+  "category": "visited",
+  "stock": 2
+ },
+ {
+  "id": 19,
+  "imgTop": "1704474224885-nosoyviejo.jpg",
+  "imgBack": "1704474224889-lorvale.jpg",
+  "title": "Titulo de prueba",
+  "author": "yo",
+  "genre": "Consulta y referencia",
+  "description": "descripcion de prueba",
+  "descriptionD": "descripcion detallada del libro de prueba descripcion detallada del libro de prueba descripcion detallada del libro de prueba descripcion detallada del libro de prueba",
+  "price": "35500",
+  "discount": "5",
+  "stock": 2
  }
 ]

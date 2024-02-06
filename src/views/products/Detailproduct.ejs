@@ -73,45 +73,13 @@
             </div>
           </div>
 
-          <a href="/productEdit/<%= getBook.id %>" class="action-button edit">EDITAR PRODUCTO</a>
-          <form action="/productDelete/<%= getBook.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-              <button type="submit" class="action-button delete">ELIMINAR</button>
-          </form>
+          <a href="/productEdit/<%= getBook.id %>" class="action-button edit">EDITAR</a>
+          <a href="/productDelete/<%= getBook.id %>" class="action-button delete">ELIMINAR</a>
         </div>
       </main>
 
       <!-- FOOTER -->
       <%- include('../partials/footer.ejs') %>
-
-      <script>
-        // Toggle
-        // Constantes Toggle Titles
-        const toggleDescription = document.querySelector(".title-description");
-        const toggleAdditionalInformation = document.querySelector(
-          ".title-additional-information"
-        );
-        const toggleReviews = document.querySelector(".title-reviews");
-
-        // Constantes Contenido Texto
-        const contentDescription = document.querySelector(".text-description");
-        const contentAdditionalInformation = document.querySelector(
-          ".text-additional-information"
-        );
-        const contentReviews = document.querySelector(".text-reviews");
-
-        // Funciones Toggle
-        toggleDescription.addEventListener("click", () => {
-          contentDescription.classList.toggle("hidden");
-        });
-
-        toggleAdditionalInformation.addEventListener("click", () => {
-          contentAdditionalInformation.classList.toggle("hidden");
-        });
-
-        toggleReviews.addEventListener("click", () => {
-          contentReviews.classList.toggle("hidden");
-        });
-      </script>
   </body>
 
   </html>

@@ -154,7 +154,6 @@ body {
 }
 
 /*  HASTA AQUI LOS LINEAMIENTOS PROPUESTOS  */
-
 /* SLIDER DE PRODUCTOS */
 #carrusel-contenido {
   margin: 0 auto;
@@ -354,8 +353,6 @@ body {
   font-size: 18px;
 }
 
-
-
 .busqueda {
   width: 25%;
   display: flex;
@@ -368,7 +365,7 @@ body {
 #logo {
   display: flex;
   width: 25%;
-  justify-content: right;
+  justify-content: center;
 }
 .logo {
   display: flex;
@@ -432,7 +429,7 @@ body {
   place-items: center;
 }
 .footer{
-    width: 95%;
+    width: 100%;
     display: flex;
     padding: 5px;
 }

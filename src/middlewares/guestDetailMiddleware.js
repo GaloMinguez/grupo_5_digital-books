@@ -1,6 +1,6 @@
 function guestDetailMiddleware(req, res, next) {
 	if (req.session.userLogged) {
-        if (req.session.userLogged.category != 'Admin'){
+        if (req.session.userLogged.category_id != '1'){  //si no es Administrador no accede
             return res.redirect('/');
         }
 	} 
