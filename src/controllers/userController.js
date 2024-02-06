@@ -164,7 +164,28 @@ const controller = {
         } catch (error) {
             console.log(error);
         }
-    }
+    },
+
+	userDelete: (req, res) => {
+        db.Usuario.findByPk(req.params.id)
+            .then(user => {
+                res.render('../views/users/userDelete', { user:user });
+            });
+    },
+
+    userDestroy: async (req, res) => {
+        try {
+            db.Usuario.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+    
+            res.redirect("/")          
+        } catch (error) {
+            console.log(error);
+        }
+    }  
 
 }
 

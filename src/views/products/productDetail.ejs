@@ -229,49 +229,47 @@
           </div>
         </div>
       </main>
-      <section class="container-related-products">
-        <h2 style="font-size: 30px;">Productos Relacionados</h2>
+
+      <section class="container-producto-oferta">
+        <header>
+          <br>
+          <br>
+          <h2>PRODUCTOS RELACIONADOS</h2>
+          <br>
+          <div class="linea"></div>
+        </header>
         <div class="card-list-products">
-          <% for( let i=1; i <=4; i++ ) { %>
-            <div class="card">
-              <div class="card-img">
-                <a href="<%= libros[i].id %>" target="">
-                  <img src="../img/<%= libros[i].imgTop %>" alt="<%= libros[i].alt %>" />
-                </a>
-              </div>
-              <div class="info-card">
-                <div class="text-product">
-                  <h4 class="titulo-libro-rela">
-                    <div>
-                      <%= libros[i].title %>
-                    </div>
-                    <%= libros[i].author %>
-                  </h4>
-                  <h5 class="titulo-libro-rela"><i>
-                      <%= libros[i].genero.name %>
-                    </i></h5>
+          <% for( let i=1; i <=5; i++ ) { %>
+          <article>
+            <a href="<%= libros[i].id %>" target="">
+              <img src="../img/<%= libros[i].imgTop %>" alt="<%= libros[i].alt %>" />
+            </a>
+              <figure>
+                <figcaption><b><%= libros[i].title %></b></figcaption>
+                <p class="category"><i><%= libros[i].genero.name %></i></p>
+                <div class="price">
+                  <b>
+                  <% if (libros[i].discount>0) { %>
+                    <span class="precio-desc-item">
+                  <% } else { %>
+                    <span class="precio-item">
+                  <br>
+                  <% } %>
+                  <%= new Intl.NumberFormat('en-US', { style: 'currency' , minimumFractionDigits: 2,
+                        currency: "USD" }).format(libros[i].price) %>
+                    </span>
+                  </b>
+                  <span class="precio-item">
+                    <% if (libros[i].discount> 0) { %>
+                      <%= new Intl.NumberFormat('en-US', { style: 'currency' , minimumFractionDigits: 2, currency: "USD"
+                        }).format(libros[i].price - (libros[i].price * libros[i].discount / 100)) %> <%= libros[i].discount
+                          %>%Off
+                          <% } %>
+                  </span>
                 </div>
-              </div>
-              <div>
-                <% if (libros[i].discount>0) { %>
-                  <span class="precio-desc-item">
-                    <% } else { %>
-                      <span class="precio-item">
-                        <br>
-                        <% } %>
-                          <%= new Intl.NumberFormat('en-US', { style: 'currency' , minimumFractionDigits: 2,
-                            currency: "USD" }).format(libros[i].price) %>
-                      </span>
-              </div>
-              <span class="precio-item">
-                <% if (libros[i].discount> 0) { %>
-                  <%= new Intl.NumberFormat('en-US', { style: 'currency' , minimumFractionDigits: 2, currency: "USD"
-                    }).format(libros[i].price - (libros[i].price * libros[i].discount / 100)) %>-<%= libros[i].discount
-                      %>% Off
-                      <% } %>
-              </span>
-            </div>
-            <% } %>
+              </figure>
+          </article>
+          <% } %> 
         </div>
       </section>
 
