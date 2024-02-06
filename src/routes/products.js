@@ -50,5 +50,10 @@ router.get('/userEdit/:id', guestDetailMiddleware, usersController.userEdit);
 // Proceso de actualizacion del usuario
 router.put('/userEdit/:id', uploadFile.single('avatar'), usersController.userUpDate);
 
+// mostrar form de borrado del producto
+router.get('/userDelete/:id', guestDetailMiddleware, usersController.userDelete); 
+
+// Proceso de eliminacion del producto
+router.post('/userDelete/:id', guestDetailMiddleware, usersController.userDestroy); 
 
 module.exports = router;
