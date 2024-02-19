@@ -91,6 +91,13 @@
       <!-- FOOTER -->
       <%- include('../partials/footer.ejs') %>
 
+    <script type="text/javascript" src="validator.min.js"></script>
+    <script type="text/javascript">
+      const Validator = require('validator');
+      
+      const validEmail = Validator.isEmail('example@example.com');
+    </script>
+
   </body>
 
   </html>

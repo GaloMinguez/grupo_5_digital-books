@@ -69,6 +69,15 @@ const controller = {
 		return res.render('../views/users/login');
 	},
 	loginProcess: async (req, res) => {
+		const resultValidation = validationResult(req);
+
+		if (resultValidation.errors.length > 0) {
+			return res.render('../views/users/login', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
+		}
+
 		let userToLogin = await db.Usuario.findOne({
             where: {
 				email : req.body.email
@@ -78,6 +87,7 @@ const controller = {
 		if(userToLogin) {
 			let password_valid = await bcryptjs.compareSync(req.body.password, userToLogin.password);
 			if (password_valid) {
+
 				/*token = jwt.sign({ "id" : userToLogin.id,"email" : userToLogin.email,"full_name":userToLogin.full_name },process.env.SECRET);
 				res.status(200).json({ token : token });*/
 
@@ -103,7 +113,7 @@ const controller = {
 		return res.render('../views/users/login', {
 			errors: {
 				email: {
-					msg: 'No se encontro este email en la Base de Datos'
+					msg: 'No se encontro este usuario en la Base de Datos'
 				}
 			}
 		});
@@ -153,7 +163,7 @@ const controller = {
 				email: req.body.email,
 				//password: bcryptjs.hashSync(req.body.password, 10),
 				category_id: req.body.category_id,
-				avatar: req.file.filename,
+				avatar: req.file?.filename || req.body.avatar,
             }, 
 			{
                 where: {

@@ -48,7 +48,7 @@ router.post('/productDelete/:id', guestDetailMiddleware, productController.produ
 router.get('/userEdit/:id', guestDetailMiddleware, usersController.userEdit);
 
 // Proceso de actualizacion del usuario
-router.put('/userEdit/:id', uploadFile.single('avatar'), usersController.userUpDate);
+router.post('/userEdit/:id', uploadFile.single('avatar'),usersController.userUpDate);
 
 // mostrar form de borrado del producto
 router.get('/userDelete/:id', guestDetailMiddleware, usersController.userDelete); 

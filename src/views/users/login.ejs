@@ -18,18 +18,24 @@
 										<div class="input-contenedor">
 											<i class="fa-solid fa-envelope"></i>
 											<input type="email" name="email" placeholder="Correo electrónico"
-												class="form-control" />
-											<% if (locals.errors && errors.email) { %>
-												<div class="text-danger">
-													<%= errors.email.msg %>
-												</div>
-												<% } %>
+											class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+											value="<%= locals.oldData ? oldData.email : null %>">
+										  <% if (locals.errors && errors.email) { %>
+											<div class="text-danger">
+											  <%= errors.email.msg %>
+											</div>
+											<% } %>
 										</div>
 
 										<div class="input-contenedor">
 											<i class="fa-solid fa-lock"></i>
 											<input type="password" placeholder="Contraseña" name="password"
 												class="form-control" />
+											<% if (locals.errors && errors.password) { %>
+												<div class="text-danger">
+													<%= errors.password.msg %>
+												</div>
+											<% } %>
 											<label for="#"></label>
 											<div class="invalid-feedback">
 											</div>
