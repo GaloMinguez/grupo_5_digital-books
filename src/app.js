@@ -42,10 +42,12 @@ app.use(userLoggedMiddleware);
 //const mainRoutes = require('./routes/main'); // Rutas main
 const productsRoutes = require('./routes/products'); // Rutas /products
 const userRoutes = require('./routes/users'); // Rutas /users
+const genresRoutes = require('./routes/genres'); // Rutas /genres
 
 //app.use('/', mainRoutes);
 app.use('/', productsRoutes);
 app.use('/users', userRoutes);
+app.use('/genres', genresRoutes);
 
 /*app.use('*', (req, res) => {
   res.render('../views/page_404');

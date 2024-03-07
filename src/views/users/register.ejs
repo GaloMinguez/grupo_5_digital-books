@@ -10,7 +10,7 @@
         <section class="section-register">
           <div class="contenedor-register">
             <div class="formulario">
-              <form method="POST" action="/users/register" enctype="multipart/form-data">
+              <form name ="formulario" method="POST" action="/users/register" enctype="multipart/form-data">
                 <h2>Regístrate</h2>
 
                 <div class="input-contenedor">
@@ -19,6 +19,9 @@
                   <input type="text" name="fullName" placeholder="Nombre Completo"
                     class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.fullName : null %>">
+                    <div class="col-8 col-lg-10">
+                      <small class="text-danger erName"></small>
+                    </div>
                   <% if (locals.errors && errors.fullName) { %>
                     <div class="text-danger">
                       <%= errors.fullName.msg %>
@@ -74,7 +77,7 @@
                 </div>
 
                 <div>
-                  <button type="submit" class="btn btn-primary">Registrarme</button>
+                  <button type="submit" class="btn btn-primary" name = "btn-enviar">Registrarme</button>
                   <div class="registrar">
                     <p>
                       ¿Ya tenés cuenta? -
@@ -90,13 +93,6 @@
 
       <!-- FOOTER -->
       <%- include('../partials/footer.ejs') %>
-
-    <script type="text/javascript" src="validator.min.js"></script>
-    <script type="text/javascript">
-      const Validator = require('validator');
-      
-      const validEmail = Validator.isEmail('example@example.com');
-    </script>
 
   </body>
 
