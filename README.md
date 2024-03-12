@@ -45,7 +45,7 @@ Visite Retrospectiva <a href="https://github.com/GaloMinguez/grupo_5_digital-boo
 
 ## **Tablero Trello:** 
 
-Visite el tablero de trabajo grupal en Trello <a href="https://trello.com/b/EJdaU8yL">aquí</a>.
+Visite el tablero de trabajo grupal en Trello <a href="https://trello.com/b/gyyFLBw6/trabajo-grupo-5">aquí</a>.
 
 
 ## **Wireframes:** 
