@@ -44,12 +44,14 @@ app.use(userLoggedMiddleware);
 //const mainRoutes = require('./routes/main'); // Rutas main
 const productsRoutes = require('./routes/products'); // Rutas /products
 const userRoutes = require('./routes/users'); // Rutas /users
-const genresRoutes = require('./routes/genres'); // Rutas /genres
+const apiProductsRoutes = require('./routes/api/apiProducts'); // Rutas /api/products
+const apiUsersRoutes = require('./routes/api/apiUsers'); // Rutas /api/users
 
 //app.use('/', mainRoutes);
 app.use('/', productsRoutes);
 app.use('/users', userRoutes);
-app.use('/genres', genresRoutes);
+app.use('/api/products', apiProductsRoutes);
+app.use('/api/users', apiUsersRoutes);
 
 /*app.use('*', (req, res) => {
   res.render('../views/page_404');

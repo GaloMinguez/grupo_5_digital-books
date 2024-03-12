@@ -57,16 +57,4 @@ router.get('/userDelete/:id', guestDetailMiddleware, usersController.userDelete)
 // Proceso de eliminacion del usuario
 router.post('/userDelete/:id', guestDetailMiddleware, usersController.userDestroy); 
 
-//Rutas API
-//Listado de todos los productos
-router.get('/api/products', productController.listAPI);
-//Detalle de un producto en base a un genero indicado
-router.get('/api/products/:id', productController.detailAPI);
-//Agregar un producto
-router.post('/create', productController.createAPI);
-//Modificar un producto
-router.put('/update/:id', productController.updateAPI);
-//Eliminar un producto
-router.delete('/delete/:id', productController.destroyAPI);
-
 module.exports = router;
