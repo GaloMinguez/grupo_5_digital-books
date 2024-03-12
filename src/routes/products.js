@@ -4,6 +4,7 @@ const router = express.Router();
 const uploadFile = require('../middlewares/multerMiddleware');
 const guestCartMiddleware = require('../middlewares/guestCartMiddleware');
 const guestDetailMiddleware = require('../middlewares/guestDetailMiddleware');
+const validationProd = require('../middlewares/validProdMiddleware');
 
 const mainController = require('../controllers/mainController');
 const productController = require('../controllers/productController');
@@ -30,13 +31,13 @@ router.get('/productCreate', guestDetailMiddleware, productController.productCre
 
 // proceso de creacion produc
 let multerWithFields = upload.fields([{ name: 'imgTop', maxCount: 1 }, { name: 'imgBack', maxCount: 1 }])
-router.post('/productCreate', multerWithFields, productController.productSave) 
+router.post('/productCreate', multerWithFields, validationProd, productController.productSave) 
 
 // mostrar form de edicion del producto
 router.get('/productEdit/:id', guestDetailMiddleware, productController.productEdit);
 
 // Proceso de actualizacion del producto
-router.put('/productEdit/:id', multerWithFields, productController.productUpDate);
+router.put('/productEdit/:id', multerWithFields, validationProd, productController.productUpDate);
 
 // mostrar form de borrado del producto
 router.get('/productDelete/:id', guestDetailMiddleware, productController.productDelete); 
@@ -48,12 +49,24 @@ router.post('/productDelete/:id', guestDetailMiddleware, productController.produ
 router.get('/userEdit/:id', guestDetailMiddleware, usersController.userEdit);
 
 // Proceso de actualizacion del usuario
-router.put('/userEdit/:id', uploadFile.single('avatar'), usersController.userUpDate);
+router.post('/userEdit/:id', uploadFile.single('avatar'),usersController.userUpDate);
 
-// mostrar form de borrado del producto
+// mostrar form de borrado del usuario
 router.get('/userDelete/:id', guestDetailMiddleware, usersController.userDelete); 
 
-// Proceso de eliminacion del producto
+// Proceso de eliminacion del usuario
 router.post('/userDelete/:id', guestDetailMiddleware, usersController.userDestroy); 
+
+//Rutas API
+//Listado de todos los productos
+router.get('/api/products', productController.listAPI);
+//Detalle de un producto en base a un genero indicado
+router.get('/api/products/:id', productController.detailAPI);
+//Agregar un producto
+router.post('/create', productController.createAPI);
+//Modificar un producto
+router.put('/update/:id', productController.updateAPI);
+//Eliminar un producto
+router.delete('/delete/:id', productController.destroyAPI);
 
 module.exports = router;

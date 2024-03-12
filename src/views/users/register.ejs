@@ -9,8 +9,11 @@
       <main>
         <section class="section-register">
           <div class="contenedor-register">
+            <div class="text-danger">
+              <ul></ul>
+            </div>
             <div class="formulario">
-              <form method="POST" action="/users/register" enctype="multipart/form-data">
+              <form name ="formulario" method="POST" action="/users/register" enctype="multipart/form-data">
                 <h2>Regístrate</h2>
 
                 <div class="input-contenedor">
@@ -19,6 +22,9 @@
                   <input type="text" name="fullName" placeholder="Nombre Completo"
                     class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.fullName : null %>">
+                    <div class="col-8 col-lg-10">
+                      <small class="text-danger erName"></small>
+                    </div>
                   <% if (locals.errors && errors.fullName) { %>
                     <div class="text-danger">
                       <%= errors.fullName.msg %>
@@ -63,7 +69,7 @@
                 <div class="input-contenedor">
                   <div>
                     <label>Imagen de perfil</label>
-                    <input type="file" name="avatar"
+                    <input type="file" name="avatar" id="file"
                       class="<%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
                     <% if (locals.errors && errors.avatar) { %>
                       <div class="text-danger">
@@ -74,7 +80,7 @@
                 </div>
 
                 <div>
-                  <button type="submit" class="btn btn-primary">Registrarme</button>
+                  <button type="submit" class="btn btn-primary" name = "btn-enviar">Registrarme</button>
                   <div class="registrar">
                     <p>
                       ¿Ya tenés cuenta? -

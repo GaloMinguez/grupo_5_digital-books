@@ -10,55 +10,102 @@
 
 
 <body>
- <main>
-     <section>
-           <form action="/productCreate" method="POST" enctype="multipart/form-data" class="createform">
-             <div>
-                 <h1>INGRESAR NUEVO PRODUCTO DB</h1>
-                
-             </div>
-             
-               <label for="title">Titulo</label>
-               <input type="text" name="title" placeholder="Titulo del Libro" class="control">
-               <label for="author">Autor</label>
-               <input type="text" name="author" placeholder="Autor del Libro" class="control">
-            
-               <label for="genre">Género</label>
-               <select name="genero" class="category">
-                 <% for( let i=0; i < genres.length; i++ ) { %>
-                     <option value="<%= genres[i].id %>" >
-                       <%= genres[i]?.name || 'No tiene genero' %>
-                     </option>
-                     <% } %>
-               </select>
+  <main>
+    <section>
+      <div class="text-danger">
+        <ul></ul>
+      </div>
+      <form id="formProduct" name="formulario" action="/productCreate" method="POST" enctype="multipart/form-data"
+        class="createform">
+        <div>
+          <h1>INGRESAR NUEVO PRODUCTO DB</h1>
+        </div>
 
-             <label for="description">Descripcion</label>
-             <textarea name="description" id="description" placeholder="Inserte Descripción de Producto" class="control"></textarea> 
+        <label for="title">Titulo</label>
+        <input type="text" id="nameProduct" name="title" placeholder="Titulo del Libro" class="control" <%=locals.errors &&
+              errors.title ? 'is-invalid' : null %> value="<%= locals.oldData ? oldData.title : null %>">
+        <div class="col-8 col-lg-10">
+          <small class="text-danger erName"></small>
+        </div>
+        <% if (locals.errors && errors.title) { %>
+        <div class="text-danger">
+          <%= errors.title.msg %>
+        </div>
+        <% } %>
 
-             <label for="descriptionD">Descripcion Detallada</label>
-             <textarea name="descriptionD" id="descriptionDetallada" placeholder="Inserte Descripción detallada de Producto" class="control"></textarea> 
+        <label for="author">Autor</label>
+        <input type="text" name="author" placeholder="Autor del Libro" class="control">
 
-             <label for="imgTop">Ingresar Imagen de Tapa del Libro</label>
-             <input type="file" name="imgTop" class="subir-archivo">
+        <label for="genre">Género</label>
+        <select name="genre" class="category">
+          <% for( let i=0; i < genres.length; i++ ) { %>
+          <option value="<%= genres[i].id %>">
+            <%= genres[i]?.name || 'No tiene genero' %>
+          </option>
+          <% } %>
+        </select>
 
-             <label for="imgBack">Ingresar Imagen de Contratapa del Libro</label>
-             <input type="file" name="imgBack" class="subir-archivo">
+        <label for="author">Descripcion</label>
+        <input type="text" id="descriptionProduct" name="description" placeholder="Descripcion del Producto"
+          class="control" <%=locals.errors && errors.description ? 'is-invalid' : null %>"
+          value="<%= locals.oldData ? oldData.description : null %>">
+        <div class="col-8 col-lg-10">
+          <small class="text-danger erName"></small>
+        </div>
+        <% if (locals.errors && errors.description) { %>
+        <div class="text-danger">
+          <%= errors.description.msg %>
+        </div>
+        <% } %>
 
-             <label for="price">Precio</label>
-             <input type="number" name="price" placeholder="Precio del Libro" class="control">
+        <label for="descriptionD">Descripcion Detallada</label>
+        <textarea name="descriptionD" id="descriptionDetallada" placeholder="Inserte Descripción detallada de Producto"
+          class="control"></textarea>
 
-             <label for="discount">Descuento</label>
-             <input type="number" name="discount" placeholder="% de Descuento" class="control">
-          
-             <div class="container-botones">
-                <button type="submit" id="CrearProducto" class="btn btn-success">Agregar producto</button>
-             </div>
+        <div class="imagenEdit2">
+          <br>
+          <img class="imagenEdit" name="imageView" src="./img/default.png" alt="Sin imagen" id="productImageAddTop">
+        </div><br>
+        <label for="imgTop">Ingresar Imagen de Tapa del Libro</label>
+        <input type="file" id="inputProductAddImageTop" name="imgTop"
+          class="subir-archivo <%= locals.errors && errors.imgTop ? 'is-invalid' : null %>">
+        <% if (locals.errors && errors.imgTop) { %>
+        <div class="text-danger">
+          <%= errors.imgTop.msg %>
+        </div>
+        <% } %>
+        <div class="imagenEdit2">
+          <br>
+          <img class="imagenEdit" name="imageView1" src="./img/default.png" alt="Sin imagen" id="productImageAddBack">
+        </div><br>
+        <label for="imgBack">Ingresar Imagen de Contratapa del Libro</label>
+        <input type="file" id="inputProductAddImageBack" name="imgBack"
+          class="subir-archivo <%= locals.errors && errors.imgBack ? 'is-invalid' : null %>">
+        <% if (locals.errors && errors.imgBack) { %>
+        <div class="text-danger">
+          <%= errors.imgBack.msg %>
+        </div>
+        <% } %>
 
-          </form>
-     </section>
-</main>
+        <label for="price">Precio</label>
+        <input type="number" name="price" placeholder="Precio del Libro" class="control">
+
+        <label for="discount">Descuento</label>
+        <input type="number" name="discount" placeholder="% de Descuento" class="control">
+
+        <div class="container-botones">
+          <button type="submit" id="CrearProducto" class="btn btn-success">Agregar
+            producto</button>
+        </div>
+
+      </form>
+    </section>
+  </main>
 </body>
 
 <!-- FOOTER -->
 <%- include('../partials/footer.ejs') %>
+
+<!--<script type="text/javascript" src="../../public/js/validProd.js"></script>-->
+
 </html>

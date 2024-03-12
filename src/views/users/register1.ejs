@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %> 
+<body>
+    <%- include('../partials/header');%> 
+    <main>
+        <form class="cajaLogin" action="/users/register" method="POST" enctype="multipart/form-data" id="formRegister">
+            <h3>
+                Registro de Usuario:
+            </h3>
+            <p>
+                <div class="imgUserContainer">
+                    <img class="imgUser" src="../../public/img/users/default.png" alt="imagen de usuario" id="imgAddUser">
+                </div>
+                <div>
+                    <p> 
+                        <br>
+                        <h4>Agregar una imagen</h4>
+                        <input class="ingresoCreate fileCreate" type="file" name="avatar" id="inputImgAddUser" accept="image/x-png,image/gif,image/jpeg"></input>
+                        <label class="feedBack"><%= locals.errors && errors.avatar ? errors.avatar.msg : '' %> </label><br> 
+                    </p>
+                </div>
+                <label class="titleRegister">Nombre y Apellido</label>
+                <input class="ingreso" type="text" name="fullNname" placeholder="Nombre y Apellido" id="full_nameRegister" value="<%= locals.register && register.fullName %>">
+                <label class="feedBack"><%= locals.errors && errors.fullName ? errors.fullName.msg : ''%> </label><br>
+                <label class="titleRegister">E-mail</label>
+                <input class="ingreso" type="email" name="email"  placeholder="E-mail" id="emailRegister" value="<%= locals.register && register.email %>">
+                <label class="feedBack"><%= locals.errors && errors.email ? errors.email.msg : ''%> </label><br>
+                <label class="titleRegister">Contraseña</label>
+                <input class="ingreso" type="password" name="password"  placeholder="Contraseña" id="passwordRegister" value="<%= locals.register && register.password %>">
+                <label class="feedBack"><%= locals.errors && errors.password ? errors.password.msg : ''%> </label><br>
+                <label class="titleRegister">Confirmar Contraseña</label>
+                <input class="ingreso" type="password" name="cfpassword"  placeholder="Confirmar Contraseña" id="confirmPasswordRegister" value="<%= locals.register && register.password %>">
+                <label class="feedBack"><%= locals.errors && errors.cfpassword ? errors.cfpassword.msg : ''%> </label><br>
+                <br>
+                <br>
+                <p class="botonsRegister">
+                    <button type="submit" class="ingreso" id="botonIngreso">Crear Usuario</button> 
+                </p>
+
+                <div>
+                    <% if (locals.user && locals.user.category_id == '1') { %>
+                        <p></p>
+                    <%} else {%>
+                        <a class="registerUser" href="/users/login">Si ya tienes una cuenta, por favor ingresa aquí!</a>
+                    <% } %>    
+                </div>
+            </p>
+        </form>
+    </main>
+
+    <%- include('../partials/footer') %> 
+</body>
+</html>

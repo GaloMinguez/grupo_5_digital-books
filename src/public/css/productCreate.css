@@ -47,6 +47,44 @@ h1{
 	font-size: 20px;
 }
 
+.imagenEdit {
+    max-width: 250px;
+    max-height: 250px;
+    overflow: auto;
+    object-fit: contain; 
+    align-self: center;  
+}
+
+.imagenEdit2 {
+    max-width: 250px;
+    max-height: 305px;
+    overflow: auto;
+    object-fit: contain; 
+    align-self: center;
+}
+
+.feedBack {
+    /* font-size: 1.5rem; */
+    /* font-weight: lighter; */
+    justify-items: flex-start;
+    margin-bottom: 10px;
+    color: rgb(248, 43, 7);
+    font-family: 'Roboto', Times, serif;
+    font-weight: bolder;
+    font-size: 1.2rem;
+
+}
+
+.ingresoCreate {
+    width: 100%;
+    border-style: none;
+    padding: 10px;
+    margin: 20px 0px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
 .subir-archivo{
 	font-size: 25px;
 	padding: 10px 0;

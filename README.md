@@ -1,5 +1,13 @@
-# DIGITAL BOOKS
+# **Grupo 5 "DIGITAL BOOKS"**
 
+Proyecto integrador de Curso Full Stack de "Digital House". <br>
+Tema: e-Comerce; sitio web de venta de libros "Digital Books". <br>
+
+<p align="center">
+  <img src="https://github.com/GaloMinguez/grupo_5_digital-books/blob/master/src/public/img/LOGO-DB-minimo.png" alt="Logo de comercio"/>
+</p>
+
+## DIGITAL BOOKS
 _Desde el año 2005 nos constituimos como una empresa socialmente responsable, que además de vender libros, se enfoca en fomentar la lectura en las personas de cualquier rincon del mundo, a través de recomendaciones de libros._
 
 _Nuestra Mision: llevar la lectura de una manera accesible a todo aquel que la necesite._
@@ -30,15 +38,33 @@ _Las referencias arriba mencionadas fueron elegidas en general por su aspecto y 
 * **Adriana Jacqueline Morales** - *39 años, de Capital, Santiago del Estero, Argentina* - *jacky_morales84@hotmail.com* - [Jacky2884](https://github.com/Jacky2884)
 
 
+## **Retrospectiva:** 
 
-## Ayudanos a crecer 🎁
+Visite Retrospectiva <a href="https://github.com/GaloMinguez/grupo_5_digital-books/blob/master/Organization/RETRO.md">aquí</a>.
+
+
+## **Tablero Trello:** 
+
+Visite el tablero de trabajo grupal en Trello <a href="https://trello.com/b/EJdaU8yL">aquí</a>.
+
+
+## **Wireframes:** 
+
+Visite Wireframes <a href="https://github.com/GaloMinguez/grupo_5_digital-books/blob/master/Organization/Wireframes/">aquí</a>.
+
+
+## **Contenido de Sprints:** 
+
+Visite Contenido de Sprints <a href="https://github.com/GaloMinguez/grupo_5_digital-books/blob/master/Organization/Sprints/">aquí</a>.
+
+
+## **Comentarios de algunos Sprints:** 
+
+Visite Comentarios Sprints <a href="https://github.com/GaloMinguez/grupo_5_digital-books/blob/master/Organization/comments.md">aquí</a>.
+
+
+## Ayudenos a crecer 🎁
 
 * Comenta a otros sobre este proyecto 📢
 * Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
 * Da las gracias públicamente 🤓.
-
-
-
-## Links de TABLERO DE TRABAJO 📋
-
-* [Organizacion del trabajo](https://trello.com/b/gyyFLBw6/trabajo-grupo-5).
