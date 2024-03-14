@@ -1,4 +1,3 @@
-//const { product } = require('../../database/models');
 const db = require("../../database/models");
 const sequelize = db.sequelize;
 
@@ -72,8 +71,8 @@ const apiProductsController = {
       });
   },
 
-  /*lastProduct: (req, res) => {
-    db.Producto.findAll({
+  lastProduct: (req, res) => {
+    db.Producto.findOne({
       order: sequelize.literal('id DESC'),
       limit: 1,
     }
@@ -88,46 +87,6 @@ const apiProductsController = {
         data: producto
       });
     })
-  },*/
-
-  lastProduct: (req, res) => {
-    db.Producto.findAll({
-      include: [
-        {
-          association: "genero",
-        },
-      ],
-      attributes: {
-        exclude: [
-          "alt,",
-          "author",
-          "category",
-          "descriptionD",
-          "discount",
-          "genre_id",
-          "imgTop",
-          "imgBack",
-          "publisher",
-          "stock",
-        ],
-      },
-    })
-      .then((products) => {
-        if (products) {
-          return res.status(200).json({
-            meta: {
-              count: products.length,
-            },
-            data: products,
-          });
-        } else {
-          res.status(400).json({ error: "No results found" });
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        return res.status(500).json({ error: "Could not connect to database" });
-      });
   },
 
    /*lastProduct1: (req, res) => {

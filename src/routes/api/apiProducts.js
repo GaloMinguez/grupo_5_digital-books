@@ -7,9 +7,9 @@ router.get('/', apiProductController.listAPI);
 //Detalle de un producto en base a un genero indicado
 router.get('/product/:id', apiProductController.detailAPI);
 //Detalle de ultimo producto agregado
-router.post('/lastProduct', apiProductController.lastProduct); 
+router.post('/product/lastProduct', apiProductController.lastProduct); 
 //Agregar un producto
-router.post('/create', apiProductController.createAPI);
+router.post('/product/create', apiProductController.createAPI);
 //Modificar un producto
 router.put('/update/:id', apiProductController.updateAPI);
 //Eliminar un producto
