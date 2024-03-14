@@ -46,9 +46,10 @@ const apiUsersController = {
           return res.status(200).json({
             meta: {
               status: 200,
-              urlImagen: `http://localhost:3002/img/${usuario.avatar}`,
+              urlImagen: `http://localhost:3002/img/users/${usuario.avatar}`,
             },
-            data: {
+            data: 
+            {
                 id: usuario.id,
                 fullName: usuario.fullName,
                 email: usuario.email,
@@ -67,6 +68,42 @@ const apiUsersController = {
           error: "Could not connect to database",
         });
       });
+  },
+  lastUser: (req, res) => {
+    db.Usuario.findAll({
+      order: [
+        ['id', 'DESC']
+      ],
+      limit: [1],
+      raw: true
+    })  
+      .then(users => {
+        let appPath = 'http://localhost:3002/img/'
+        let imageURL = appPath + users[0].avatar;
+        let lastUser = users[0];
+        console.log(lastUser);
+        lastUser.imageURL = imageURL;
+        if (users) {
+          res.status(200).json({
+            meta: {
+              url: req.originalUrl,
+              status: 200,
+              count: 1
+            },
+            data: lastUser
+          });
+        } else {
+          res.status(400).json({
+            error: 'No results found'
+          });
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        return res.status(500).json({
+          error: 'Could not connect to database'
+        });;
+      })
   },
   createAPI: (req, res) => {
     return res.send(

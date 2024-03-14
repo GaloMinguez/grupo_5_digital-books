@@ -30,9 +30,12 @@ const apiProductsController = {
             meta: {
               count: products.length,
               countByCategory: "",
-              detail: "api/products/:id",
             },
-            data: products,
+            data:
+            {
+              datos: products,
+              URLdetail: `http://localhost:3002/api/products/detail/:${products.id}`,
+            },
           });
         } else {
           res.status(400).json({ error: "No results found" });
@@ -72,59 +75,42 @@ const apiProductsController = {
   },
 
   lastProduct: (req, res) => {
-    db.Producto.findOne({
-      order: sequelize.literal('id DESC'),
-      limit: 1,
-    }
-    ).then(producto => {
-
-      res.status(200).json({
-        meta: {
-          url: req.originalUrl,
-          status: 200,
-          count: 1
-        },
-        data: producto
-      });
+    db.Producto.findAll({
+      order: [
+        ['id', 'DESC']
+      ],
+      limit: [1],
+      raw: true
     })
+      .then(products => {
+        let appPath = 'http://localhost:3002/img/'
+        let imageURL = appPath + products[0].imgTop;
+        let lastProduct = products[0];
+        console.log(lastProduct);
+        lastProduct.imageURL = imageURL;
+        if (products) {
+          res.status(200).json({
+            meta: {
+              url: req.originalUrl,
+              status: 200,
+              count: 1
+            },
+            data: lastProduct
+          });
+        } else {
+          res.status(400).json({
+            error: 'No results found'
+          });
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        return res.status(500).json({
+          error: 'Could not connect to database'
+        });;
+      })
   },
 
-   /*lastProduct1: (req, res) => {
-         db.Producto.findAll({
-           order: [
-             ['id', 'DESC']
-           ],
-           limit: [1],
-           raw: true
-         })  
-           .then(products => {
-             let appPath = 'http://localhost:3002/img/'
-             let imageURL = appPath + products[0].imgTop;
-             let lastProduct = products[0];
-             console.log(lastProduct);
-             lastProduct.imageURL = imageURL;
-             if (products) {
-               res.status(200).json({
-                 meta: {
-                   url: req.originalUrl,
-                   status: 200,
-                   count: 1
-                 },
-                 //data: lastProduct
-               });
-             } else {
-               res.status(400).json({
-                 error: 'No results found'
-               });
-             }
-           })
-           .catch(error => {
-             console.log(error);
-             return res.status(500).json({
-               error: 'Could not connect to database'
-             });;
-           })
-       },*/
   createAPI: (req, res) => {
     return res.send(
       "Puedes agregar un nuevo producto a nuestra base de datos. Para porder utilizar esta API, debes ejecutar la ruta /productos/create/id desde la plataforma POSTMAN"
