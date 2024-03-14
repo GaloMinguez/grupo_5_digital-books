@@ -5,7 +5,9 @@ const apiProductController = require('../../controllers/api/apiProductController
 //Listado de todos los productos
 router.get('/', apiProductController.listAPI);
 //Detalle de un producto en base a un genero indicado
-router.get('/:id', apiProductController.detailAPI);
+router.get('/product/:id', apiProductController.detailAPI);
+//Detalle de ultimo producto agregado
+router.post('/lastProduct', apiProductController.lastProduct); 
 //Agregar un producto
 router.post('/create', apiProductController.createAPI);
 //Modificar un producto

@@ -46,12 +46,14 @@ const productsRoutes = require('./routes/products'); // Rutas /products
 const userRoutes = require('./routes/users'); // Rutas /users
 const apiProductsRoutes = require('./routes/api/apiProducts'); // Rutas /api/products
 const apiUsersRoutes = require('./routes/api/apiUsers'); // Rutas /api/users
+const apiGenresRoutes = require('./routes/api/apiGenres'); // Rutas /api/genres
 
 //app.use('/', mainRoutes);
 app.use('/', productsRoutes);
 app.use('/users', userRoutes);
 app.use('/api/products', apiProductsRoutes);
 app.use('/api/users', apiUsersRoutes);
+app.use('/api/genres', apiGenresRoutes);
 
 /*app.use('*', (req, res) => {
   res.render('../views/page_404');
