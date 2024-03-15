@@ -98,21 +98,21 @@
 <script>
   function validateForm() {
     var title = document.getElementById("title").value;
-    // Agrega validaciones para los otros campos según los requisitos
+
 
     var erTitle = document.querySelector('.erTitle');
-    // Agrega más variables para otras posibles áreas de error
+
 
     var isValid = true;
 
     erTitle.innerHTML = '';
-    // Agrega más líneas para limpiar otras áreas de error
+
 
     if (title.length < 5) {
       erTitle.innerHTML = 'El título del producto debe tener al menos 5 caracteres';
       isValid = false;
     }
-    // Agrega más condiciones de validación para otros campos
+
 
     return isValid;
   }
