@@ -2,12 +2,14 @@ const db = require("../../database/models");
 const sequelize = db.sequelize;
 
 const apiProductsController = {
+
+
   listAPI: (req, res) => {
     db.Producto.findAll({
       include: [
         {
           association: "genero",
-        },
+        }
       ],
       attributes: {
         exclude: [
@@ -26,17 +28,17 @@ const apiProductsController = {
     })
       .then((products) => {
         if (products) {
+          products.forEach(producto => {
+            producto.publisher = `http://localhost:3002/api/products/detail/${producto.id}`
+          });
           return res.status(200).json({
             meta: {
               count: products.length,
               countByCategory: "",
             },
-            data:
-            {
-              datos: products,
-              URLdetail: `http://localhost:3002/api/products/detail/:${products.id}`,
-            },
+            data: products
           });
+
         } else {
           res.status(400).json({ error: "No results found" });
         }
@@ -60,7 +62,8 @@ const apiProductsController = {
           return res.status(200).json({
             meta: {
               status: 200,
-              url: `http://localhost:3002/img/${producto.imgTop}`,
+              url1: `http://localhost:3002/img/${producto.imgTop}`,
+              url2: `http://localhost:3002/img/${producto.imgBack}`,
             },
             data: producto,
           });

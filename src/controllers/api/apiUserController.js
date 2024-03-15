@@ -13,10 +13,12 @@ const apiUsersController = {
     })
       .then((users) => {
         if (users) {
+          users.forEach(user => {
+            user.password = `http://localhost:3002/api/products/detail/${user.id}`
+          });
           return res.status(200).json({
             meta: {
               count: users.length,
-              detail: `http://localhost:3002/api/users/:id`,
             },
             data: users,
           });
