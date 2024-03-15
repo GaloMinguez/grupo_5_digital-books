@@ -1,102 +1,164 @@
 <!-- HEAD -->
 <%- include('../partials/head.ejs', {title: 'Formulario de Registro' }) %>
-  <link rel="stylesheet" href="../css/login-register.css" />
+<link rel="stylesheet" href="../css/login-register.css" />
 
-  <body>
-    <!-- HEADER -->
-    <%- include('../partials/header.ejs') %>
+<body>
+  <!-- HEADER -->
+  <%- include('../partials/header.ejs') %>
 
-      <main>
-        <section class="section-register">
-          <div class="contenedor-register">
-            <div class="text-danger">
-              <ul></ul>
+  <main>
+    <section class="section-register">
+      <div class="contenedor-register">
+        <div class="text-danger">
+          <ul></ul>
+        </div>
+        <div class="formulario">
+          <form name="formulario" method="POST" action="/users/register" enctype="multipart/form-data"
+            onsubmit="return validateForm()">
+            <h2>Regístrate</h2>
+
+            <div class="input-contenedor">
+              <i class="fa-solid fa-user" icon></i>
+              <input type="text" name="fullName" id="fullName" placeholder="Nombre Completo"
+                class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.fullName : null %>">
+              <div class="col-8 col-lg-10">
+                <small class="text-danger erName"></small>
+              </div>
+              <% if (locals.errors && errors.fullName) { %>
+              <div class="text-danger">
+                <%= errors.fullName.msg %>
+              </div>
+              <% } %>
             </div>
-            <div class="formulario">
-              <form name ="formulario" method="POST" action="/users/register" enctype="multipart/form-data">
-                <h2>Regístrate</h2>
 
-                <div class="input-contenedor">
-                  <i class="fa-solid fa-user" icon></i>
-
-                  <input type="text" name="fullName" placeholder="Nombre Completo"
-                    class="form-control <%= locals.errors && errors.fullName ? 'is-invalid' : null %>"
-                    value="<%= locals.oldData ? oldData.fullName : null %>">
-                    <div class="col-8 col-lg-10">
-                      <small class="text-danger erName"></small>
-                    </div>
-                  <% if (locals.errors && errors.fullName) { %>
-                    <div class="text-danger">
-                      <%= errors.fullName.msg %>
-                    </div>
-                    <% } %>
-                </div>
-
-                <div class="input-contenedor">
-                  <i class="fa-solid fa-envelope" icon></i>
-                  <input type="text" name="email" placeholder="Correo electrónico"
-                    class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-                    value="<%= locals.oldData ? oldData.email : null %>">
-                  <% if (locals.errors && errors.email) { %>
-                    <div class="text-danger">
-                      <%= errors.email.msg %>
-                    </div>
-                    <% } %>
-                </div>
-
-                <div class="input-contenedor">
-                  <i class="fa-solid fa-key"></i>
-                  <input type="password" name="password" placeholder="Contraseña"
-                    class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>">
-                  <% if (locals.errors && errors.password) { %>
-                    <div class="text-danger">
-                      <%= errors.password.msg %>
-                    </div>
-                    <% } %>
-                </div>
-
-                <div class="input-contenedor">
-                  <i class="fa-solid fa-key"></i>
-                  <input type="password" name="cfpassword" placeholder="Repite contraseña"
-                    class="form-control <%= locals.errors && errors.cfpassword ? 'is-invalid' : null %>">
-                  <% if (locals.errors && errors.cfpassword) { %>
-                    <div class="text-danger">
-                      <%= errors.cfpassword.msg %>
-                    </div>
-                    <% } %>
-                </div>
-
-                <div class="input-contenedor">
-                  <div>
-                    <label>Imagen de perfil</label>
-                    <input type="file" name="avatar" id="file"
-                      class="<%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
-                    <% if (locals.errors && errors.avatar) { %>
-                      <div class="text-danger">
-                        <%= errors.avatar.msg %>
-                      </div>
-                      <% } %>
-                  </div>
-                </div>
-
-                <div>
-                  <button type="submit" class="btn btn-primary" name = "btn-enviar">Registrarme</button>
-                  <div class="registrar">
-                    <p>
-                      ¿Ya tenés cuenta? -
-                      <a class="link" href="/users/login">Iniciar Sección</a>
-                    </p>
-                  </div>
-                </div>
-              </form>
+            <div class="input-contenedor">
+              <i class="fa-solid fa-envelope" icon></i>
+              <input type="email" name="email" id="email" placeholder="Correo electrónico"
+                class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                value="<%= locals.oldData ? oldData.email : null %>">
+              <div class="col-8 col-lg-10">
+                <small class="text-danger erEmail"></small>
+              </div>
+              <% if (locals.errors && errors.email) { %>
+              <div class="text-danger">
+                <%= errors.email.msg %>
+              </div>
+              <% } %>
             </div>
-          </div>
-        </section>
-      </main>
 
-      <!-- FOOTER -->
-      <%- include('../partials/footer.ejs') %>
+            <div class="input-contenedor">
+              <i class="fa-solid fa-key"></i>
+              <input type="password" name="password" id="password" placeholder="Contraseña"
+                class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>">
+              <div class="col-8 col-lg-10">
+                <small class="text-danger erPassword"></small>
+              </div>
+              <% if (locals.errors && errors.password) { %>
+              <div class="text-danger">
+                <%= errors.password.msg %>
+              </div>
+              <% } %>
+            </div>
 
-  </body>
+            <div class="input-contenedor">
+              <i class="fa-solid fa-key"></i>
+              <input type="password" name="cfpassword" id="cfpassword" placeholder="Repite contraseña"
+                class="form-control <%= locals.errors && errors.cfpassword ? 'is-invalid' : null %>">
+              <div class="col-8 col-lg-10">
+                <small class="text-danger erCfpassword"></small>
+              </div>
+              <% if (locals.errors && errors.cfpassword) { %>
+              <div class="text-danger">
+                <%= errors.cfpassword.msg %>
+              </div>
+              <% } %>
+            </div>
 
-  </html>
+            <div class="input-contenedor">
+              <div>
+                <label>Imagen de perfil</label>
+                <input type="file" name="avatar" id="avatar" accept=".jpg, .jpeg, .png, .gif"
+                  class="<%= locals.errors && errors.avatar ? 'is-invalid' : null %>">
+                <div class="col-8 col-lg-10">
+                  <small class="text-danger erAvatar"></small>
+                </div>
+                <% if (locals.errors && errors.avatar) { %>
+                <div class="text-danger">
+                  <%= errors.avatar.msg %>
+                </div>
+                <% } %>
+              </div>
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-primary" name="btn-enviar">Registrarme</button>
+              <div class="registrar">
+                <p>
+                  ¿Ya tenés cuenta? - <a class="link" href="/users/login">Iniciar Sección</a>
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <%- include('../partials/footer.ejs') %>
+
+</body>
+
+<script>
+  function validateForm() {
+    var fullName = document.getElementById("fullName").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var cfpassword = document.getElementById("cfpassword").value;
+    var avatar = document.getElementById("avatar").value;
+
+    var erName = document.querySelector('.erName');
+    var erEmail = document.querySelector('.erEmail');
+    var erPassword = document.querySelector('.erPassword');
+    var erCfpassword = document.querySelector('.erCfpassword');
+    var erAvatar = document.querySelector('.erAvatar');
+
+    var isValid = true;
+
+    erName.innerHTML = '';
+    erEmail.innerHTML = '';
+    erPassword.innerHTML = '';
+    erCfpassword.innerHTML = '';
+    erAvatar.innerHTML = '';
+
+    if (fullName.length < 2) {
+      erName.innerHTML = 'Nombre y apellido debe tener al menos 2 caracteres';
+      isValid = false;
+    }
+
+    if (!email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+      erEmail.innerHTML = 'Por favor, introduce un correo electrónico válido';
+      isValid = false;
+    }
+
+    if (password.length < 8) {
+      erPassword.innerHTML = 'La contraseña debe tener al menos 8 caracteres';
+      isValid = false;
+    }
+
+    if (password !== cfpassword) {
+      erCfpassword.innerHTML = 'Las contraseñas no coinciden';
+      isValid = false;
+    }
+
+    if (!avatar.match(/\.(jpg|jpeg|png|gif)$/i)) {
+      erAvatar.innerHTML = 'La imagen debe tener un formato válido (JPG,cowo JPEG, PNG, GIF)';
+      isValid = false;
+    }
+
+    return isValid;
+  }
+</script>
+
+</html>
