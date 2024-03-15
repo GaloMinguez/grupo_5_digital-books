@@ -1,87 +1,28 @@
 <!-- HEAD -->
 <%- include('../partials/head.ejs') %>
-
 <link rel="stylesheet" href="../css/login-register.css" />
 <link rel="stylesheet" type="text/css" href="../css/productCreate.css" />
 
-
 <!-- HEADER -->
 <%- include('../partials/header.ejs') %>
-
 
 <body>
   <main>
     <section>
       <form id="formProduct" action="/productEdit/<%= libro.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
-        class="createform">
+        class="createform" onsubmit="return validateForm()">
         <div>
           <h1>MODIFICAR PRODUCTO DB</h1>
 
         </div>
 
         <label for="title">Titulo</label>
-        <input type="text" name="title" placeholder="Titulo del Libro" class="control" value=" <%= libro.title %>">
-        <label for="author">Autor</label>
-        <input type="text" name="author" placeholder="Autor del Libro" class="control" value=" <%= libro.author %>">
-
-
-        <label for="genre">Género</label>
-        <select name="genero" class="category">
-          <% for( let i=0; i < genres.length; i++ ) { %>
-          <% if (genres[i].id==libro.genre_id) { %>
-          <option value="<%= genres[i].id %>" selected>
-            <%= genres[i]?.name || 'No tiene genero' %>
-          </option>
-          <% } else { %>
-          <option value="<%= genres[i].id %>">
-            <%= genres[i]?.name || 'No tiene genero' %>
-          </option>
-          <% } %>
-          <% } %>
-        </select>
-
-        <label for="description">Descripcion</label>
-        <textarea name="description" id="description" placeholder="Inserte Descripción de Producto" class="control">
-              <%= libro.description %>
-             </textarea>
-
-        <label for="descriptionD">Descripcion Detallada</label>
-        <textarea name="descriptionD" id="descriptionDetallada" placeholder="Inserte Descripción detallada de Producto"
-          class="control">
-              <%= libro.descriptionD %>
-             </textarea>
-        <br>
-        <div class="imagenEdit2">
-          <label>Imagen de Tapa</label>
-          <img class="imagenEdit" name="imgTop" src="/img/<%= libro.imgTop %>" alt="" id="productImageEditTop">
+        <input type="text" name="title" id="title" placeholder="Titulo del Libro" class="control" value="<%= libro.title %>">
+        <div class="col-8 col-lg-10">
+          <small class="text-danger erName"></small>
         </div>
-        <p>
-          <label>Agregar una imagen</label>
-          <input class="subir-archivo" type="file" name="imgTop" value="<%= libro.imgTop %>" id="inputProductImageEditTop">
-          <label class="feedBack"><%= locals.errors && errors.image ? errors.image.msg : '' %> </label><br> 
-        </p>
 
-        <!--<label for="imgTop">Ingresar Imagen de Tapa del Libro</label>
-            <input type="file" name="imgTop" class="subir-archivo">-->
-        <br>
-        <div class="imagenEdit2">
-          <label>Imagen de Portada</label>
-          <img class="imagenEdit" name="imgTop" src="/img/<%= libro.imgBack %>" alt="" id="productImageEditBack">
-        </div>
-        <p>
-          <label>Agregar una imagen</label>
-          <input class="subir-archivo" type="file" name="imgTop" value="<%= libro.imgBack %>" id="inputProductImageEditBack">
-          <label class="feedBack"><%= locals.errors && errors.image ? errors.image.msg : '' %> </label><br> 
-        </p>
-
-        <!--<label for="imgBack">Ingresar Imagen de portada del Libro</label>
-            <input type="file" name="imgBack" class="subir-archivo">-->
-
-        <label for="price">Precio</label>
-        <input type="number" name="precio" placeholder="Precio del Libro" class="control" value="<%= libro.price %>">
-
-        <label for="discount">Descuento</label>
-        <input type="number" name="discount" placeholder="% de Descuento" class="control" value="<%= libro.discount %>">
+        <!-- Agrega más campos del formulario -->
 
         <div class="container-botones">
           <button type="submit" id="Actualizar" class="btn btn-success">Actualizar producto</button>
@@ -94,5 +35,28 @@
 
 <!-- FOOTER -->
 <%- include('../partials/footer.ejs') %>
+
+<script>
+  function validateForm() {
+    var title = document.getElementById("title").value;
+    // Agrega validaciones para los otros campos según los requisitos
+
+    var erTitle = document.querySelector('.erTitle');
+    // Agrega más variables para otras posibles áreas de error
+
+    var isValid = true;
+
+    erTitle.innerHTML = '';
+    // Agrega más líneas para limpiar otras áreas de error
+
+    if (title.length < 5) {
+      erTitle.innerHTML = 'El título del producto debe tener al menos 5 caracteres';
+      isValid = false;
+    }
+    // Agrega más condiciones de validación para otros campos
+
+    return isValid;
+  }
+</script>
 
 </html>

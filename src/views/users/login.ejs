@@ -1,71 +1,93 @@
 <!-- HEAD -->
-<%- include('../partials/head.ejs', {title: 'Formulario de Registro' }) %>
-	<link rel="stylesheet" href="../css/login-register.css" />
+<%- include('../partials/head.ejs', {title: 'Formulario de Inicio de Sesión' }) %>
+<link rel="stylesheet" href="../css/login-register.css" />
 
-	<body>
-		<!-- HEADER -->
-		<%- include('../partials/header.ejs') %>
+<body>
+  <!-- HEADER -->
+  <%- include('../partials/header.ejs') %>
 
-			<!-- Login-Form -->
-			<main>
-				<section class="section-login">
-					<div class="contenedor-login">
-						<div class="row">
-							<div class="text-danger">
-								<ul></ul>
-							  </div>
-							<div class="formulario">
-								<h2>Formulario de Login</h2>
+  <!-- Login-Form -->
+  <main>
+    <section class="section-login">
+      <div class="contenedor-login">
+        <div class="row">
+          <div class="text-danger">
+            <ul></ul>
+          </div>
+          <div class="formulario">
+            <h2>Formulario de Inicio de Sesión</h2>
 
-								<form name="formulario" method="POST" action="/users/login">
-										<div class="input-contenedor">
-											<i class="fa-solid fa-envelope"></i>
-											<input type="email" name="email" placeholder="Correo electrónico"
-											class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
-											value="<%= locals.oldData ? oldData.email : null %>">
-										  <% if (locals.errors && errors.email) { %>
-											<div class="text-danger">
-											  <%= errors.email.msg %>
-											</div>
-											<% } %>
-										</div>
+            <form name="formulario" method="POST" action="/users/login" onsubmit="return validateForm()">
+              <div class="input-contenedor">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Correo electrónico"
+                  class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+                  value="<%= locals.oldData ? oldData.email : null %>">
+                <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                  <%= errors.email.msg %>
+                </div>
+                <% } %>
+              </div>
 
-										<div class="input-contenedor">
-											<i class="fa-solid fa-lock"></i>
-											<input type="password" placeholder="Contraseña" name="password"
-												class="form-control" />
-											<% if (locals.errors && errors.password) { %>
-												<div class="text-danger">
-													<%= errors.password.msg %>
-												</div>
-											<% } %>
-											<label for="#"></label>
-											<div class="invalid-feedback">
-											</div>
-										</div>
+              <div class="input-contenedor">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" name="password" id="password" placeholder="Contraseña" class="form-control" />
+                <% if (locals.errors && errors.password) { %>
+                <div class="text-danger">
+                  <%= errors.password.msg %>
+                </div>
+                <% } %>
+              </div>
 
-										<div class="col-md-6 my-2">
-											<div class="form-group form-check">
-												<label class="form-check-label">
-													<input type="checkbox" class="form-check-input"
-														name="remember_user"> Recordar mi usuario
-												</label>
-											</div>
-										</div>
-										
-										<div class="col-12 my-3">
-											<button type="submit" class="btn btn-primary">Loguearme</button>
-										</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</section>
-			</main>
-			<!-- //Login-Form -->
+              <div class="col-md-6 my-2">
+                <div class="form-group form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="remember_user"> Recordar mi usuario
+                  </label>
+                </div>
+              </div>
 
-			<!-- FOOTER -->
-			<%- include('../partials/footer.ejs') %>
-	</body>
+              <div class="col-12 my-3">
+                <button type="submit" class="btn btn-primary">Loguearme</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- //Login-Form -->
 
-	</html>
+  <!-- FOOTER -->
+  <%- include('../partials/footer.ejs') %>
+</body>
+
+<script>
+  function validateForm() {
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+
+    var erEmail = document.querySelector('.erEmail');
+    var erPassword = document.querySelector('.erPassword');
+
+    var isValid = true;
+
+    erEmail.innerHTML = '';
+    erPassword.innerHTML = '';
+
+    if (!email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)) {
+      erEmail.innerHTML = 'Por favor, introduce un correo electrónico válido';
+      isValid = false;
+    }
+
+    if (password.length === 0) {
+      erPassword.innerHTML = 'Por favor, introduce tu contraseña';
+      isValid = false;
+    }
+
+    return isValid;
+  }
+</script>
+
+</html>

@@ -1,13 +1,10 @@
 <!-- HEAD -->
 <%- include('../partials/head.ejs') %>
-
 <link rel="stylesheet" href="../css/login-register.css" />
 <link rel="stylesheet" type="text/css" href="../css/productCreate.css" />
 
-
 <!-- HEADER -->
 <%- include('../partials/header.ejs') %>
-
 
 <body>
   <main>
@@ -16,14 +13,14 @@
         <ul></ul>
       </div>
       <form id="formProduct" name="formulario" action="/productCreate" method="POST" enctype="multipart/form-data"
-        class="createform">
+        class="createform" onsubmit="return validateForm()">
         <div>
           <h1>INGRESAR NUEVO PRODUCTO DB</h1>
         </div>
 
         <label for="title">Titulo</label>
         <input type="text" id="nameProduct" name="title" placeholder="Titulo del Libro" class="control" <%=locals.errors &&
-              errors.title ? 'is-invalid' : null %> value="<%= locals.oldData ? oldData.title : null %>">
+          errors.title ? 'is-invalid' : null %> value="<%= locals.oldData ? oldData.title : null %>">
         <div class="col-8 col-lg-10">
           <small class="text-danger erName"></small>
         </div>
@@ -33,65 +30,7 @@
         </div>
         <% } %>
 
-        <label for="author">Autor</label>
-        <input type="text" name="author" placeholder="Autor del Libro" class="control">
-
-        <label for="genre">Género</label>
-        <select name="genre" class="category">
-          <% for( let i=0; i < genres.length; i++ ) { %>
-          <option value="<%= genres[i].id %>">
-            <%= genres[i]?.name || 'No tiene genero' %>
-          </option>
-          <% } %>
-        </select>
-
-        <label for="author">Descripcion</label>
-        <input type="text" id="descriptionProduct" name="description" placeholder="Descripcion del Producto"
-          class="control" <%=locals.errors && errors.description ? 'is-invalid' : null %>"
-          value="<%= locals.oldData ? oldData.description : null %>">
-        <div class="col-8 col-lg-10">
-          <small class="text-danger erName"></small>
-        </div>
-        <% if (locals.errors && errors.description) { %>
-        <div class="text-danger">
-          <%= errors.description.msg %>
-        </div>
-        <% } %>
-
-        <label for="descriptionD">Descripcion Detallada</label>
-        <textarea name="descriptionD" id="descriptionDetallada" placeholder="Inserte Descripción detallada de Producto"
-          class="control"></textarea>
-
-        <div class="imagenEdit2">
-          <br>
-          <img class="imagenEdit" name="imageView" src="./img/default.png" alt="Sin imagen" id="productImageAddTop">
-        </div><br>
-        <label for="imgTop">Ingresar Imagen de Tapa del Libro</label>
-        <input type="file" id="inputProductAddImageTop" name="imgTop"
-          class="subir-archivo <%= locals.errors && errors.imgTop ? 'is-invalid' : null %>">
-        <% if (locals.errors && errors.imgTop) { %>
-        <div class="text-danger">
-          <%= errors.imgTop.msg %>
-        </div>
-        <% } %>
-        <div class="imagenEdit2">
-          <br>
-          <img class="imagenEdit" name="imageView1" src="./img/default.png" alt="Sin imagen" id="productImageAddBack">
-        </div><br>
-        <label for="imgBack">Ingresar Imagen de Contratapa del Libro</label>
-        <input type="file" id="inputProductAddImageBack" name="imgBack"
-          class="subir-archivo <%= locals.errors && errors.imgBack ? 'is-invalid' : null %>">
-        <% if (locals.errors && errors.imgBack) { %>
-        <div class="text-danger">
-          <%= errors.imgBack.msg %>
-        </div>
-        <% } %>
-
-        <label for="price">Precio</label>
-        <input type="number" name="price" placeholder="Precio del Libro" class="control">
-
-        <label for="discount">Descuento</label>
-        <input type="number" name="discount" placeholder="% de Descuento" class="control">
+        <!-- Agregar más campos del formulario -->
 
         <div class="container-botones">
           <button type="submit" id="CrearProducto" class="btn btn-success">Agregar
@@ -106,6 +45,47 @@
 <!-- FOOTER -->
 <%- include('../partials/footer.ejs') %>
 
-<!--<script type="text/javascript" src="../../public/js/validProd.js"></script>-->
+<script>
+  function validateForm() {
+    var nameProduct = document.getElementById("nameProduct").value;
+    var descriptionProduct = document.getElementById("descriptionProduct").value;
+    var inputProductAddImageTop = document.getElementById("inputProductAddImageTop").value;
+    var inputProductAddImageBack = document.getElementById("inputProductAddImageBack").value;
+
+    var erName = document.querySelector('.erName');
+    var erDescription = document.querySelector('.erDescription');
+    var erImageTop = document.querySelector('.erImageTop');
+    var erImageBack = document.querySelector('.erImageBack');
+
+    var isValid = true;
+
+    erName.innerHTML = '';
+    erDescription.innerHTML = '';
+    erImageTop.innerHTML = '';
+    erImageBack.innerHTML = '';
+
+    if (nameProduct.length < 5) {
+      erName.innerHTML = 'El nombre del producto debe tener al menos 5 caracteres';
+      isValid = false;
+    }
+
+    if (descriptionProduct.length < 20) {
+      erDescription.innerHTML = 'La descripción del producto debe tener al menos 20 caracteres';
+      isValid = false;
+    }
+
+    if (!inputProductAddImageTop.match(/\.(jpg|jpeg|png|gif)$/i)) {
+      erImageTop.innerHTML = 'La imagen de tapa debe tener un formato válido (JPG, JPEG, PNG, GIF)';
+      isValid = false;
+    }
+
+    if (!inputProductAddImageBack.match(/\.(jpg|jpeg|png|gif)$/i)) {
+      erImageBack.innerHTML = 'La imagen de contraportada debe tener un formato válido (JPG, JPEG, PNG, GIF)';
+      isValid = false;
+    }
+
+    return isValid;
+  }
+</script>
 
 </html>
