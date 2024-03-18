@@ -19,7 +19,6 @@ const apiProductsController = {
           "descriptionD",
           "discount",
           "genre_id",
-          "imgTop",
           "imgBack",
           "publisher",
           "stock",
