@@ -160,8 +160,6 @@ const productsController = {
           genre_id: editProduct.genre,
           description: editProduct.description,
           descriptionD: editProduct.descriptionD,
-          //imgTop: editProduct.imgTop,
-          //imgBack: editProduct.imgBack,
           price: editProduct.price,
           discount: editProduct.discount,
         }, {
@@ -169,10 +167,10 @@ const productsController = {
             id: req.params.id,
           },
         });
-        return res.redirect("/detail/" + req.params.id);
       } catch (error) {
         console.log(error);
       }
+      return res.redirect("/detail/" + req.params.id);
     }
   },
 

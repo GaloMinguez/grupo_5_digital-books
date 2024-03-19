@@ -50,7 +50,7 @@ const controller = {
         category_id: 2,
         avatar: req.file.filename,
       });
-      res.redirect("/");
+      //res.redirect("/");
     } catch (error) {
       console.log(error);
     }
@@ -169,10 +169,10 @@ const controller = {
           },
         }
       );
-      res.redirect("/users/userlist");
     } catch (error) {
       console.log(error);
     }
+    res.redirect("/users/userlist");
   },
 
   userDelete: (req, res) => {
