@@ -45,11 +45,13 @@ router.get('/productDelete/:id', guestDetailMiddleware, productController.produc
 // Proceso de eliminacion del producto
 router.post('/productDelete/:id', guestDetailMiddleware, productController.productDestroy); 
 
+
+//****************************************** */
 // mostrar form de edicion del usuario
 router.get('/userEdit/:id', guestDetailMiddleware, usersController.userEdit);
 
 // Proceso de actualizacion del usuario
-router.post('/userEdit/:id', uploadFile.single('avatar'),usersController.userUpDate);
+router.put('/userEdit/:id', uploadFile.single('avatar'),usersController.userUpDate);
 
 // mostrar form de borrado del usuario
 router.get('/userDelete/:id', guestDetailMiddleware, usersController.userDelete); 

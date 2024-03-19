@@ -80,7 +80,7 @@ const apiUsersController = {
       raw: true
     })  
       .then(users => {
-        let appPath = 'http://localhost:3002/img/'
+        let appPath = 'http://localhost:3002/img/users/'
         let imageURL = appPath + users[0].avatar;
         let lastUser = users[0];
         console.log(lastUser);

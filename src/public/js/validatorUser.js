@@ -75,4 +75,34 @@ window.addEventListener("load", function () {
             return valid_extensions.includes(file_extension);
         }
     });
+
+       //EVENTOS IMÁGENES DE PRODUCTOS-----------------------------------------------------------
+
+    // captura de imágenes cuando el Administrador quiere cambiar una imágen de un usuario
+    let input_user_image_edit = document.getElementById('inputUserImageEdit');
+    if (input_user_image_edit) {
+        input_user_image_edit.addEventListener('change', function () {
+            let imgUser = document.getElementById("userImageEdit");
+            let fileUser = this.files[0];
+            imgUser.classList.add("obj");
+            imgUser.file = fileUser;
+            let readerUser = new FileReader();
+            readerUser.onload = (function (aImg) { return function (e) { aImg.src = e.target.result; }; })(imgUser);
+            readerUser.readAsDataURL(fileUser);
+        });
+    };
+
+    // captura de imágenes cuando el Administrador crea un producto
+    let input_user_image_add = document.getElementById('inputUserAddImage');
+    if (input_product_image_add) {
+        input_user_image_add.addEventListener('change', function () {
+            let imgUserAdd = document.getElementById("userImageAdd");
+            let fileUserAdd = this.files[0];
+            imgUserAdd.classList.add("obj");
+            imgUserAdd.file = fileUserAdd;
+            let readerUserAdd = new FileReader();
+            readerUserAdd.onload = (function (aImg) { return function (e) { aImg.src = e.target.result; }; })(imgUserAdd);
+            readerUserAdd.readAsDataURL(fileUserAdd);
+        });
+    };
 })

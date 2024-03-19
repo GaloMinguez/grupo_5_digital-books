@@ -1,6 +1,4 @@
-const {
-  validationResult
-} = require("express-validator");
+const { validationResult } = require("express-validator");
 
 const db = require("../database/models");
 const sequelize = db.sequelize;
@@ -8,24 +6,28 @@ const sequelize = db.sequelize;
 const productsController = {
   productListAbm: (req, res) => {
     db.Producto.findAll({
-      include: [{
-        association: "genero"
-      }],
+      include: [
+        {
+          association: "genero",
+        },
+      ],
     }).then((libros) => {
       return res.render("../views/products/productAbm", {
-        libros
+        libros,
       });
     });
   },
   productList: async (req, res) => {
     try {
       let libros = await db.Producto.findAll({
-        include: [{
-          association: "genero"
-        }],
+        include: [
+          {
+            association: "genero",
+          },
+        ],
       });
       return res.render("../views/products/productList", {
-        libros
+        libros,
       });
     } catch (error) {
       console.log(error);
@@ -35,9 +37,11 @@ const productsController = {
     let pedidoProducto = db.Producto.findByPk(req.params.id);
 
     let pedidoProductos = db.Producto.findAll({
-      include: [{
-        association: "genero"
-      }],
+      include: [
+        {
+          association: "genero",
+        },
+      ],
     });
 
     Promise.all([pedidoProducto, pedidoProductos]).then(function ([
@@ -55,9 +59,11 @@ const productsController = {
 
   detailProduct: (req, res) => {
     db.Producto.findByPk(req.params.id, {
-      include: [{
-        association: "genero"
-      }],
+      include: [
+        {
+          association: "genero",
+        },
+      ],
     }).then((producto) => {
       return res.render("../views/products/Detailproduct", {
         getBook: producto,
@@ -70,7 +76,7 @@ const productsController = {
   productCreate: (req, res) => {
     db.Genero.findAll().then(function (generos) {
       return res.render("../views/products/productCreate", {
-        genres: generos
+        genres: generos,
       });
     });
   },
@@ -90,8 +96,8 @@ const productsController = {
     } else {
       try {
         let newProduct = req.body;
-        newProduct.imgTop = 'default.png';
-        newProduct.imgBack = 'default.png';
+        newProduct.imgTop = "default.png";
+        newProduct.imgBack = "default.png";
         if (req.files) {
           newProduct.imgTop = req.files.imgTop[0].filename;
           newProduct.imgBack = req.files.imgBack[0].filename;
@@ -129,22 +135,23 @@ const productsController = {
         genres: generos,
       });
     });
-    //return res.send('El libro que quieres editar no existe')
   },
 
   productUpDate: async (req, res) => {
-    const resultValidation = validationResult(req);
+    try {
+      const resultValidation = validationResult(req);
 
-    if (resultValidation.errors.length > 0) {
-      db.Genero.findAll().then(function (generos) {
+      if (resultValidation.errors.length > 0) {
+        let genres = await db.Genero.findAll();
+        let product = await db.Producto.findByPk(req.params.id);
+
         return res.render("../views/products/productEdit", {
-          genres: generos,
+          libro: product,
+          genres: genres,
           errors: resultValidation.mapped(),
           oldData: req.body,
         });
-      });
-    } else {
-      try {
+      } else {
         let editProduct = req.body;
         if (req.files) {
           editProduct.imgTop = req.files.imgTop[0].filename;
@@ -154,37 +161,40 @@ const productsController = {
           editProduct.imgTop = product_old_db.imgTop;
           editProduct.imgBack = product_old_db.imgBack;
         }
-        db.Producto.update({
-          title: editProduct.title,
-          author: editProduct.author,
-          genre_id: editProduct.genre,
-          description: editProduct.description,
-          descriptionD: editProduct.descriptionD,
-          price: editProduct.price,
-          discount: editProduct.discount,
-        }, {
-          where: {
-            id: req.params.id,
+        console.log(editProduct);
+        await db.Producto.update(
+          {
+            title: editProduct.title,
+            author: editProduct.author,
+            genre_id: editProduct.genre,
+            description: editProduct.description,
+            descriptionD: editProduct.descriptionD,
+            price: editProduct.price,
+            discount: editProduct.discount,
           },
-        });
-      } catch (error) {
-        console.log(error);
+          {
+            where: { id: req.params.id },
+          }
+        );
+        //return res.redirect("/detail/" + req.params.id);
       }
-      return res.redirect("/detail/" + req.params.id);
+    } catch (error) {
+      console.log(error);
     }
+    return res.redirect("/productAbm");
   },
 
-  productDelete: (req, res) => {
-    db.Producto.findByPk(req.params.id).then((product) => {
+  productDelete: async (req, res) => {
+    await db.Producto.findByPk(req.params.id).then((product) => {
       res.render("../views/products/productDelete", {
-        product: product
+        product: product,
       });
     });
   },
 
   productDestroy: async (req, res) => {
     try {
-      db.Producto.destroy({
+      await db.Producto.destroy({
         where: {
           id: req.params.id,
         },
@@ -195,7 +205,6 @@ const productsController = {
       console.log(error);
     }
   },
-
 };
 
 module.exports = productsController;

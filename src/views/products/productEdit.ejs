@@ -61,9 +61,6 @@
           <input class="subir-archivo" type="file" name="imgTop" value="<%= libro.imgTop %>" id="inputProductImageEditTop">
           <label class="feedBack"><%= locals.errors && errors.image ? errors.image.msg : '' %> </label><br> 
         </p>
-
-        <!--<label for="imgTop">Ingresar Imagen de Tapa del Libro</label>
-            <input type="file" name="imgTop" class="subir-archivo">-->
         <br>
         <div class="imagenEdit2">
           <label>Imagen de Portada</label>
@@ -74,10 +71,6 @@
           <input class="subir-archivo" type="file" name="imgTop" value="<%= libro.imgBack %>" id="inputProductImageEditBack">
           <label class="feedBack"><%= locals.errors && errors.image ? errors.image.msg : '' %> </label><br> 
         </p>
-
-        <!--<label for="imgBack">Ingresar Imagen de portada del Libro</label>
-            <input type="file" name="imgBack" class="subir-archivo">-->
-
         <label for="price">Precio</label>
         <input type="number" name="precio" placeholder="Precio del Libro" class="control" value="<%= libro.price %>">
 
@@ -92,9 +85,8 @@
     </section>
   </main>
 </body>
-
-
 <%- include('../partials/footer.ejs') %>
+
 <script>
   function validateForm() {
     var title = document.getElementById("title").value;

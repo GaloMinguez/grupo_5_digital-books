@@ -1,5 +1,4 @@
 // ************ Require's ************
-const createError = require('http-errors');
 const session = require('express-session');
 const cookies = require('cookie-parser');
 const express = require('express');
@@ -55,9 +54,9 @@ app.use('/api/products', apiProductsRoutes);
 app.use('/api/users', apiUsersRoutes);
 app.use('/api/genres', apiGenresRoutes);
 
-/*app.use('*', (req, res) => {
+app.use('*', (req, res) => {
   res.render('../views/page_404');
-});*/
+});
 
 
 app.listen(port, () => {

@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `fullName` VARCHAR(30) NOT NULL,
   `email` VARCHAR(255) NOT NULL,
-  `password` VARCHAR(32) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
   `category_id` INT NOT NULL,
   `avatar` VARCHAR(65) NULL,
   PRIMARY KEY (`id`));
