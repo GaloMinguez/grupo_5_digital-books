@@ -14,6 +14,7 @@ const Op = sequelize.Op;
 
 const controller = {
     index: (req, res) => res.render('index'),
+    contact: (req, res) => res.render('contactForm'),
     search: async (req, res) => {
         const Op = db.Sequelize.Op;
         palabra = (req.query.keywords).toLowerCase();
