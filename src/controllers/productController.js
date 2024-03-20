@@ -153,15 +153,23 @@ const productsController = {
         });
       } else {
         let editProduct = req.body;
-        if (req.files) {
-          editProduct.imgTop = req.files.imgTop[0].filename;
-          editProduct.imgBack = req.files.imgBack[0].filename;
-        } else {
-          let product_old_db = await product.findByPk(req.params.id);
+        let product_old_db = await db.Producto.findByPk(req.params.id);
+  
+        const imgTop = req.files['imgTop'] ? req.files['imgTop'][0] : null;
+        const imgBack = req.files['imgBack'] ? req.files['imgBack'][0] : null;
+  
+        if (imgTop == null) {
           editProduct.imgTop = product_old_db.imgTop;
-          editProduct.imgBack = product_old_db.imgBack;
+        } else {
+          editProduct.imgTop = req.files.imgTop[0].filename;
         }
-        console.log(editProduct);
+  
+        if (imgBack == null) {
+          editProduct.imgBack = product_old_db.imgBack;
+        } else {
+          editProduct.imgBack = req.files.imgBack[0].filename;
+        }
+  
         await db.Producto.update(
           {
             title: editProduct.title,
@@ -170,18 +178,19 @@ const productsController = {
             description: editProduct.description,
             descriptionD: editProduct.descriptionD,
             price: editProduct.price,
+            imgTop: editProduct.imgTop,
+            imgBack: editProduct.imgBack,
             discount: editProduct.discount,
           },
           {
             where: { id: req.params.id },
           }
-        );
         //return res.redirect("/detail/" + req.params.id);
-      }
+      )}
     } catch (error) {
       console.log(error);
     }
-    return res.redirect("/productAbm");
+    return res.redirect("/");
   },
 
   productDelete: async (req, res) => {

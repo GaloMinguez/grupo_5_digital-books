@@ -31,6 +31,7 @@ router.get('/productCreate', guestDetailMiddleware, productController.productCre
 
 // proceso de creacion produc
 let multerWithFields = upload.fields([{ name: 'imgTop', maxCount: 1 }, { name: 'imgBack', maxCount: 1 }])
+
 router.post('/productCreate', multerWithFields, validationProd, productController.productSave) 
 
 // mostrar form de edicion del producto

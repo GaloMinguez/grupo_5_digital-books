@@ -13,7 +13,7 @@
       <form id="formProduct" action="/productEdit/<%= libro.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
         class="createform" onsubmit="return validateForm()">
         <div>
-          <h1>MODIFICAR PRODUCTO DB</h1>
+          <h1>MODIFICAR PRODUCTO</h1>
         </div>
 
         <label for="title">Titulo</label>
@@ -64,11 +64,11 @@
         <br>
         <div class="imagenEdit2">
           <label>Imagen de Portada</label>
-          <img class="imagenEdit" name="imgTop" src="/img/<%= libro.imgBack %>" alt="" id="productImageEditBack">
+          <img class="imagenEdit" name="imgBack" src="/img/<%= libro.imgBack %>" alt="" id="productImageEditBack">
         </div>
         <p>
           <label>Agregar una imagen</label>
-          <input class="subir-archivo" type="file" name="imgTop" value="<%= libro.imgBack %>" id="inputProductImageEditBack">
+          <input class="subir-archivo" type="file" name="imgBack" value="<%= libro.imgBack %>" id="inputProductImageEditBack">
           <label class="feedBack"><%= locals.errors && errors.image ? errors.image.msg : '' %> </label><br> 
         </p>
         <label for="price">Precio</label>
