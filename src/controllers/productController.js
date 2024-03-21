@@ -139,59 +139,60 @@ const productsController = {
 
   productUpDate: async (req, res) => {
     try {
-      const resultValidation = validationResult(req);
+        const resultValidation = validationResult(req);
 
-      if (resultValidation.errors.length > 0) {
-        let genres = await db.Genero.findAll();
-        let product = await db.Producto.findByPk(req.params.id);
+        if (resultValidation.errors.length > 0) {
+            let genres = await db.Genero.findAll();
+            let product = await db.Producto.findByPk(req.params.id);
 
-        return res.render("../views/products/productEdit", {
-          libro: product,
-          genres: genres,
-          errors: resultValidation.mapped(),
-          oldData: req.body,
-        });
-      } else {
-        let editProduct = req.body;
-        let product_old_db = await db.Producto.findByPk(req.params.id);
-  
-        const imgTop = req.files['imgTop'] ? req.files['imgTop'][0] : null;
-        const imgBack = req.files['imgBack'] ? req.files['imgBack'][0] : null;
-  
-        if (imgTop == null) {
-          editProduct.imgTop = product_old_db.imgTop;
+            return res.render("../views/products/productEdit", {
+                libro: product,
+                genres: genres,
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+            });
         } else {
-          editProduct.imgTop = req.files.imgTop[0].filename;
+            let editProduct = req.body;
+            let product_old_db = await db.Producto.findByPk(req.params.id);
+
+            const imgTop = req.files['imgTop'] ? req.files['imgTop'][0] : null;
+            const imgBack = req.files['imgBack'] ? req.files['imgBack'][0] : null;
+
+            if (imgTop == null) {
+                editProduct.imgTop = product_old_db.imgTop;
+            } else {
+                editProduct.imgTop = req.files.imgTop[0].filename;
+            }
+
+            if (imgBack == null) {
+                editProduct.imgBack = product_old_db.imgBack;
+            } else {
+                editProduct.imgBack = req.files.imgBack[0].filename;
+            }
+
+            await db.Producto.update({
+                title: editProduct.title,
+                author: editProduct.author,
+                genre_id: editProduct.genre,
+                description: editProduct.description,
+                descriptionD: editProduct.descriptionD,
+                price: editProduct.price,
+                imgTop: editProduct.imgTop,
+                imgBack: editProduct.imgBack,
+                discount: editProduct.discount,
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            });
+
+            // Debería estar dentro del bloque else
         }
-  
-        if (imgBack == null) {
-          editProduct.imgBack = product_old_db.imgBack;
-        } else {
-          editProduct.imgBack = req.files.imgBack[0].filename;
-        }
-  
-        await db.Producto.update(
-          {
-            title: editProduct.title,
-            author: editProduct.author,
-            genre_id: editProduct.genre,
-            description: editProduct.description,
-            descriptionD: editProduct.descriptionD,
-            price: editProduct.price,
-            imgTop: editProduct.imgTop,
-            imgBack: editProduct.imgBack,
-            discount: editProduct.discount,
-          },
-          {
-            where: { id: req.params.id },
-          }
-        //return res.redirect("/detail/" + req.params.id);
-      )}
     } catch (error) {
-      console.log(error);
+        console.log(error);
     }
-    return res.redirect("/");
-  },
+    return res.redirect("/"); 
+},
 
   productDelete: async (req, res) => {
     await db.Producto.findByPk(req.params.id).then((product) => {

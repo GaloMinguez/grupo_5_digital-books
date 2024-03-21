@@ -69,3 +69,39 @@
   </body>
 
   </html>
+
+  <script>
+    // Espera a que el DOM esté completamente cargado
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.querySelector('form');
+  
+      form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+        const fullName = document.getElementById('fullName').value;
+        const email = document.getElementById('email').value;
+  
+        // Verificar que el campo de nombre completo no esté vacío
+        if (fullName.trim() === '') {
+          alert('Por favor ingrese su nombre completo.');
+          return;
+        }
+  
+        // Verificar que el campo de correo electrónico sea válido
+        if (!isValidEmail(email)) {
+          alert('Por favor ingrese un correo electrónico válido.');
+          return;
+        }
+  
+        // Si pasa todas las validaciones, enviar el formulario
+        form.submit();
+      });
+  
+      // Función para verificar si el correo electrónico es válido
+      function isValidEmail(email) {
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+    });
+  </script>

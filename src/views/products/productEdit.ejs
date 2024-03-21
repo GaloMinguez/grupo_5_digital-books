@@ -90,23 +90,49 @@
 <script>
   function validateForm() {
     var title = document.getElementById("title").value;
-
+    var description = document.getElementById("description").value;
+    var imgTop = document.getElementById("inputProductImageEditTop").value;
+    var imgBack = document.getElementById("inputProductImageEditBack").value;
 
     var erTitle = document.querySelector('.erTitle');
-
+    var erDescription = document.querySelector('.erDescription');
+    var erImgTop = document.querySelector('.erImgTop');
+    var erImgBack = document.querySelector('.erImgBack');
 
     var isValid = true;
 
     erTitle.innerHTML = '';
-
+    erDescription.innerHTML = '';
+    erImgTop.innerHTML = '';
+    erImgBack.innerHTML = '';
 
     if (title.length < 5) {
       erTitle.innerHTML = 'El título del producto debe tener al menos 5 caracteres';
       isValid = false;
     }
 
+    if (description.length < 20) {
+      erDescription.innerHTML = 'La descripción del producto debe tener al menos 20 caracteres';
+      isValid = false;
+    }
+
+    if (imgTop == '' || !isValidFile(imgTop)) {
+      erImgTop.innerHTML = 'La imagen de tapa no es válida. Debe ser un archivo JPG, JPEG, PNG o GIF';
+      isValid = false;
+    }
+
+    if (imgBack == '' || !isValidFile(imgBack)) {
+      erImgBack.innerHTML = 'La imagen de portada no es válida. Debe ser un archivo JPG, JPEG, PNG o GIF';
+      isValid = false;
+    }
 
     return isValid;
+  }
+
+  // Función para verificar si el archivo es válido
+  function isValidFile(file) {
+    var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+    return allowedExtensions.test(file);
   }
 </script>
 
