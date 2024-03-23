@@ -1,55 +1,54 @@
 <link rel="stylesheet" href="../css/header.css" />
+
 <header>
      <div class="header-top">
-
-          <div class="">
-               <form action="/search" method="GET" class="search-form">
-                    <input type="text" name="keywords" placeholder="Buscar libros y más" class="search-form_input">
-                    <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
-               </form>
-          </div>
-
           <div id="logo">
                <a href="/" class="main-header_home-link"><img class="logo" src="/img/LOGO-DB.png"></a>
           </div>
-
           <div class="cuentas">
-               <ul>
-                    <% if (locals.isLogged) { %>
-                         <li>
-                              <a class="nav-link dropdown-toggle" href="/users/profile" id="dropUser" role="button"
-                                   data-bs-toggle="dropdown" aria-expanded="false">
-                                   <img src="/img/users/<%= locals.userLogged.avatar %>" width="40"
-                                        style="border-radius: 100%;">
-                              </a>
-                              <ul aria-labelledby="navbarDropdown">
-                                   <li>
-                                        <hr class="dropdown-divider">
-                                   </li>
-                                   <a class="dropdown-item" href="/users/profile">Mi perfil</a>
-                                   <li>
-                                        <hr class="dropdown-divider">
-                                   </li>
-                                   <a class="dropdown-item" href="/users/logout">Logout</a>
-                                   <li>
-                                        <hr class="dropdown-divider">
-                                   </li>
-                                   <a class="dropdown-item" href="/productAbm">Productos</a>
-                                   <li>
-                                        <hr class="dropdown-divider">
-                                   </li>
-                                   <a class="dropdown-item" href="/users/userList">Usuarios</a>
-                                   <li>
-                                        <hr class="dropdown-divider">
-                                   </li>
-                                   <li><a href="/productCart">Mis compras</a></li>
-                              </ul>
-                         </li>
-                         <% } else { %>
-                              <li class="nav-item"><a class="nav-link" href="/users/register">Crear cuenta</a></li>
-                              <li class="nav-item"><a class="nav-link" href="/users/login">Iniciar sesión</a></li>
-                              <% } %>
-               </ul>
+               <div class="">
+                    <form action="/search" method="GET" class="search-form">
+                         <input type="text" name="keywords" placeholder="Buscar libros y más" class="search-form_input">
+                         <button type="submit" class="search-form_button"><i class="fas fa-search"></i></button>
+                    </form>
+                    <ul>
+                         <% if (locals.isLogged) { %>
+                              <li>
+                                   <a class="nav-link dropdown-toggle" href="/users/profile" id="dropUser" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="/img/users/<%= locals.userLogged.avatar %>" width="40"
+                                             style="border-radius: 100%;">
+                                   </a>
+                                   <ul aria-labelledby="navbarDropdown">
+                                        <li>
+                                             <hr class="dropdown-divider">
+                                        </li>
+                                        <a class="dropdown-item" href="/users/profile">Mi perfil</a>
+                                        <li>
+                                             <hr class="dropdown-divider">
+                                        </li>
+                                        <a class="dropdown-item" href="/users/logout">Logout</a>
+                                        <li>
+                                             <hr class="dropdown-divider">
+                                        </li>
+                                        <a class="dropdown-item" href="/productAbm">Productos</a>
+                                        <li>
+                                             <hr class="dropdown-divider">
+                                        </li>
+                                        <a class="dropdown-item" href="/users/userList">Usuarios</a>
+                                        <li>
+                                             <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a href="/productCart">Mis compras</a></li>
+                                   </ul>
+                              </li>
+                              <% } else { %>
+                                   <li class="nav-item"><a class="nav-link" href="/users/register">Crear cuenta</a></li>
+                                   <li class="nav-item"><a class="nav-link" href="/users/login">Iniciar sesión</a></li>
+                                   <% } %>
+                    </ul>
+               </div>
+               
           </div>
      </div>
 

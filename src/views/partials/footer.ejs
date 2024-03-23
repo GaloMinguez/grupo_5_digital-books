@@ -1,103 +1,240 @@
 <style>
      .footer-wrapper {
-          background-color: #f8e6c0
-     }
-
-     footer {
-          width: 50%;
           background-color: #f8e6c0;
-          color: var(--second-c);
-     }
-
-     footer ul {
-          padding: 0;
-     }
-
-     footer li {
-          list-style: none;
-     }
-
-     .wrap-footer {
-          display: grid;
-          grid-template-columns: 30% 15% 15% 20%;
-          column-gap: 5%;
           padding: 1rem;
           margin: 2rem auto;
           max-width: 1200px;
      }
 
+     footer {
+          width: 100%;
+          background-color: #f8e6c0;
+          color: #576171;
+          padding: 1rem;
+     }
+
+     footer ul {
+          padding: 0;
+          margin: 0;
+     }
+
+     footer li {
+          list-style: none;
+     }
+     .footer {
+    background-color: #f8e6c0;
+    color: #576171;
+    padding: 1rem;
+}
+
+.wrap-footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+    overflow-x: hidden;
+}
+
+.element-footer {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-element_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-element_footer img {
+    max-height: 75px;
+    width: auto;
+}
+
+.text-element-footer ul,
+.rrss-element-footer ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.text-element-footer li,
+.rrss-element-footer li {
+    line-height: 1.5;
+}
+
+.link-elements-footer li a {
+    color: #ff8000;
+    text-decoration: none;
+}
+
+.rrss-element-footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rrss-element-footer img {
+    width: 35px;
+    margin-right: 10px;
+}
+
+.footer-creds {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 2rem; /* Aumenta el espacio entre los elementos del footer y los avisos legales */
+}
+
+.footer-creds .legal-creds ul {
+    display: flex;
+    justify-content: center;
+    margin: 0; /* Ajusta el margen a cero */
+}
+
+.footer-creds .legal-creds ul li {
+    margin-right: 20px;
+}
+
+.footer-creds .legal-creds ul a {
+    color: #576171;
+    text-decoration: none;
+}
+
+     .wrap-footer {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          grid-gap: 20px;
+          max-width: 1200px;
+          margin: auto;
+     }
+
      .logo-element_footer {
           display: flex;
-          margin: 2rem 0;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 20px;
      }
 
      .logo-element_footer img {
           max-height: 75px;
+          width: auto;
+     }
+
+     .element-footer {
+          text-align: center;
+          margin-bottom: 2rem;
      }
 
      .element-footer h5 {
           margin: 1rem 0;
           font-size: 18px;
+          color: #ff8000;
      }
 
      .text-element-footer li {
-          line-height: 2;
+          line-height: 1.5;
      }
 
      .link-elements-footer li a {
           color: #ff8000;
+          text-decoration: none;
      }
 
      .rrss-element-footer ul {
           display: flex;
-          flex-flow: wrap;
+          justify-content: center;
+          align-items: center;
+          list-style: none;
+          padding: 0;
+          margin: 0;
      }
 
      .rrss-element-footer img {
           width: 35px;
-     }
-
-     .rrss-element-footer li {
-          margin-right: 1rem;
+          margin-right: 10px;
      }
 
      .footer-creds {
-          display: flex;
-          justify-content: space-between;
-          padding: 50px 1rem;
-          color: #576171;
-          font-size: .9rem;
-          max-width: 1200px;
-          margin: 0 auto;
+          text-align: center;
+          padding: 20px 0;
+          margin-top: 1rem;
      }
 
      .legal-creds ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
           display: flex;
-          flex-flow: column;
+          justify-content: center;
      }
-     
+
      .legal-creds ul li {
-          padding-right: 1rem;
-          padding: 10px;
+          margin-right: 20px;
      }
 
      .legal-creds ul a {
           color: #576171;
-          font-size: .9rem;
+          text-decoration: none;
+     }
+
+     .rrss-element-footer {
+          margin-top: 2rem;
+        
+     }
+
+     .footer-creds {
+          margin-top: 2rem;
+      
+     }
+
+     .footer-creds .legal-creds {
+          margin-top: 1rem;
+          
+     }
+
+
+
+     @media only screen and (min-width: 460px) {
+          .wrap-footer {
+               grid-template-columns: repeat(2, 1fr);
+       
+               column-gap: 2%;
+      
+          }
+     }
+
+     @media only screen and (min-width: 768px) {
+          .wrap-footer {
+               grid-template-columns: repeat(2, 1fr);
+  
+               column-gap: 2%;
+           
+          }
+     }
+
+     @media only screen and (min-width: 1024px) {
+          .wrap-footer {
+               grid-template-columns: repeat(2,1fr);
+  
+          }
      }
 </style>
 
 <footer class="footer">
-
      <div class="wrap-footer">
-          <div class="text-element-footer element-footer">
-               <a href="/"><img class="logo" src="/img/LOGO-DB.png"></a>
-               <h3 class="main-c">Acerca de nosotros</h3>
-               <p>Desde el año 2005 nos constituimos como una empresa socialmente
-                    responsable, que además de vender libros, se enfoca en fomentar la lectura en las personas
-                    de cualquier rincon del mundo, a través de recomendaciones de libros.</p>
-                    <br>
-                    <p>©2023 - Todos los derechos reservados.</p>    
+          
+          <div class="text-element-footer link-elements-footer element-footer">
+               <h5>Más Información</h5>
+               <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="https://github.com/GaloMinguez/grupo_5_digital-books/blob/master/README.md"
+                              target="_blank">Nosotros</a></li>
+                    <li><a href="/">Carta</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/">Contactar</a></li>
+               </ul>
           </div>
           <div class="text-element-footer element-footer">
                <h5>Dirección</h5>
@@ -106,17 +243,6 @@
                     <li>La Avenida - 0007</li>
                     <li>Mvl: (+34) 600 00 00 00</li>
                     <li>Tel: (+34) 900 00 00 00</li>
-               </ul>
-          </div>
-          <div class="text-element-footer link-elements-footer element-footer">
-               <h5>Más Información</h5>
-               <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="https://github.com/GaloMinguez/grupo_5_digital-books/blob/master/README.md" target=""
-                              _blank>Nosotros</a></li>
-                    <li><a href="/">Carta</a></li>
-                    <li><a href="/">Blog</a></li>
-                    <li><a href="/">Contactar</a></li>
                </ul>
           </div>
           <div class="rrss-element-footer element-footer">
@@ -137,28 +263,34 @@
                                    src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMjU2IDBjLTE0MC42OTkyMTkgMC0yNTYgMTE1LjMwMDc4MS0yNTYgMjU2IDAgNDYuNSAxMi41OTc2NTYgOTEuNSAzNi4zMDA3ODEgMTMxLjEwMTU2MmwtMzYuMzAwNzgxIDEyNC44OTg0MzggMTI0Ljg5ODQzOC0zNi4zMDA3ODFjMzkuNjAxNTYyIDIzLjY5OTIxOSA4NC42MDE1NjIgMzYuMzAwNzgxIDEzMS4xMDE1NjIgMzYuMzAwNzgxIDE0MC42OTkyMTkgMCAyNTYtMTE1LjMwMDc4MSAyNTYtMjU2cy0xMTUuMzAwNzgxLTI1Ni0yNTYtMjU2em0wIDAiIGZpbGw9IiMwMGRkN2IiLz48cGF0aCBkPSJtNTEyIDI1NmMwIDE0MC42OTkyMTktMTE1LjMwMDc4MSAyNTYtMjU2IDI1NnYtNTEyYzE0MC42OTkyMTkgMCAyNTYgMTE1LjMwMDc4MSAyNTYgMjU2em0wIDAiIGZpbGw9IiMwMGNjNzEiLz48cGF0aCBkPSJtNDE3LjE5OTIxOSAzNjQuMzAwNzgxLTEyIDExLjY5OTIxOWMtMTYuODAwNzgxIDE2LjgwMDc4MS01NS44MDA3ODEgMTUuNTk3NjU2LTgwLjY5OTIxOSAxMC44MDA3ODEtMjIuMTk5MjE5LTQuMTk5MjE5LTQ2LTE0LjEwMTU2Mi02OC41LTI3LjkwMjM0My02MS4xOTkyMTktMzcuMTk5MjE5LTExNi42OTkyMTktMTAzLjE5OTIxOS0xMzAuMTk5MjE5LTE2Mi41OTc2NTctOS4zMDA3ODEtNDAuMjAzMTI1LTQuMTk5MjE5LTc1IDktODguNWwxMi0xMmM2LjYwMTU2My02LjMwMDc4MSAxNy4wOTc2NTctNi4zMDA3ODEgMjMuNjk5MjE5IDBsNDcuNjk5MjE5IDQ3LjY5OTIxOWMzLjMwMDc4MSAzLjMwMDc4MSA1LjEwMTU2MiA3LjUgNS4xMDE1NjIgMTJzLTEuODAwNzgxIDguNjk5MjE5LTUuMTAxNTYyIDEybC0xMiAxMS42OTkyMTljLTEyLjg5ODQzOCAxMy4xOTkyMTktMTIuODk4NDM4IDM0LjUgMCA0Ny42OTkyMTlsNDkuODAwNzgxIDQ4LjkwMjM0MyAyOS4wOTc2NTYgMjguODAwNzgxYzEzLjIwMzEyNSAxMy4xOTkyMTkgMzUuNTAzOTA2IDEzLjE5OTIxOSA0OC43MDMxMjUgMGwxMS42OTkyMTktMTIuMDAzOTA2YzYuMzAwNzgxLTYgMTcuNjk5MjE5LTYgMjQgMGw0Ny42OTkyMTkgNDcuNzAzMTI1YzYuMzAwNzgxIDYuNTk3NjU3IDYuNjAxNTYyIDE3LjA5NzY1NyAwIDI0em0wIDAiIGZpbGw9IiNlY2VjZjEiLz48cGF0aCBkPSJtNDE3LjE5OTIxOSAzNjQuMzAwNzgxLTEyIDExLjY5OTIxOWMtMTYuODAwNzgxIDE2LjgwMDc4MS01NS44MDA3ODEgMTUuNTk3NjU2LTgwLjY5OTIxOSAxMC44MDA3ODEtMjIuMTk5MjE5LTQuMTk5MjE5LTQ2LTE0LjEwMTU2Mi02OC41LTI3LjkwMjM0M3YtODMuMDk3NjU3bDI5LjA5NzY1NiAyOC44MDA3ODFjMTMuMjAzMTI1IDEzLjE5OTIxOSAzNS41MDM5MDYgMTMuMTk5MjE5IDQ4LjcwMzEyNSAwbDExLjY5OTIxOS0xMi4wMDM5MDZjNi4zMDA3ODEtNiAxNy42OTkyMTktNiAyNCAwbDQ3LjY5OTIxOSA0Ny43MDMxMjVjNi4zMDA3ODEgNi41OTc2NTcgNi42MDE1NjIgMTcuMDk3NjU3IDAgMjR6bTAgMCIgZmlsbD0iI2UyZTJlNyIvPjwvc3ZnPg=="
                                    alt="icono redes sociales"></a>
                     </li>
-                    <h5 class="titulos-footer">Medios de Pago</h5>
-                    <br>
-                    <br>
-                    <br>
-                    <ul>
-                         <li class="fa-solid fa-money-check-dollar fa-xl"></li>
-                         <li class="fa-brands fa-cc-mastercard fa-xl"></li>
-                         <li class="fa-brands fa-cc-visa fa-xl"></li>
-                         <li class="fa-brands fa-cc-paypal fa-xl"></li>
-                         <li class="fa-brands fa-cc-amazon-pay fa-xl"></li>
-                    </ul>
+               </ul>
+               <h5 class="titulos-footer">Medios de Pago</h5>
+               <ul>
+                    <li class="fa-solid fa-money-check-dollar fa-xl"></li>
+                    <li class="fa-brands fa-cc-mastercard fa-xl"></li>
+                    <li class="fa-brands fa-cc-visa fa-xl"></li>
+                    <li class="fa-brands fa-cc-paypal fa-xl"></li>
+                    <li class="fa-brands fa-cc-amazon-pay fa-xl"></li>
                </ul>
           </div>
-     </div>
-
-     <div class="footer-creds">
-          <div class="legal-creds">
-               <ul>
-                    <li><a href="/">Política de Privacidad</a></li>
-                    <li><a href="/">Política de Cookies</a></li>
-                    <li><a href="/">Aviso Legal</a></li>
-               </ul>
+          <div class="footer-creds">
+               <div class="legal-creds">
+                    <ul>
+                         <li><a href="/">Política de Privacidad</a></li>
+                         <li><a href="/">Política de Cookies</a></li>
+                         <li><a href="/">Aviso Legal</a></li>
+                    </ul>
+               </div>
+          </div>
+          <div class="text-element-footer element-footer">
+               <div class="logo-element_footer">
+                    <a href="/"><img class="logo" src="/img/LOGO-DB.png" alt="Logo"></a>
+               </div>
+               <h5>Acerca de nosotros</h5>
+               <p>Desde el año 2005 nos constituimos como una empresa socialmente responsable, que además de vender
+                    libros, se enfoca en fomentar la lectura en las personas de cualquier rincón del mundo, a través de
+                    recomendaciones de libros.</p>
+               <p>©2023 - Todos los derechos reservados.</p>
           </div>
      </div>
 </footer>

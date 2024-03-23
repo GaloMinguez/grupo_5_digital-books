@@ -363,7 +363,6 @@ body {
   height: 30px;
 }
 #logo {
-  display: flex;
   width: 25%;
   justify-content: center;
 }
@@ -398,7 +397,7 @@ body {
 
 /* Estilos para el logo (ajusta el ancho según sea necesario) */
 #logo {
-  flex: 1; /* Toma todo el espacio disponible para empujar los elementos de cuentas a la derecha */
+  flex: 0; /* Toma todo el espacio disponible para empujar los elementos de cuentas a la derecha */
   margin-left: 0; /* Ajusta el margen izquierdo para mover el logo más a la izquierda */
 }
 
@@ -478,10 +477,24 @@ body {
   
 }
 
-.card-list-products {
-  display: flex;
-  justify-content: space-between; /* Espaciado uniforme entre los elementos */
+@media ((max-width: 460px)) {
+  .card-list-products {
+    display: block;
+    justify-content: space-between; /* Espaciado uniforme entre los elementos */
+  }
+  
 }
+
+@media ((min-width: 668px))  {
+  .card-list-products {
+    display: flex;
+    justify-content: space-between; /* Espaciado uniforme entre los elementos */
+  }
+  
+}
+
+
+
 
 .card {
   width: 23%; /* Ajusta el ancho de cada tarjeta según tus necesidades */

@@ -104,7 +104,7 @@ main {
   color: rgb(33, 48, 247);
 }
 
-/*iconos*/
+
 .input-contenedor i {
   position: absolute;
   color: rgb(0, 0, 0);
@@ -112,7 +112,7 @@ main {
   top: 19px;
   right: 8px;
 }
-/*recordar*/
+
 .olvidar {
   margin: -15px 0 15px;
   font-size: 1rem;
@@ -158,14 +158,13 @@ button:hover {
   font-style: italic;
 }
 
-/*No tengo cuenta*/
 .registrar {
   font-size: 1rem;
   color: rgb(0, 0, 0);
   text-align: center;
   margin: 20px 0 10px;
 }
-/*crear una cuenta*/
+
 .registrar p a {
   text-decoration: none;
   color: rgb(235, 101, 101);
@@ -189,5 +188,27 @@ button:hover {
   }
   .registrar {
     margin: 10px 0 5px;
+  }
+}
+
+/* Media query para celulares */
+@media (max-width: 767px) {
+  .contenedor-login, .contenedor-register {
+    height: auto;
+  }
+
+  .input-contenedor {
+    width: 80%;
+  }
+}
+
+/* Media query para escritorio */
+@media (min-width: 1025px) {
+  .section-login, .section-register {
+    min-height: auto;
+  }
+
+  .contenedor-login, .contenedor-register {
+    height: auto;
   }
 }
