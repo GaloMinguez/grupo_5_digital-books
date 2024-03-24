@@ -77,6 +77,7 @@
   .search-form_input {
       height: 30px;
       font-size: 1em;
+      margin: auto;
   }
 }
 
@@ -134,4 +135,9 @@
   #logo, .logo img {
     display: none; /* Oculta el logo y su contenedor en resoluciones de celular */
   }
+  .search-form_input {
+    height: 30px;
+    font-size: 1em;
+    margin: auto;
+}
 }
