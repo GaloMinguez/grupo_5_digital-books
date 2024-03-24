@@ -112,3 +112,43 @@ h1{
 button:hover{
 	color: rgba(255, 40, 12, 0.884);
 }
+
+
+/* Media query para pantallas de celular */
+@media screen and (max-width: 460px) {
+    .createform {
+        width: 90%;
+    }
+
+    .imagenEdit,
+    .imagenEdit2 {
+        max-width: 100%;
+        max-height: 200px;
+    }
+}
+
+/* Media query para pantallas de tablets */
+@media screen and (min-width: 461px) and (max-width: 1024px) {
+    .createform {
+        width: 70%;
+    }
+
+    .imagenEdit,
+    .imagenEdit2 {
+        max-width: 100%;
+        max-height: 250px;
+    }
+}
+
+/* Media query para pantallas de escritorio */
+@media screen and (min-width: 1025px) {
+    .createform {
+        width: 50%;
+    }
+
+    .imagenEdit,
+    .imagenEdit2 {
+        max-width: 250px;
+        max-height: 250px;
+    }
+}

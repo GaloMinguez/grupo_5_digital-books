@@ -214,15 +214,55 @@ header h1{
     scale: 1.05;
 }
 
-/* SECCION RESPONSIVE */
-@media screen and (max-width: 850px) {
+
+
+/* Media query para pantallas de tablets */
+@media screen and (min-width: 461px) and (max-width: 1024px) {
     .contenedor {
-      display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-    .contenedor-items{
-        width: 100% !important;
-    }
-    .carrito{
+
+    .contenedor-items {
         width: 100%;
     }
-  }
+
+    .carrito {
+        width: 100%;
+    }
+}
+
+  /* Media query para pantallas de celular */
+@media screen and (max-width: 460px) {
+    .contenedor {
+        display: block;
+    }
+
+    .contenedor-items {
+        width: 100% !important;
+    }
+
+    .carrito {
+        width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 1025px) {
+    .contenedor {
+        max-width: 1200px;
+        padding: 10px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contenedor-items {
+        width: 60%;
+    }
+
+    .carrito {
+        width: 35%;
+    }
+}

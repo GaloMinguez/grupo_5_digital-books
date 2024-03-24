@@ -886,3 +886,75 @@
 	}
   }
   
+  /* Estilos para dispositivos de hasta 768px de ancho (tablets y celulares en modo horizontal) */
+@media only screen and (max-width: 768px) {
+	main {
+		max-width: 100%;
+		padding: 0 10px; /* Añade espacio a los lados */
+	}
+
+	.container-img {
+		height: auto; /* Ajusta la altura automáticamente */
+	}
+
+	.container-name-product,
+	.container-ratingt {
+		flex-direction: column; /* Cambia a una disposición vertical */
+	}
+
+	.card-list-products {
+		flex-direction: column; /* Cambia a una disposición vertical */
+	}
+
+	.card {
+		width: 100%; /* Ocupa todo el ancho disponible */
+		margin-right: 0; /* Elimina el margen derecho */
+		margin-bottom: 20px; /* Espaciado entre tarjetas */
+	}
+
+	/* Estilos para el contenedor del visor de imágenes */
+	.contenedorvisor {
+		width: 100%;
+		height: auto; /* Ajusta la altura automáticamente */
+	}
+
+	.contenedorvisor .grande {
+		top: 0; /* Ajusta la posición de la imagen grande */
+	}
+
+	/* Estilos para la lista de comentarios */
+	.comments-container,
+	.comments-list .comment-box,
+	.reply-list .comment-box {
+		width: 100%; /* Ocupa todo el ancho disponible */
+	}
+}
+
+/* Estilos para dispositivos de hasta 480px de ancho (celulares en modo vertical) */
+@media only screen and (max-width: 480px) {
+	.busqueda-container {
+		position: relative;
+		top: initial;
+		left: initial;
+		width: 100%; 
+		margin-bottom: 20px; 
+	}
+
+	#busqueda {
+		width: calc(100% - 30px); 
+	}
+
+	.header-top {
+		height: 150px; 
+		font-size: 14px; 
+	}
+
+}
+
+/* Estilos para pantallas grandes (mayores a 1200px de ancho) */
+@media only screen and (min-width: 1200px) {
+	main {
+		margin: 20px auto; /* Mantén el margen */
+	}
+}
+
